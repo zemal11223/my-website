@@ -5,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Calm Mind — a mindful wellness website for emotional awareness, meditation, journaling, and sessions."
+      content="Calm Mind — emotional wellness, anxiety support, happiness habits, and depression care for everyday balance."
     />
     <title>Calm Mind | Emotional Wellness</title>
     <style>
       :root {
-        --bg: #050b14;
-        --bg-2: #0b1420;
-        --panel: rgba(17, 27, 39, 0.85);
-        --panel-strong: rgba(20, 32, 46, 0.96);
-        --card: rgba(26, 39, 58, 0.9);
+        --bg: #050d18;
+        --bg-2: #0b1523;
+        --panel: rgba(17, 25, 38, 0.75);
+        --panel-strong: rgba(20, 31, 45, 0.92);
+        --card: rgba(28, 39, 57, 0.9);
+        --text: #f2f7ff;
+        --muted: #d0d9e7;
+        --soft: #9aa9ba;
         --line: rgba(255, 255, 255, 0.08);
-        --line-soft: rgba(255, 255, 255, 0.14);
-        --text: #edf6ff;
-        --muted: #bfd0e3;
-        --soft: #8ca8c0;
-        --primary: #a8d9ff;
-        --primary-2: #b9a4ff;
-        --mint: #b7f3d4;
-        --peach: #ffcfb1;
-        --pink: #ffc9d8;
-        --gold: #f5d99d;
-        --shadow: rgba(10, 16, 24, 0.65);
-        --radius: 28px;
+        --line-2: rgba(255, 255, 255, 0.12);
+        --primary: #c9d7ff;
+        --primary-2: #b7a8ff;
+        --mint: #b9ecd5;
+        --peach: #f8d3a7;
+        --pink: #f8c7d6;
+        --shadow: rgba(7, 13, 22, 0.8);
       }
 
       * { box-sizing: border-box; }
@@ -36,57 +34,57 @@
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background:
-          radial-gradient(circle at 50% 12%, rgba(120, 164, 255, 0.16), transparent 20%),
-          radial-gradient(circle at 25% 28%, rgba(180, 173, 255, 0.08), transparent 26%),
-          linear-gradient(180deg, #020912 0%, #050b14 32%, #030a12 100%);
+          radial-gradient(circle at 50% 10%, rgba(143, 166, 255, 0.08), transparent 20%),
+          radial-gradient(circle at 80% 30%, rgba(191, 175, 255, 0.08), transparent 20%),
+          linear-gradient(180deg, #040b15, #02070f 35%, #030c14 100%);
         color: var(--text);
-        line-height: 1.6;
+        line-height: 1.5;
       }
 
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
-      ul { list-style: none; margin: 0; padding: 0; }
       button, input, textarea { font: inherit; }
+      ul { list-style: none; padding: 0; margin: 0; }
 
       .container {
         width: min(1200px, calc(100% - 32px));
         margin: 0 auto;
       }
 
-      .nav-wrap {
+      .topbar {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(4, 10, 17, 0.7);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--line);
+        background: rgba(3, 8, 15, 0.75);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255,255,255,0.03);
       }
 
       .nav {
+        min-height: 78px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 82px;
-        gap: 22px;
+        gap: 20px;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        font-size: 1.02rem;
-        letter-spacing: 0.28rem;
         font-weight: 800;
+        letter-spacing: 0.28rem;
+        font-size: 1rem;
         text-transform: uppercase;
       }
 
       .brand-mark {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
         position: relative;
-        background: linear-gradient(135deg, rgba(181, 240, 255, 0.7), rgba(181, 214, 255, 0.8));
-        box-shadow: inset 0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(140, 200, 255, 0.18);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(172, 228, 255, 0.95), rgba(196, 183, 255, 0.9));
+        box-shadow: inset 0 0 8px rgba(255,255,255,0.6);
       }
 
       .brand-mark::before,
@@ -95,94 +93,70 @@
         position: absolute;
         inset: 0;
         margin: auto;
-        border-radius: 50%;
       }
 
       .brand-mark::before {
-        width: 16px;
+        width: 12px;
         height: 10px;
-        border: 2px solid rgba(12, 25, 35, 0.9);
-        border-color: rgba(12, 25, 35, 0.9) transparent transparent transparent;
-        transform: rotate(-18deg) translateY(1px);
+        border: 2px solid rgba(18, 28, 38, 0.9);
+        border-color: rgba(18, 28, 38, 0.9) transparent transparent transparent;
+        border-radius: 50%;
+        transform: rotate(-20deg) translateY(1px);
       }
 
       .brand-mark::after {
-        width: 13px;
-        height: 13px;
-        border: 2px solid rgba(12,25,35,0.9);
-        border-radius: 50% 50% 45% 55%;
-        transform: rotate(-22deg) scale(0.8);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(18, 28, 38, 0.9);
+        transform: translate(-2px, -2px);
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 28px;
+        gap: 30px;
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.96rem;
       }
 
       .nav-links a {
         opacity: 0.9;
-        transition: color 0.2s ease, opacity 0.2s ease;
+        transition: opacity 0.2s ease, color 0.2s ease;
       }
 
-      .nav-links a:hover { color: var(--text); opacity: 1; }
-
-      .nav-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 999px;
-        padding: 0.9rem 1.4rem;
-        color: var(--text);
-        border: 1px solid var(--line-soft);
-        background: rgba(255,255,255,0.02);
-      }
+      .nav-links a:hover { opacity: 1; color: var(--text); }
 
       .hero {
-        padding: 58px 0 28px;
+        padding: 36px 0 70px;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
+        grid-template-columns: 1.05fr 0.95fr;
         align-items: center;
-        gap: 34px;
+        gap: 28px;
       }
 
-      .eyebrow {
-        display: inline-block;
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--primary);
-        background: rgba(168, 217, 255, 0.08);
-        border: 1px solid rgba(168, 217, 255, 0.2);
-        padding: 0.48rem 0.8rem;
-        border-radius: 999px;
-      }
-
-      .hero h1 {
+      .hero-copy h1 {
         margin: 22px 0 18px;
-        font-size: clamp(4rem, 5.8vw, 8rem);
+        font-size: clamp(4rem, 7vw, 8rem);
         line-height: 0.9;
-        letter-spacing: -0.07em;
+        letter-spacing: -0.08em;
         font-weight: 800;
       }
 
       .hero-copy p {
         margin: 0;
-        max-width: 620px;
+        max-width: 650px;
         color: var(--muted);
-        font-size: 1.12rem;
+        font-size: 1.08rem;
       }
 
       .cta-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 18px;
+        gap: 16px;
         margin-top: 28px;
       }
 
@@ -195,23 +169,22 @@
         border-radius: 999px;
         border: 1px solid transparent;
         font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+        font-size: 1.06rem;
         cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      .btn:hover {
-        transform: translateY(-2px);
-      }
+      .btn:hover { transform: translateY(-2px); }
 
       .btn-primary {
-        background: linear-gradient(90deg, rgba(159, 205, 255, 0.95), rgba(196, 175, 255, 0.9));
+        background: linear-gradient(90deg, rgba(153, 190, 255, 0.95), rgba(195, 175, 255, 0.9));
         color: #0a1320;
-        box-shadow: 0 18px 28px rgba(142, 178, 255, 0.25);
+        box-shadow: 0 18px 28px rgba(122, 158, 255, 0.28);
       }
 
       .btn-secondary {
-        border-color: rgba(255,255,255,0.18);
-        background: rgba(255,255,255,0.015);
+        background: transparent;
+        border-color: rgba(255,255,255,0.12);
         color: var(--text);
       }
 
@@ -225,286 +198,188 @@
       .badge {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        padding: 0.8rem 1rem;
-        min-width: 180px;
+        gap: 10px;
+        min-width: 175px;
+        padding: 0.9rem 1.05rem;
         border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(11,18,28,0.8);
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(20, 31, 46, 0.4);
         color: var(--muted);
         font-weight: 600;
       }
 
       .badge-dot {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #e2f1ff, #d5d0ff);
-        box-shadow: inset 0 0 6px rgba(255,255,255,0.4);
+        background: linear-gradient(135deg, rgba(206, 233, 255, 0.9), rgba(197, 185, 255, 0.95));
       }
 
       .hero-art {
         position: relative;
-        min-height: 600px;
-      }
-
-      .float-wrap {
-        position: absolute;
-        inset: 0;
-      }
-
-      .mood-card {
-        position: absolute;
-        right: 40px;
-        top: 30px;
-        width: 250px;
-        border-radius: 20px;
-        border: 1px solid var(--line);
-        background: rgba(20, 34, 48, 0.9);
-        box-shadow: 0 28px 40px rgba(0,0,0,0.18);
-        padding: 18px 16px;
-      }
-
-      .mood-card-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-      }
-
-      .tiny-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 16px;
-        background: linear-gradient(135deg, rgba(166, 217, 255, 0.35), rgba(195, 171, 255, 0.35));
-        display: grid;
-        place-items: center;
-        font-weight: 800;
-        color: var(--text);
-      }
-
-      .mood-card h4 {
-        margin: 0;
-        font-size: 1rem;
-      }
-
-      .mood-card small {
-        color: var(--muted);
-      }
-
-      .state-bars {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 10px;
-        height: 110px;
-        margin-top: 18px;
-      }
-
-      .state-bars span {
-        display: block;
-        width: 18%;
-        border-radius: 12px 12px 0 0;
-        background: linear-gradient(180deg, rgba(177, 236, 203, 0.92), rgba(164, 197, 255, 0.9));
-        box-shadow: 0 18px 24px rgba(164,197,255,0.15);
-      }
-
-      .state-bars span:nth-child(1) { height: 38%; }
-      .state-bars span:nth-child(2) { height: 56%; }
-      .state-bars span:nth-child(3) { height: 48%; }
-      .state-bars span:nth-child(4) { height: 76%; }
-      .state-bars span:nth-child(5) { height: 60%; }
-
-      .floating-note {
-        position: absolute;
-        left: 24px;
-        bottom: 44px;
-        width: 180px;
-        border-radius: 20px;
-        border: 1px solid var(--line);
-        background: rgba(19, 28, 35, 0.9);
-        padding: 16px 18px;
-        box-shadow: 0 24px 32px rgba(0,0,0,0.18);
-      }
-
-      .pill {
-        display: inline-block;
-        padding: 0.35rem 0.7rem;
-        border-radius: 999px;
-        font-size: 0.68rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: rgba(255, 197, 214, 0.14);
-        border: 1px solid rgba(255, 197, 214, 0.2);
-        color: #ffdeea;
-      }
-
-      .floating-note h3 {
-        margin: 12px 0 0;
-        font-size: 1.05rem;
+        min-height: 560px;
       }
 
       .face {
         position: absolute;
-        width: 210px;
-        height: 210px;
         border-radius: 50%;
-        box-shadow: inset -12px -12px 24px rgba(255,255,255,0.18), inset 10px 12px 18px rgba(255,255,255,0.12), 0 24px 30px rgba(18, 26, 38, 0.3);
+        box-shadow: inset -14px -14px 30px rgba(255,255,255,0.18), inset 12px 12px 25px rgba(255,255,255,0.1), 0 26px 35px rgba(10,15,25,0.26);
       }
 
-      .face-large {
-        width: 220px;
-        height: 220px;
+      .face::before,
+      .face::after {
+        content: "";
+        position: absolute;
       }
 
       .happy {
-        right: 240px;
-        top: 30px;
-        background: radial-gradient(circle at 35% 26%, #f6f2d4 0%, rgba(242, 224, 180, 0.9) 20%, rgba(241, 190, 132, 0.9) 56%, #f2d0a2 100%);
+        width: 220px;
+        height: 220px;
+        right: 230px;
+        top: 20px;
+        background: radial-gradient(circle at 35% 28%, #f7f4d8 0%, rgba(246, 228, 181, 0.96) 20%, rgba(240, 196, 135, 0.95) 60%, rgba(236, 180, 119, 0.9) 100%);
       }
 
-      .happy::before, .happy::after,
-      .sleep::before, .sleep::after,
-      .sad::before, .sad::after,
-      .stress::before, .stress::after {
-        content: "";
+      .happy .eye {
         position: absolute;
-      }
-
-      .happy::before {
-        width: 32px;
-        height: 28px;
+        width: 16px;
+        height: 16px;
+        background: rgba(30, 30, 30, 0.9);
         border-radius: 50%;
-        background: rgba(255,255,255,0.2);
-        right: 30px;
-        top: 10px;
+        top: 96px;
       }
 
-      .happy::after {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 70%);
-        left: 18px;
-        top: 8px;
-      }
+      .happy .eye.left { left: 64px; }
+      .happy .eye.right { right: 64px; }
 
-      .eyes {
+      .happy .smile {
         position: absolute;
-        inset: 0;
-      }
-
-      .eyes span {
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: #1a1a1a;
-        top: 90px;
-      }
-
-      .eyes span:first-child { left: 62px; }
-      .eyes span:last-child { right: 62px; }
-
-      .smile {
-        position: absolute;
-        width: 90px;
-        height: 50px;
-        border: 7px solid rgba(0,0,0,0.7);
-        border-color: transparent transparent rgba(0,0,0,0.72) transparent;
-        border-radius: 0 0 120px 120px;
+        width: 84px;
+        height: 48px;
         left: 50%;
-        bottom: 45px;
+        bottom: 48px;
         transform: translateX(-50%);
+        border: 7px solid rgba(39, 29, 26, 0.7);
+        border-color: transparent transparent rgba(39,29,26,0.7) transparent;
+        border-radius: 0 0 110px 110px;
       }
 
-      .blush {
+      .happy .blush {
         position: absolute;
         width: 24px;
         height: 16px;
-        background: rgba(255, 131, 161, 0.45);
+        background: rgba(255, 131, 161, 0.4);
         border-radius: 50%;
-        bottom: 58px;
+        bottom: 62px;
       }
 
-      .blush.left { left: 34px; }
-      .blush.right { right: 34px; }
+      .happy .blush.left { left: 32px; }
+      .happy .blush.right { right: 32px; }
 
-      .flower {
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        background: linear-gradient(135deg, #a8e7b2, #6ec785);
-        border-radius: 50%;
-        top: -18px;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 0 0 6px rgba(122, 162, 98, 0.4);
-      }
-
-      .flower::before,
-      .flower::after {
-        content: "";
+      .happy .flower {
         position: absolute;
         width: 18px;
         height: 18px;
+        background: linear-gradient(135deg, #e7f8dc, #95db89);
         border-radius: 50%;
-        background: linear-gradient(135deg, #c6efd6, #8fcc9a);
-        top: 12px;
-        left: -10px;
-        box-shadow: 0 0 0 5px rgba(125, 170, 112, 0.15);
+        left: 50%;
+        top: -20px;
+        transform: translateX(-50%);
+        box-shadow: 0 0 0 6px rgba(124, 170, 100, 0.28);
       }
 
-      .flower::after {
+      .happy .flower::before,
+      .happy .flower::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #dff7df, #9bcf8a);
+        top: 12px;
+        left: -10px;
+      }
+
+      .happy .flower::after {
         left: auto;
         right: -10px;
       }
 
-      .sleep {
-        left: 110px;
-        bottom: 20px;
-        background: radial-gradient(circle at 35% 26%, #f9f4e5 0%, #e7e1f9 38%, #c8c4ee 100%);
+      .sad {
+        width: 200px;
+        height: 200px;
+        right: 20px;
+        bottom: 30px;
+        background: radial-gradient(circle at 35% 28%, #edf6ff 0%, rgba(204, 221, 246, 0.9) 22%, rgba(168, 187, 228, 0.9) 60%, rgba(144, 170, 219, 0.85) 100%);
       }
 
-      .sleep .eyes span {
-        width: 18px;
-        height: 8px;
-        border-radius: 60px;
-        background: rgba(25,25,25,0.7);
-        top: 102px;
+      .sad .eye {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: rgba(14, 14, 14, 0.8);
+        border-radius: 50%;
+        top: 92px;
       }
 
-      .sleep .smile {
+      .sad .eye.left { left: 56px; }
+      .sad .eye.right { right: 56px; }
+
+      .sad .smile {
+        position: absolute;
         width: 70px;
-        height: 36px;
-        border-width: 5px;
-        border-color: rgba(0,0,0,0.72) transparent transparent transparent;
-        border-radius: 70px 70px 0 0;
-        bottom: 56px;
+        height: 48px;
+        left: 50%;
+        bottom: 42px;
+        transform: translateX(-50%);
+        border: 6px solid rgba(26,26,26,0.8);
+        border-color: rgba(26,26,26,0.8) transparent transparent transparent;
+        border-radius: 90px 90px 0 0;
+      }
+
+      .sad .drop {
+        position: absolute;
+        width: 12px;
+        height: 22px;
+        background: linear-gradient(180deg, rgba(131, 208, 255, 0.9), rgba(108, 180, 255, 0.7));
+        border-radius: 0 0 12px 12px;
+        right: 20px;
+        top: 40px;
+        transform: rotate(18deg);
+      }
+
+      .sad .drop::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(135deg, rgba(154, 213, 255, 0.9), rgba(108, 180, 255, 0.7));
+        border-radius: 50% 50% 50% 0;
+        top: -8px;
+        left: -2px;
+        transform: rotate(-45deg);
+      }
+
+      .sleep {
+        width: 220px;
+        height: 220px;
+        left: 70px;
+        bottom: 10px;
+        background: radial-gradient(circle at 35% 30%, #f8f5e5 0%, rgba(220, 225, 249, 0.96) 30%, rgba(190, 194, 238, 0.92) 100%);
       }
 
       .sleep .cap {
         position: absolute;
         width: 150px;
-        height: 70px;
-        background: linear-gradient(180deg, rgba(200, 211, 255, 0.9), rgba(168,179,255,0.7));
-        border-radius: 50% 50% 45% 45%;
-        top: 18px;
+        height: 62px;
+        background: linear-gradient(180deg, rgba(182, 197, 255, 0.92), rgba(153, 166, 242, 0.8));
+        border-radius: 50% 50% 40% 40%;
         left: 50%;
+        top: 24px;
         transform: translateX(-50%);
       }
 
-      .sleep .cap::before {
-        content: "";
-        position: absolute;
-        width: 30px;
-        height: 28px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.5);
-        top: 15px;
-        left: 28px;
-      }
-
+      .sleep .cap::before,
       .sleep .cap::after {
         content: "";
         position: absolute;
@@ -512,90 +387,76 @@
         height: 18px;
         border-radius: 50%;
         background: rgba(255,255,255,0.45);
-        right: 26px;
         top: 12px;
       }
 
-      .sad {
-        right: 22px;
-        bottom: 30px;
-        background: radial-gradient(circle at 35% 26%, #eef4ff 0%, #c8d8ee 36%, #a5b1e3 100%);
+      .sleep .cap::before { left: 28px; }
+      .sleep .cap::after { right: 28px; }
+
+      .sleep .eye {
+        position: absolute;
+        width: 18px;
+        height: 8px;
+        background: rgba(26,26,26,0.75);
+        border-radius: 999px;
+        top: 102px;
       }
 
-      .sad .eyes span {
+      .sleep .eye.left { left: 62px; }
+      .sleep .eye.right { right: 62px; }
+
+      .sleep .smile {
+        position: absolute;
+        width: 64px;
+        height: 32px;
+        left: 50%;
+        bottom: 48px;
+        transform: translateX(-50%);
+        border: 5px solid rgba(22,22,22,0.75);
+        border-color: rgba(22,22,22,0.75) transparent transparent transparent;
+        border-radius: 80px 80px 0 0;
+      }
+
+      .stress {
+        width: 200px;
+        height: 200px;
+        right: 220px;
+        bottom: 25px;
+        background: radial-gradient(circle at 35% 28%, #f8efe2 0%, rgba(223, 209, 188, 0.96) 30%, rgba(201, 214, 234, 0.92) 100%);
+      }
+
+      .stress .eye {
+        position: absolute;
         width: 16px;
         height: 16px;
-        background: #1d1d1d;
+        background: rgba(20,20,20,0.8);
+        border-radius: 50%;
         top: 92px;
       }
 
-      .sad .eyes span:first-child { left: 56px; }
-      .sad .eyes span:last-child { right: 56px; }
-
-      .sad .smile {
-        width: 72px;
-        height: 52px;
-        border: 6px solid rgba(0,0,0,0.72);
-        border-color: rgba(0,0,0,0.72) transparent transparent transparent;
-        border-radius: 100px 100px 0 0;
-        bottom: 42px;
-      }
-
-      .drop {
-        position: absolute;
-        width: 10px;
-        height: 18px;
-        background: linear-gradient(180deg, #c3f2ff, rgba(128, 204, 255, 0.8));
-        border-radius: 0 0 12px 12px;
-        transform: rotate(30deg);
-      }
-
-      .drop::before {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-radius: 50% 50% 50% 0;
-        background: linear-gradient(135deg, rgba(163, 220, 255, 0.75), rgba(138, 194, 255, 0.9));
-        top: -8px;
-        left: -2px;
-        transform: rotate(-45deg);
-      }
-
-      .drop.a { right: 20px; top: 54px; }
-      .drop.b { right: 42px; top: 76px; }
-      .drop.c { right: 10px; top: 90px; }
-
-      .stress {
-        right: 230px;
-        bottom: 24px;
-        background: radial-gradient(circle at 30% 25%, #f6ecdb 0%, #e4d2b8 28%, #c7d0e6 100%);
-      }
-
-      .stress .eyes span {
-        width: 18px;
-        height: 18px;
-        background: #1b1b1b;
-        top: 90px;
-      }
+      .stress .eye.left { left: 54px; }
+      .stress .eye.right { right: 54px; }
 
       .stress .smile {
-        width: 58px;
-        height: 34px;
-        border-width: 6px;
-        border-color: rgba(0,0,0,0.72) transparent transparent transparent;
-        border-radius: 120px 120px 0 0;
-        bottom: 48px;
+        position: absolute;
+        width: 72px;
+        height: 42px;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        border: 6px solid rgba(24,24,24,0.8);
+        border-color: rgba(24,24,24,0.8) transparent transparent transparent;
+        border-radius: 100px 100px 0 0;
       }
 
       .stress .scarf {
         position: absolute;
-        width: 90px;
-        height: 28px;
-        background: linear-gradient(135deg, #ffd7bf, #eead7a);
-        border-radius: 25px;
-        bottom: 16px;
+        width: 88px;
+        height: 24px;
+        background: linear-gradient(135deg, #f6d6b9, #f0b681);
+        border-radius: 30px;
         left: 50%;
+        bottom: 10px;
         transform: translateX(-50%);
       }
 
@@ -603,376 +464,75 @@
       .stress .scarf::after {
         content: "";
         position: absolute;
-        width: 14px;
-        height: 32px;
-        background: linear-gradient(135deg, #f6ceb7, #f3b585);
-        border-radius: 12px;
-        top: -5px;
+        width: 12px;
+        height: 28px;
+        top: -6px;
+        background: linear-gradient(135deg, #f7d2af, #efb075);
+        border-radius: 10px;
       }
 
-      .stress .scarf::before { left: 18px; }
-      .stress .scarf::after { right: 18px; }
+      .stress .scarf::before { left: 16px; }
+      .stress .scarf::after { right: 16px; }
 
-      .section {
-        padding: 78px 0;
-      }
-
-      .section-header {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 22px;
-        margin-bottom: 28px;
-      }
-
-      .section-header h2 {
-        margin: 12px 0 0;
-        font-size: clamp(2.4rem, 3vw, 3.4rem);
-        letter-spacing: -0.06em;
-      }
-
-      .section-header p {
-        max-width: 560px;
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .card-grid {
-        display: grid;
-        gap: 22px;
-      }
-
-      .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .panel {
-        background: linear-gradient(180deg, rgba(18, 29, 41, 0.8), rgba(11, 17, 25, 0.8));
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 26px;
-        box-shadow: 0 22px 36px rgba(0,0,0,0.16);
-      }
-
-      .icon-box {
-        width: 54px;
-        height: 54px;
-        display: grid;
-        place-items: center;
-        border-radius: 16px;
-        font-size: 1.4rem;
-        background: linear-gradient(135deg, rgba(166, 217, 255, 0.16), rgba(192, 172, 255, 0.17));
-        border: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .panel h3 {
-        margin: 18px 0 10px;
-        font-size: 1.4rem;
-      }
-
-      .panel p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .meditation-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 22px;
-      }
-
-      .mini-quote {
-        font-size: 1.1rem;
-        color: var(--text);
-        margin-bottom: 18px;
-      }
-
-      .list-check {
-        display: grid;
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .list-check li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--muted);
-      }
-
-      .list-check li::before {
-        content: "✓";
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: rgba(154, 234, 201, 0.12);
-        color: #aaf0cc;
-        font-weight: 700;
-      }
-
-      .session-card {
-        background: rgba(18, 29, 41, 0.8);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 22px 20px;
-      }
-
-      .session-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 14px;
-      }
-
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.72rem;
-        font-weight: 700;
-        padding: 0.42rem 0.78rem;
-        border-radius: 999px;
-        background: rgba(180, 166, 255, 0.12);
-        color: #e5dcff;
-        border: 1px solid rgba(180,166,255,0.22);
-      }
-
-      .session-card h3 {
-        margin: 0 0 10px;
-      }
-
-      .meta {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        color: var(--muted);
-        font-size: 0.9rem;
-        margin: 18px 0 0;
-      }
-
-      .profile-box {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 22px;
-      }
-
-      .profile-hero {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .avatar-large {
-        width: 120px;
-        height: 120px;
-        border-radius: 32px;
-        background: linear-gradient(135deg, rgba(170, 222, 255, 0.35), rgba(191, 173, 255, 0.5));
-        display: grid;
-        place-items: center;
-        font-size: 2.1rem;
-        font-weight: 800;
-        box-shadow: inset 0 0 10px rgba(255,255,255,0.4);
-      }
-
-      .stats-row {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 20px;
-      }
-
-      .stat-box {
-        padding: 18px 14px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--line);
-      }
-
-      .stat-box strong {
-        display: block;
-        font-size: 1.5rem;
-        margin-bottom: 4px;
-      }
-
-      .stat-box span {
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-
-      .progress-list {
-        display: grid;
-        gap: 14px;
-      }
-
-      .progress-item {
-        padding: 18px 16px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--line);
-      }
-
-      .progress-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
-
-      .bar {
-        width: 100%;
+      .bubble {
+        position: absolute;
+        width: 10px;
         height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.25);
+      }
+
+      .bubble-1 { right: 85px; top: 120px; }
+      .bubble-2 { right: 70px; top: 145px; }
+      .bubble-3 { right: 95px; top: 180px; }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 0.45rem 0.8rem;
         border-radius: 999px;
-        background: rgba(255,255,255,0.06);
-        overflow: hidden;
-      }
-
-      .bar > span {
-        display: block;
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(90deg, rgba(176, 219, 255, 0.95), rgba(183, 165, 255, 0.9));
-      }
-
-      .contact-wrap {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 22px;
-      }
-
-      .form-grid {
-        display: grid;
-        gap: 16px;
-      }
-
-      .field {
-        display: grid;
-        gap: 8px;
-      }
-
-      .field label {
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .field input,
-      .field textarea {
-        width: 100%;
-        border: 1px solid var(--line-soft);
-        background: rgba(255,255,255,0.02);
-        border-radius: 16px;
-        padding: 0.9rem 1rem;
-        color: var(--text);
-      }
-
-      .field textarea {
-        min-height: 120px;
-        resize: vertical;
-      }
-
-      .contact-list {
-        display: grid;
-        gap: 18px;
-        margin-top: 18px;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 16px 14px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--line);
-      }
-
-      .contact-item .icon-box {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-      }
-
-      .small-muted {
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      footer {
-        border-top: 1px solid var(--line);
-        padding: 24px 0 36px;
-      }
-
-      .footer-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: 1px solid rgba(153, 200, 255, 0.2);
+        background: rgba(153, 200, 255, 0.06);
+        color: #b7d8ff;
       }
 
       @media (max-width: 980px) {
-        .hero-grid,
-        .meditation-grid,
-        .profile-box,
-        .contact-wrap {
+        .hero-grid {
           grid-template-columns: 1fr;
         }
 
-        .cards-3,
-        .cards-4,
-        .cards-2 {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .nav-links {
-          display: none;
-        }
+        .nav-links { display: none; }
       }
 
       @media (max-width: 620px) {
-        .hero {
-          padding-top: 30px;
+        .hero-copy h1 {
+          font-size: 4rem;
         }
 
-        .hero-grid {
-          gap: 10px;
-        }
-
-        .hero h1 {
-          font-size: 3.6rem;
-        }
-
-        .cta-row,
-        .feature-badges {
+        .cta-row {
           flex-direction: column;
-          align-items: stretch;
         }
 
-        .btn,
-        .nav-cta {
+        .btn {
           width: 100%;
         }
 
-        .cards-3,
-        .cards-4,
-        .cards-2,
-        .stats-row {
-          grid-template-columns: 1fr;
+        .hero-art {
+          min-height: 500px;
         }
 
-        .hero-art { min-height: 520px; }
-        .happy { right: 150px; }
+        .happy { right: 20px; }
+        .stress { right: 130px; }
+        .sleep { left: 25px; }
         .sad { right: 10px; }
-        .sleep { left: 40px; }
-        .stress { right: 150px; }
       }
     </style>
   </head>
   <body>
-    <header class="nav-wrap">
+    <header class="topbar">
       <div class="container nav">
         <a href="#home" class="brand" aria-label="Calm Mind home">
           <span class="brand-mark" aria-hidden="true"></span>
@@ -986,8 +546,6 @@
           <a href="#sessions">Sessions</a>
           <a href="#profile">Profile</a>
         </nav>
-
-        <a class="nav-cta" href="#contact">Talk to us</a>
       </div>
     </header>
 
@@ -1003,7 +561,7 @@
             </p>
 
             <div class="cta-row">
-              <a class="btn btn-primary" href="#sessions">Begin Now</a>
+              <a class="btn btn-primary" href="#sessions">Begin Now →</a>
               <a class="btn btn-secondary" href="#meditate">Learn More</a>
             </div>
 
@@ -1014,323 +572,88 @@
             </div>
           </div>
 
-          <div class="hero-art" aria-label="Illustrated emotion cards">
-            <div class="float-wrap">
-              <div class="face happy face-large">
-                <div class="flowers" style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); width:40px; height:40px;">
-                  <div class="flower"></div>
-                </div>
-                <div class="eyes"><span></span><span></span></div>
-                <div class="blush left"></div>
-                <div class="blush right"></div>
-                <div class="smile"></div>
-              </div>
+          <div class="hero-art" aria-label="Mood illustration preview">
+            <div class="face happy" aria-hidden="true">
+              <div class="flower"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="blush left"></div>
+              <div class="blush right"></div>
+              <div class="smile"></div>
+            </div>
 
-              <div class="face sad" style="bottom: 42px;">
-                <div class="drop a"></div>
-                <div class="drop b"></div>
-                <div class="drop c"></div>
-                <div class="eyes"><span></span><span></span></div>
-                <div class="smile"></div>
-              </div>
+            <div class="face sad" aria-hidden="true">
+              <div class="drop"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="smile"></div>
+            </div>
 
-              <div class="face sleep" style="left: 80px; bottom: 18px;">
-                <div class="cap"></div>
-                <div class="eyes"><span></span><span></span></div>
-                <div class="smile"></div>
-              </div>
+            <div class="face sleep" aria-hidden="true">
+              <div class="cap"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="smile"></div>
+            </div>
 
-              <div class="face stress" style="right: 200px; bottom: 40px;">
-                <div class="eyes"><span></span><span></span></div>
-                <div class="smile"></div>
-                <div class="scarf"></div>
-              </div>
-
-              <div class="mood-card">
-                <div class="mood-card-head">
-                  <div>
-                    <h4>Today's emotional check</h4>
-                    <small>Gentle self-awareness</small>
-                  </div>
-                  <div class="tiny-avatar">C</div>
-                </div>
-                <div class="state-bars" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-
-              <div class="floating-note">
-                <span class="pill">Mindful living</span>
-                <h3>Calm · Clear · Stronger</h3>
-              </div>
+            <div class="face stress" aria-hidden="true">
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="smile"></div>
+              <div class="scarf"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="meditate" class="section">
+      <section id="meditate" style="padding: 20px 0 80px;">
         <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">How it works</span>
-              <h2>Build a calmer rhythm.</h2>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+            <div style="background:rgba(18,30,43,0.7);border:1px solid var(--line);border-radius:24px;padding:28px;">
+              <div style="width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(175,200,255,0.12);font-size:1.5rem;">🌿</div>
+              <h3 style="margin:18px 0 10px;font-size:1.3rem;">Meditation</h3>
+              <p style="margin:0;color:var(--muted);">Guided breathing and calming routines to bring attention back to the present.</p>
             </div>
-            <p>Support for reflection, rest, and emotional health through simple routines that feel realistic and kind.</p>
+            <div style="background:rgba(18,30,43,0.7);border:1px solid var(--line);border-radius:24px;padding:28px;">
+              <div style="width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(175,200,255,0.12);font-size:1.5rem;">📔</div>
+              <h3 style="margin:18px 0 10px;font-size:1.3rem;">Journal</h3>
+              <p style="margin:0;color:var(--muted);">Reflect on thoughts, emotions, and habits with gentle prompts and check-ins.</p>
+            </div>
+            <div style="background:rgba(18,30,43,0.7);border:1px solid var(--line);border-radius:24px;padding:28px;">
+              <div style="width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(175,200,255,0.12);font-size:1.5rem;">🧭</div>
+              <h3 style="margin:18px 0 10px;font-size:1.3rem;">Sessions</h3>
+              <p style="margin:0;color:var(--muted);">Private support for stress, mindfulness, sleep, and emotional regulation.</p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div class="meditation-grid">
-            <div class="panel">
-              <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-                <div class="icon-box">🌿</div>
-                <h3 style="margin:0;">Meditation &amp; grounding</h3>
-              </div>
-              <div class="mini-quote">“Small moments of quiet can create a stronger mind.”</div>
-              <ul class="list-check">
-                <li>Breathing exercises for stress relief</li>
-                <li>Guided resets during busy or overwhelming days</li>
-                <li>Gentle, private support for emotional regulation</li>
+      <section id="contact" style="padding-bottom:80px;">
+        <div class="container">
+          <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px;">
+            <div style="background:rgba(18,30,43,0.7);border:1px solid var(--line);border-radius:28px;padding:28px;">
+              <span class="eyebrow" style="margin-bottom:12px;">Reach out</span>
+              <h3 style="margin:0 0 12px;font-size:2rem;letter-spacing:-0.05em;">Need support? We are here for you.</h3>
+              <p style="margin:0;color:var(--muted);">Calm Mind is a compassionate space for emotional support, reflection, and healing. If you are feeling overwhelmed, anxious, low, or lost, you do not have to carry it alone.</p>
+              <a class="btn btn-primary" href="mailto:hello@calmmind.example" style="margin-top:20px;">hello@calmmind.example</a>
+            </div>
+
+            <div style="background:rgba(18,30,43,0.7);border:1px solid var(--line);border-radius:28px;padding:28px;">
+              <h3 style="margin:0 0 18px;font-size:1.6rem;">Helpful info</h3>
+              <ul style="display:grid;gap:12px;color:var(--muted);">
+                <li>Email: hello@calmmind.example</li>
+                <li>Phone: +1 (555) 234-6789</li>
+                <li>Support Hours: 9:00 AM – 7:00 PM</li>
+                <li>Location: Online / Global</li>
               </ul>
-            </div>
-
-            <div class="panel">
-              <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-                <div class="icon-box">🧠</div>
-                <h3 style="margin:0;">Daily check-ins</h3>
-              </div>
-              <p>See your emotional trend over time and notice what truly helps you feel safe, steady, and supported.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="journal" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Inner reflection</span>
-              <h2>Journal your path to clarity.</h2>
-            </div>
-            <p>Capture thoughts, patterns, wins, and emotions in a space designed for gentleness and honesty.</p>
-          </div>
-
-          <div class="card-grid cards-3">
-            <article class="panel">
-              <div class="icon-box">✍️</div>
-              <h3>Daily journal</h3>
-              <p>Write short reflections that help you notice your mood, habits, and growth without pressure.</p>
-            </article>
-
-            <article class="panel">
-              <div class="icon-box">🌤️</div>
-              <h3>Emotion prompts</h3>
-              <p>Reflect on what drained you, what lifted you, and what you need more of in your daily life.</p>
-            </article>
-
-            <article class="panel">
-              <div class="icon-box">💬</div>
-              <h3>Thought tracking</h3>
-              <p>Reconnect with cause and effect so you can act with more calm, patience, and awareness.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="sessions" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Choose support</span>
-              <h2>Sessions built around your needs.</h2>
-            </div>
-            <p>From quiet breathing to guided reflection, you can choose a rhythm that feels supportive, safe, and sustainable.</p>
-          </div>
-
-          <div class="card-grid cards-3">
-            <div class="session-card">
-              <div class="session-head">
-                <h3>Breathing Reset</h3>
-                <span class="tag">5 min</span>
-              </div>
-              <p>Calm racing thoughts and restore focus when stress begins to rise.</p>
-              <div class="meta">
-                <span>Beginner</span>
-                <span>Stress relief</span>
-              </div>
-            </div>
-
-            <div class="session-card">
-              <div class="session-head">
-                <h3>Mindful Check-in</h3>
-                <span class="tag">10 min</span>
-              </div>
-              <p>Slow down and notice what you are feeling without judgment or pressure.</p>
-              <div class="meta">
-                <span>Reflective</span>
-                <span>Daily habit</span>
-              </div>
-            </div>
-
-            <div class="session-card">
-              <div class="session-head">
-                <h3>Night Calm</h3>
-                <span class="tag">15 min</span>
-              </div>
-              <p>Wind down and support deeper rest with grounding practices and peaceful focus.</p>
-              <div class="meta">
-                <span>Sleep</span>
-                <span>Recovery</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="profile" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Your progress</span>
-              <h2>Keep growing with gentle momentum.</h2>
-            </div>
-            <p>Personal insight gives direction. A little consistency can create lasting emotional healing.</p>
-          </div>
-
-          <div class="profile-box">
-            <div class="panel profile-hero">
-              <div class="avatar-large">CM</div>
-              <div>
-                <h3 style="margin:0 0 8px;">Calm Mind Profile</h3>
-                <p>Mindfulness routines and emotional check-ins from your weekly journey.</p>
-              </div>
-
-              <div class="stats-row">
-                <div class="stat-box">
-                  <strong>12</strong>
-                  <span>Sessions</span>
-                </div>
-                <div class="stat-box">
-                  <strong>8</strong>
-                  <span>Journal entries</span>
-                </div>
-                <div class="stat-box">
-                  <strong>86%</strong>
-                  <span>Consistency</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel">
-              <h3 style="margin:0 0 18px;">Current progress</h3>
-              <div class="progress-list">
-                <div class="progress-item">
-                  <div class="progress-head">
-                    <strong>Mindfulness</strong>
-                    <span>80%</span>
-                  </div>
-                  <div class="bar"><span style="width:80%"></span></div>
-                </div>
-
-                <div class="progress-item">
-                  <div class="progress-head">
-                    <strong>Stress awareness</strong>
-                    <span>72%</span>
-                  </div>
-                  <div class="bar"><span style="width:72%"></span></div>
-                </div>
-
-                <div class="progress-item">
-                  <div class="progress-head">
-                    <strong>Sleep routine</strong>
-                    <span>90%</span>
-                  </div>
-                  <div class="bar"><span style="width:90%"></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="eyebrow">Contact &amp; feedback</span>
-              <h2>We’re here for you.</h2>
-            </div>
-            <p>Reach out with questions, feedback, or support requests. We welcome honest conversations and thoughtful ideas.</p>
-          </div>
-
-          <div class="contact-wrap">
-            <div class="panel">
-              <h3 style="margin-top:0;">Send a message</h3>
-              <form class="form-grid">
-                <div class="field">
-                  <label for="name">Name</label>
-                  <input id="name" type="text" placeholder="Your name" />
-                </div>
-
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" placeholder="you@example.com" />
-                </div>
-
-                <div class="field">
-                  <label for="message">Message or feedback</label>
-                  <textarea id="message" placeholder="Share how we can support you..."></textarea>
-                </div>
-
-                <button class="btn btn-primary" type="submit">Send message</button>
-              </form>
-            </div>
-
-            <div class="panel">
-              <h3 style="margin-top:0;">Helpful information</h3>
-              <div class="contact-list">
-                <div class="contact-item">
-                  <div class="icon-box">✉️</div>
-                  <div>
-                    <strong>Email</strong>
-                    <div class="small-muted">hello@calmmind.example</div>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <div class="icon-box">📞</div>
-                  <div>
-                    <strong>Phone</strong>
-                    <div class="small-muted">+1 (555) 234-6789</div>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <div class="icon-box">🕒</div>
-                  <div>
-                    <strong>Support hours</strong>
-                    <div class="small-muted">9:00 AM – 7:00 PM</div>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <div class="icon-box">🌍</div>
-                  <div>
-                    <strong>Location</strong>
-                    <div class="small-muted">Online / Global</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container footer-inner">
+    <footer style="border-top:1px solid rgba(255,255,255,0.04);padding:26px 0 34px;">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:18px;color:var(--muted);">
         <div class="brand" aria-label="Calm Mind footer brand">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Calm Mind</span>
@@ -1341,12 +664,6 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
-      document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const button = event.target.querySelector('button');
-        button.textContent = 'Message Sent';
-        button.disabled = true;
-      });
     </script>
   </body>
 </html>
