@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Calm Mind - Zemal</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calm Mind - Zemal</title>
 <style>
 body{margin:0;background:#0a0a0f;color:white;font-family:sans-serif;text-align:center;padding:80px 20px}
 h1{font-size:50px} p{color:#aaa;font-size:20px}
-a{background:#8b5cf6;color:white;padding:15px 30px;border-radius:30px;text-decoration:none;display:inline-block;margin-top:20px}
+.btn{background:#8b5cf6;color:white;padding:15px 30px;border-radius:30px;text-decoration:none;display:inline-block;margin-top:20px;border:none;cursor:pointer;font-size:16px}
+.emotions{display:none;margin-top:40px;max-width:600px;margin-left:auto;margin-right:auto}
+.emo-box{background:#1e1e3a;padding:20px;margin:10px;border-radius:15px;display:inline-block;width:120px;cursor:pointer}
+.emo-box:hover{background:#2e2e5a}
+#msg{margin-top:30px;background:#1e1e3a;padding:20px;border-radius:15px;display:none}
 </style>
 </head>
 <body>
 <h1>Meet Your Emotions</h1>
 <p>Track how you feel. Build calm. Be present.</p>
-<a href="#">Begin Now</a>
+<button class="btn" onclick="show()">Begin Now</button>
+
+<div id="tracker" class="emotions">
+<h2>How are you feeling today?</h2>
+<div class="emo-box" onclick="feel('Happy 😊')">Happy 😊</div>
+<div class="emo-box" onclick="feel('Calm 😌')">Calm 😌</div>
+<div class="emo-box" onclick="feel('Anxious 😟')">Anxious 😟</div>
+<div class="emo-box" onclick="feel('Sad 😔')">Sad 😔</div>
+<div id="msg"></div>
+</div>
+
+<script>
+function show(){document.getElementById('tracker').style.display='block';window.scrollTo(0,300)}
+function feel(e){let m=document.getElementById('msg');m.style.display='block';m.innerHTML='<h3>You selected: '+e+'</h3><p>Great job! Take a deep breath for 5 seconds.</p><button class=btn onclick=location.reload()>Start Over</button>'}
+</script>
 </body>
 </html>
