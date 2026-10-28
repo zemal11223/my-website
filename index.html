@@ -5,47 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Official website for ZEMAL — digital solutions, branding, and growth-focused design services."
+      content="Calm Mind official website for wellness, mindful living, and emotional balance."
     />
-    <title>ZEMAL | Official Website</title>
+    <title>Calm Mind | Official Website</title>
     <style>
       :root {
-        --bg: #07111f;
-        --bg-soft: #0d1b2a;
-        --panel: rgba(15, 23, 42, 0.8);
-        --card: #101d2d;
-        --primary: #6ee7f9;
-        --secondary: #8b5cf6;
-        --accent: #fbbf24;
-        --text: #edf6ff;
-        --muted: #a5b4c8;
-        --line: rgba(255, 255, 255, 0.12);
-        --success: #34d399;
+        --bg: #0c1220;
+        --bg-soft: #121b2d;
+        --panel: rgba(18, 27, 45, 0.9);
+        --card: #1a2436;
+        --primary: #8fe3d1;
+        --secondary: #b79cff;
+        --accent: #ffd86b;
+        --text: #f4fbff;
+        --muted: #b9c7d9;
+        --line: rgba(255, 255, 255, 0.1);
+        --success: #7ee7b5;
       }
 
       * { box-sizing: border-box; }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: radial-gradient(circle at top, #0b1d2d 0%, var(--bg) 45%, #020a13 100%);
+        background: radial-gradient(circle at top, #18253a 0%, var(--bg) 48%, #060b12 100%);
         color: var(--text);
         line-height: 1.6;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
 
       .container {
         width: min(1120px, calc(100% - 32px));
@@ -57,7 +48,7 @@
         top: 0;
         z-index: 50;
         backdrop-filter: blur(14px);
-        background: rgba(7, 17, 31, 0.7);
+        background: rgba(12, 18, 32, 0.7);
         border-bottom: 1px solid var(--line);
       }
 
@@ -79,15 +70,15 @@
       }
 
       .brand-mark {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         border-radius: 12px;
         background: linear-gradient(135deg, var(--primary), var(--secondary));
         display: grid;
         place-items: center;
-        color: #041018;
+        color: #0a1e1e;
         font-weight: 900;
-        box-shadow: 0 12px 28px rgba(110, 231, 249, 0.35);
+        box-shadow: 0 12px 28px rgba(143, 227, 209, 0.3);
       }
 
       .nav-links {
@@ -98,13 +89,8 @@
         font-size: 0.96rem;
       }
 
-      .nav-links a {
-        transition: color 0.2s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--text);
-      }
+      .nav-links a { transition: color 0.2s ease; }
+      .nav-links a:hover { color: var(--text); }
 
       .nav-actions {
         display: flex;
@@ -125,14 +111,12 @@
       }
 
       .button:hover,
-      button:hover {
-        transform: translateY(-1px);
-      }
+      button:hover { transform: translateY(-1px); }
 
       .button-primary {
-        background: linear-gradient(135deg, var(--primary), #5eead4);
-        color: #03131b;
-        box-shadow: 0 18px 30px rgba(94, 234, 212, 0.25);
+        background: linear-gradient(135deg, var(--primary), #7fd9ff);
+        color: #091820;
+        box-shadow: 0 18px 30px rgba(143, 227, 209, 0.25);
       }
 
       .button-secondary {
@@ -141,13 +125,8 @@
         color: var(--text);
       }
 
-      .section {
-        padding: 92px 0;
-      }
-
-      .hero {
-        padding: 72px 0 42px;
-      }
+      .section { padding: 92px 0; }
+      .hero { padding: 72px 0 42px; }
 
       .hero-grid {
         display: grid;
@@ -160,8 +139,8 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        border: 1px solid rgba(110, 231, 249, 0.3);
-        background: rgba(110, 231, 249, 0.08);
+        border: 1px solid rgba(143, 227, 209, 0.3);
+        background: rgba(143, 227, 209, 0.08);
         color: var(--primary);
         border-radius: 999px;
         padding: 0.45rem 0.8rem;
@@ -220,9 +199,9 @@
 
       .panel {
         border: 1px solid var(--line);
-        background: linear-gradient(180deg, rgba(17, 25, 39, 0.96), rgba(11, 20, 30, 0.98));
+        background: linear-gradient(180deg, rgba(19, 28, 42, 0.96), rgba(11, 16, 24, 0.98));
         border-radius: 28px;
-        box-shadow: 0 34px 60px rgba(2, 6, 23, 0.55);
+        box-shadow: 0 36px 62px rgba(2, 6, 23, 0.58);
       }
 
       .dashboard {
@@ -259,7 +238,7 @@
         width: 52px;
         height: 52px;
         border-radius: 16px;
-        background: linear-gradient(135deg, rgba(110, 231, 249, 0.3), rgba(139, 92, 246, 0.45));
+        background: linear-gradient(135deg, rgba(143, 227, 209, 0.25), rgba(183, 156, 255, 0.42));
         display: grid;
         place-items: center;
         font-weight: 800;
@@ -286,7 +265,7 @@
         width: 18%;
         border-radius: 12px 12px 0 0;
         background: linear-gradient(180deg, var(--primary), var(--secondary));
-        box-shadow: 0 18px 30px rgba(139, 92, 246, 0.18);
+        box-shadow: 0 18px 30px rgba(183, 156, 255, 0.18);
       }
 
       .bars span:nth-child(1) { height: 50%; }
@@ -319,7 +298,7 @@
       }
 
       .pill-green {
-        background: rgba(52, 211, 153, 0.12);
+        background: rgba(126, 231, 181, 0.12);
         color: var(--success);
       }
 
@@ -351,9 +330,7 @@
         gap: 24px;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .about-grid { grid-template-columns: 1fr 1fr; }
 
       .story,
       .service,
@@ -392,9 +369,7 @@
         color: var(--primary);
       }
 
-      .services-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
       .service .icon {
         width: 52px;
@@ -402,7 +377,7 @@
         display: grid;
         place-items: center;
         border-radius: 14px;
-        background: linear-gradient(135deg, rgba(110, 231, 249, 0.18), rgba(139, 92, 246, 0.18));
+        background: linear-gradient(135deg, rgba(143, 227, 209, 0.18), rgba(183, 156, 255, 0.18));
         font-size: 1.4rem;
       }
 
@@ -413,9 +388,7 @@
         font-size: 1.4rem;
       }
 
-      .process-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
+      .process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
       .step-number {
         display: inline-grid;
@@ -423,18 +396,13 @@
         width: 46px;
         height: 46px;
         border-radius: 12px;
-        background: linear-gradient(135deg, rgba(110, 231, 249, 0.2), rgba(139, 92, 246, 0.22));
+        background: linear-gradient(135deg, rgba(143, 227, 209, 0.2), rgba(183, 156, 255, 0.22));
         font-weight: 800;
       }
 
-      .contact-grid {
-        grid-template-columns: 1.2fr 0.8fr;
-      }
+      .contact-grid { grid-template-columns: 1.2fr 0.8fr; }
 
-      .contact-panel .button {
-        display: inline-flex;
-        margin-top: 10px;
-      }
+      .contact-panel .button { display: inline-flex; margin-top: 10px; }
 
       .contact-links {
         list-style: none;
@@ -444,9 +412,7 @@
         gap: 12px;
       }
 
-      .contact-links li {
-        color: var(--muted);
-      }
+      .contact-links li { color: var(--muted); }
 
       footer {
         border-top: 1px solid var(--line);
@@ -470,43 +436,24 @@
           grid-template-columns: 1fr;
         }
 
-        .nav-links {
-          display: none;
-        }
-
-        .nav {
-          justify-content: space-between;
-        }
+        .nav-links { display: none; }
+        .nav { justify-content: space-between; }
       }
 
       @media (max-width: 520px) {
-        .button,
-        button {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .cta-row,
-        .nav-actions {
-          width: 100%;
-        }
-
-        .hero {
-          padding-top: 44px;
-        }
-
-        .section {
-          padding: 72px 0;
-        }
+        .button, button { width: 100%; justify-content: center; }
+        .cta-row, .nav-actions { width: 100%; }
+        .hero { padding-top: 44px; }
+        .section { padding: 72px 0; }
       }
     </style>
   </head>
   <body>
     <header class="topbar">
       <div class="container nav">
-        <a href="#home" class="brand" aria-label="ZEMAL home">
-          <span class="brand-mark">Z</span>
-          <span>ZEMAL</span>
+        <a href="#home" class="brand" aria-label="Calm Mind home">
+          <span class="brand-mark">C</span>
+          <span>CALM MIND</span>
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
@@ -518,7 +465,7 @@
         </nav>
 
         <div class="nav-actions">
-          <a class="button button-secondary" href="#contact">Get in touch</a>
+          <a class="button button-secondary" href="#contact">Take a breath</a>
         </div>
       </div>
     </header>
@@ -528,51 +475,50 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Official Website</span>
-            <h1>Building bold digital experiences.</h1>
+            <h1>Find your calm, one mindful step at a time.</h1>
             <p>
-              We help brands, startups, and businesses grow with modern web design,
-              strategic branding, and digital solutions engineered for trust, clarity,
-              and momentum.
+              Calm Mind helps people reconnect with themselves through emotional awareness,
+              wellness guidance, and mindful routines designed for everyday balance and peace.
             </p>
 
             <div class="cta-row">
-              <a class="button button-primary" href="#contact">Book a consultation</a>
-              <a class="button button-secondary" href="#services">Explore services</a>
+              <a class="button button-primary" href="#contact">Start your journey</a>
+              <a class="button button-secondary" href="#services">Explore offerings</a>
             </div>
 
-            <div class="metrics" aria-label="Company statistics">
+            <div class="metrics" aria-label="Calm Mind statistics">
               <div class="metric">
-                <strong>5+</strong>
-                <span>Years of growth</span>
+                <strong>4.9/5</strong>
+                <span>Wellness rating</span>
               </div>
               <div class="metric">
-                <strong>30+</strong>
-                <span>Projects delivered</span>
+                <strong>24/7</strong>
+                <span>Mindful support</span>
               </div>
               <div class="metric">
                 <strong>100%</strong>
-                <span>Client-focused</span>
+                <span>People-first</span>
               </div>
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="Business dashboard illustration">
+          <div class="hero-visual" aria-label="Calm Mind dashboard illustration">
             <div class="panel dashboard">
               <div class="mini-card">
                 <div>
-                  <strong>Growth dashboard</strong>
-                  <span>Q4 performance overview</span>
+                  <strong>Daily balance</strong>
+                  <span>Mindful progress overview</span>
                 </div>
-                <div class="avatar">Z</div>
+                <div class="avatar">C</div>
               </div>
 
               <div class="chart">
                 <div style="display:flex; justify-content:space-between; color: var(--muted); font-size:0.8rem;">
-                  <span>Jan</span>
-                  <span>Feb</span>
-                  <span>Mar</span>
-                  <span>Apr</span>
-                  <span>May</span>
+                  <span>Mon</span>
+                  <span>Tue</span>
+                  <span>Wed</span>
+                  <span>Thu</span>
+                  <span>Fri</span>
                 </div>
                 <div class="bars" aria-hidden="true">
                   <span></span>
@@ -585,16 +531,16 @@
 
               <div class="score">
                 <div>
-                  <span style="color: var(--muted); font-size:0.8rem;">Revenue growth</span>
-                  <strong style="display:block; font-size:1.8rem; margin-top:6px;">+24.8%</strong>
+                  <span style="color: var(--muted); font-size:0.8rem;">Emotional stability</span>
+                  <strong style="display:block; font-size:1.8rem; margin-top:6px;">+32%</strong>
                 </div>
-                <span class="pill pill-green">On track</span>
+                <span class="pill pill-green">Growing</span>
               </div>
             </div>
 
             <div class="panel floating-card">
-              <span class="pill pill-green">Trusted partner</span>
-              <h3 style="margin:14px 0 0; font-size:1.2rem;">Strategy • Design • Growth</h3>
+              <span class="pill pill-green">Mindful living</span>
+              <h3 style="margin:14px 0 0; font-size:1.2rem;">Wellness • Clarity • Balance</h3>
             </div>
           </div>
         </div>
@@ -605,33 +551,29 @@
           <div class="section-head">
             <div>
               <span class="eyebrow">About us</span>
-              <h2>Purpose-driven digital strategy.</h2>
+              <h2>Helping people feel calmer, clearer, and stronger.</h2>
             </div>
             <p>
-              We combine creativity, structure, and measurable outcomes to help our clients
-              stand out in crowded markets and build trust with every interaction.
+              Calm Mind is built around the idea that emotional well-being is a daily practice — and that real healing begins with small, intentional steps.
             </p>
           </div>
 
           <div class="about-grid">
             <div class="story">
               <p>
-                At ZEMAL, we believe that a great website is more than a digital brochure —
-                it is a business asset. We build polished, conversion-focused experiences that
-                communicate your value clearly and help your audience take action with confidence.
+                We create spaces that support emotional balance, mindfulness, and healthier routines.
+                Our mission is to help people reconnect with themselves, reduce overwhelm, and build a life that feels grounded and peaceful.
               </p>
               <ul>
-                <li>Clear brand positioning and storytelling</li>
-                <li>Modern website design and user experience</li>
-                <li>Conversion-focused strategy for growth</li>
+                <li>Mindfulness and emotional awareness</li>
+                <li>Stress relief and daily wellness routines</li>
+                <li>Supportive guidance for real-life balance</li>
               </ul>
             </div>
 
             <div class="story">
               <p>
-                Our process starts with understanding your goals, then translating that vision into a
-                professional online presence that feels credible, intuitive, and memorable. Whether you
-                are launching a new venture or elevating an existing brand, we help you look and perform at your best.
+                Through thoughtful content, calm design, and practical wellness tools, Calm Mind gives people a gentle way to reset, reflect, and move forward with more clarity.
               </p>
             </div>
           </div>
@@ -643,32 +585,32 @@
           <div class="section-head">
             <div>
               <span class="eyebrow">Services</span>
-              <h2>Everything needed to grow online.</h2>
+              <h2>Support for a calmer life.</h2>
             </div>
           </div>
 
           <div class="services-grid">
             <article class="service">
               <div class="icon">✦</div>
-              <h3>Brand Strategy</h3>
+              <h3>Mindful Coaching</h3>
               <p>
-                Positioning, messaging, identity direction, and strategic guidance to make your business stand out.
+                Personalized guidance to help you manage stress, improve self-awareness, and cultivate balance with confidence.
               </p>
             </article>
 
             <article class="service">
               <div class="icon">▣</div>
-              <h3>Website Design</h3>
+              <h3>Wellness Programs</h3>
               <p>
-                Clean, modern, responsive websites designed to build trust and convert visitors into customers.
+                Gentle routines, reflective practices, and step-by-step programs designed for everyday emotional well-being.
               </p>
             </article>
 
             <article class="service">
               <div class="icon">◎</div>
-              <h3>Digital Growth</h3>
+              <h3>Growth & Reflection</h3>
               <p>
-                Performance-focused marketing systems and digital experiences that support visibility and results.
+                Tools that encourage emotional insight, resilience, and healthier habits for a more grounded life.
               </p>
             </article>
           </div>
@@ -680,33 +622,33 @@
           <div class="section-head">
             <div>
               <span class="eyebrow">Process</span>
-              <h2>A simple path to a stronger brand.</h2>
+              <h2>A gentle path to feeling better.</h2>
             </div>
           </div>
 
           <div class="process-grid">
             <div class="step">
               <div class="step-number">01</div>
-              <h3>Discover</h3>
-              <p>We learn about your business, goals, audience, and the value you want to communicate.</p>
+              <h3>Reflect</h3>
+              <p>We begin by understanding what feels heavy, stressful, or unbalanced in your current routine.</p>
             </div>
 
             <div class="step">
               <div class="step-number">02</div>
-              <h3>Design</h3>
-              <p>We shape the look, structure, and messaging into a polished digital experience.</p>
+              <h3>Reconnect</h3>
+              <p>We guide you toward grounding practices and emotional clarity that support daily calm.</p>
             </div>
 
             <div class="step">
               <div class="step-number">03</div>
               <h3>Build</h3>
-              <p>We develop a responsive, professional website that reflects your brand and goals.</p>
+              <p>We create a practical wellness rhythm that feels realistic, sustainable, and kind to your life.</p>
             </div>
 
             <div class="step">
               <div class="step-number">04</div>
-              <h3>Launch</h3>
-              <p>We refine, optimize, and launch with confidence so your online presence is ready to perform.</p>
+              <h3>Grow</h3>
+              <p>We help you continue strengthening balance, resilience, and peaceful daily habits over time.</p>
             </div>
           </div>
         </div>
@@ -716,21 +658,21 @@
         <div class="container">
           <div class="contact-grid">
             <div class="contact-panel">
-              <span class="eyebrow">Let’s talk</span>
-              <h3>Ready to build something remarkable?</h3>
+              <span class="eyebrow">Let’s connect</span>
+              <h3>Ready to begin your calm journey?</h3>
               <p>
-                Whether you need a refined brand presence, a new website, or a clearer digital strategy,
-                we’re ready to help you move forward with clarity and confidence.
+                Whether you are looking for support, wellness guidance, or a more mindful life,
+                we’re here to help you take the next step toward feeling better and living lighter.
               </p>
-              <a class="button button-primary" href="mailto:hello@zemal.example">hello@zemal.example</a>
+              <a class="button button-primary" href="mailto:hello@calmmind.example">hello@calmmind.example</a>
             </div>
 
             <div class="contact-panel">
               <h3>Contact Details</h3>
               <ul class="contact-links">
-                <li>Email: hello@zemal.example</li>
+                <li>Email: hello@calmmind.example</li>
                 <li>Phone: +1 (555) 123-4567</li>
-                <li>Location: Global / Remote</li>
+                <li>Location: Worldwide / Online</li>
               </ul>
             </div>
           </div>
@@ -740,11 +682,11 @@
 
     <footer>
       <div class="container footer-inner">
-        <div class="brand" aria-label="ZEMAL footer brand">
-          <span class="brand-mark">Z</span>
-          <span>ZEMAL</span>
+        <div class="brand" aria-label="Calm Mind footer brand">
+          <span class="brand-mark">C</span>
+          <span>CALM MIND</span>
         </div>
-        <div>© <span id="year"></span> ZEMAL. All rights reserved.</div>
+        <div>© <span id="year"></span> Calm Mind. All rights reserved.</div>
       </div>
     </footer>
 
