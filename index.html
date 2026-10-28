@@ -1,71 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calm Mind</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#07070F;color:white;font-family:'Segoe UI',sans-serif;overflow-x:hidden}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;color:#aaa}
-nav b{letter-spacing:3px;color:#a8d8d0}
-nav span{margin-left:20px;cursor:pointer}
-.hero{display:flex;min-height:90vh;align-items:center;padding:0 5%;gap:20px}
-.left{flex:1}
-.left h1{font-size:70px;line-height:1.1;font-weight:800}
-.left p{margin:20px 0;color:#aaa;font-size:18px;max-width:500px;line-height:1.6}
-.btns{display:flex;gap:15px;margin-top:30px}
-.btn1{background:linear-gradient(90deg,#8b7eff,#a6b1ff);padding:14px 28px;border-radius:30px;border:none;color:white;font-weight:600;cursor:pointer;box-shadow:0 0 20px #8b7eff66}
-.btn2{background:transparent;padding:14px 28px;border-radius:30px;border:1px solid #444;color:white;cursor:pointer}
-.right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.card{border-radius:30px;padding:20px;text-align:center;aspect-ratio:1; display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:70px;transition:0.3s;cursor:pointer}
-.card:hover{transform:scale(1.05)}
-.c1{background:radial-gradient(circle,#fff4c0,#ffcb6b);color:black}
-.c2{background:radial-gradient(circle,#d0e6ff,#8bb7ff)}
-.c3{background:radial-gradient(circle,#e0d4ff,#9d8bff)}
-.c4{background:radial-gradient(circle,#ffe9d0,#ffb894)}
-.label{font-size:14px;margin-top:10px;font-weight:600;color:#111;background:white;padding:4px 10px;border-radius:10px}
-#tracker{padding:80px 5%;text-align:center;display:none;background:#10101e}
-.emo{padding:12px 20px;background:#1e1e3a;margin:10px;border-radius:20px;display:inline-block;cursor:pointer;border:1px solid #333}
-.emo:hover{background:#8b7eff}
-@media(max-width:800px){.hero{flex-direction:column}.left h1{font-size:45px}}
-</style>
-</head>
-<body>
-<nav><b>🍃 CALM MIND</b><div><span>Home</span><span>Meditate</span><span>Journal</span></div></nav>
-<div class="hero">
-<div class="left">
-<h1>Meet Your<br>Emotions</h1>
-<p>Track how you feel. Build calm. Be present.<br>A gentle space to check in, reflect, and breathe — designed for your mental well-being.</p>
-<div class="btns">
-<button class="btn1" onclick="document.getElementById('tracker').style.display='block';document.getElementById('tracker').scrollIntoView({behavior:'smooth'})">Begin Now →</button>
-<button class="btn2" onclick="alert('Calm Mind is your daily mental health companion')">Learn More</button>
-</div>
-</div>
-<div class="right">
-<div class="card c1" onclick="selectEmo('Happy')">😊<span class="label">Happy - Joyful</span></div>
-<div class="card c2" onclick="selectEmo('Sad - Blue')">😢<span class="label">Sad - Blue</span></div>
-<div class="card c3" onclick="selectEmo('Calm - Sleepy')">😴<span class="label">Calm - Sleepy</span></div>
-<div class="card c4" onclick="selectEmo('Anxious - Worried')">😰<span class="label">Anxious - Worried</span></div>
-</div>
-</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Official website for ZEMAL — digital solutions, branding, and growth-focused design services."
+    />
+    <title>ZEMAL | Official Website</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --bg-soft: #0d1b2a;
+        --panel: rgba(15, 23, 42, 0.8);
+        --card: #101d2d;
+        --primary: #6ee7f9;
+        --secondary: #8b5cf6;
+        --accent: #fbbf24;
+        --text: #edf6ff;
+        --muted: #a5b4c8;
+        --line: rgba(255, 255, 255, 0.12);
+        --success: #34d399;
+      }
 
-<div id="tracker">
-<h2 id="result" style="font-size:40px">How are you feeling today?</h2>
-<p style="color:#aaa;margin-top:10px">Click any emotion card above or below</p>
-<div style="margin-top:30px">
-<div class="emo" onclick="selectEmo('Happy 😊')">Happy 😊</div>
-<div class="emo" onclick="selectEmo('Sad 😔')">Sad 😔</div>
-<div class="emo" onclick="selectEmo('Anxious 😟')">Anxious 😟</div>
-<div class="emo" onclick="selectEmo('Calm 😌')">Calm 😌</div>
-</div>
-</div>
+      * { box-sizing: border-box; }
 
-<script>
-function selectEmo(e){
-document.getElementById('tracker').style.display='block';
-document.getElementById('result').innerHTML="You are feeling: "+e+" <br><span style='font-size:18px;color:#aaa'>Take 3 deep breaths. You are doing great.</span>";
-document.getElementById('tracker').scrollIntoView({behavior:'smooth'});
-}
-</script>
-</body>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at top, #0b1d2d 0%, var(--bg) 45%, #020a13 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(14px);
+        background: rgba(7, 17, 31, 0.7);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        font-size: 0.9rem;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: grid;
+        place-items: center;
+        color: #041018;
+        font-weight: 900;
+        box-shadow: 0 12px 28px rgba(110, 231, 249, 0.35);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .nav-links a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .button,
+      button {
+        appearance: none;
+        border: none;
+        border-radius: 999px;
+        padding: 0.9rem 1.5rem;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover,
+      button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        background: linear-gradient(135deg, var(--primary), #5eead4);
+        color: #03131b;
+        box-shadow: 0 18px 30px rgba(94, 234, 212, 0.25);
+      }
+
+      .button-secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: var(--text);
+      }
+
+      .section {
+        padding: 92px 0;
+      }
+
+      .hero {
+        padding: 72px 0 42px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(110, 231, 249, 0.3);
+        background: rgba(110, 231, 249, 0.08);
+        color: var(--primary);
+        border-radius: 999px;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 5vw, 5rem);
+        line-height: 1.06;
+        margin: 20px 0 18px;
+        letter-spacing: -0.05em;
+      }
+
+      .hero-copy p {
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .metric {
+        min-width: 130px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: clamp(1.4rem, 2vw, 2.1rem);
+        font-weight: 800;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 520px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(17, 25, 39, 0.96), rgba(11, 20, 30, 0.98));
+        border-radius: 28px;
+        box-shadow: 0 34px 60px rgba(2, 6, 23, 0.55);
+      }
+
+      .dashboard {
+        position: absolute;
+        right: 0;
+        top: 36px;
+        width: min(100%, 460px);
+        min-height: 410px;
+        padding: 24px;
+      }
+
+      .mini-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+        border-radius: 18px;
+        padding: 14px 16px;
+      }
+
+      .mini-card strong {
+        display: block;
+        font-size: 1.05rem;
+      }
+
+      .mini-card span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(110, 231, 249, 0.3), rgba(139, 92, 246, 0.45));
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+      }
+
+      .chart {
+        margin-top: 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 18px;
+      }
+
+      .bars {
+        display: flex;
+        align-items: end;
+        gap: 12px;
+        height: 160px;
+        margin-top: 20px;
+      }
+
+      .bars span {
+        display: block;
+        width: 18%;
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(180deg, var(--primary), var(--secondary));
+        box-shadow: 0 18px 30px rgba(139, 92, 246, 0.18);
+      }
+
+      .bars span:nth-child(1) { height: 50%; }
+      .bars span:nth-child(2) { height: 78%; }
+      .bars span:nth-child(3) { height: 56%; }
+      .bars span:nth-child(4) { height: 88%; }
+      .bars span:nth-child(5) { height: 74%; }
+
+      .floating-card {
+        position: absolute;
+        left: 10px;
+        bottom: 12px;
+        width: min(220px, 62%);
+        padding: 18px 18px 14px;
+      }
+
+      .score {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .pill-green {
+        background: rgba(52, 211, 153, 0.12);
+        color: var(--success);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        margin: 0;
+        max-width: 540px;
+      }
+
+      .about-grid,
+      .services-grid,
+      .process-grid,
+      .contact-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .story,
+      .service,
+      .step,
+      .contact-panel {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 28px;
+      }
+
+      .story p,
+      .service p,
+      .step p,
+      .contact-panel p {
+        color: var(--muted);
+      }
+
+      .story ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .story li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+      }
+
+      .story li::before {
+        content: "●";
+        color: var(--primary);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .service .icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(110, 231, 249, 0.18), rgba(139, 92, 246, 0.18));
+        font-size: 1.4rem;
+      }
+
+      .service h3,
+      .step h3,
+      .contact-panel h3 {
+        margin: 18px 0 12px;
+        font-size: 1.4rem;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .step-number {
+        display: inline-grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(110, 231, 249, 0.2), rgba(139, 92, 246, 0.22));
+        font-weight: 800;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .contact-panel .button {
+        display: inline-flex;
+        margin-top: 10px;
+      }
+
+      .contact-links {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .contact-links li {
+        color: var(--muted);
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0 40px;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .about-grid,
+        .services-grid,
+        .process-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .nav {
+          justify-content: space-between;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .button,
+        button {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .cta-row,
+        .nav-actions {
+          width: 100%;
+        }
+
+        .hero {
+          padding-top: 44px;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#home" class="brand" aria-label="ZEMAL home">
+          <span class="brand-mark">Z</span>
+          <span>ZEMAL</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="button button-secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Official Website</span>
+            <h1>Building bold digital experiences.</h1>
+            <p>
+              We help brands, startups, and businesses grow with modern web design,
+              strategic branding, and digital solutions engineered for trust, clarity,
+              and momentum.
+            </p>
+
+            <div class="cta-row">
+              <a class="button button-primary" href="#contact">Book a consultation</a>
+              <a class="button button-secondary" href="#services">Explore services</a>
+            </div>
+
+            <div class="metrics" aria-label="Company statistics">
+              <div class="metric">
+                <strong>5+</strong>
+                <span>Years of growth</span>
+              </div>
+              <div class="metric">
+                <strong>30+</strong>
+                <span>Projects delivered</span>
+              </div>
+              <div class="metric">
+                <strong>100%</strong>
+                <span>Client-focused</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Business dashboard illustration">
+            <div class="panel dashboard">
+              <div class="mini-card">
+                <div>
+                  <strong>Growth dashboard</strong>
+                  <span>Q4 performance overview</span>
+                </div>
+                <div class="avatar">Z</div>
+              </div>
+
+              <div class="chart">
+                <div style="display:flex; justify-content:space-between; color: var(--muted); font-size:0.8rem;">
+                  <span>Jan</span>
+                  <span>Feb</span>
+                  <span>Mar</span>
+                  <span>Apr</span>
+                  <span>May</span>
+                </div>
+                <div class="bars" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="score">
+                <div>
+                  <span style="color: var(--muted); font-size:0.8rem;">Revenue growth</span>
+                  <strong style="display:block; font-size:1.8rem; margin-top:6px;">+24.8%</strong>
+                </div>
+                <span class="pill pill-green">On track</span>
+              </div>
+            </div>
+
+            <div class="panel floating-card">
+              <span class="pill pill-green">Trusted partner</span>
+              <h3 style="margin:14px 0 0; font-size:1.2rem;">Strategy • Design • Growth</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">About us</span>
+              <h2>Purpose-driven digital strategy.</h2>
+            </div>
+            <p>
+              We combine creativity, structure, and measurable outcomes to help our clients
+              stand out in crowded markets and build trust with every interaction.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="story">
+              <p>
+                At ZEMAL, we believe that a great website is more than a digital brochure —
+                it is a business asset. We build polished, conversion-focused experiences that
+                communicate your value clearly and help your audience take action with confidence.
+              </p>
+              <ul>
+                <li>Clear brand positioning and storytelling</li>
+                <li>Modern website design and user experience</li>
+                <li>Conversion-focused strategy for growth</li>
+              </ul>
+            </div>
+
+            <div class="story">
+              <p>
+                Our process starts with understanding your goals, then translating that vision into a
+                professional online presence that feels credible, intuitive, and memorable. Whether you
+                are launching a new venture or elevating an existing brand, we help you look and perform at your best.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Services</span>
+              <h2>Everything needed to grow online.</h2>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <article class="service">
+              <div class="icon">✦</div>
+              <h3>Brand Strategy</h3>
+              <p>
+                Positioning, messaging, identity direction, and strategic guidance to make your business stand out.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="icon">▣</div>
+              <h3>Website Design</h3>
+              <p>
+                Clean, modern, responsive websites designed to build trust and convert visitors into customers.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="icon">◎</div>
+              <h3>Digital Growth</h3>
+              <p>
+                Performance-focused marketing systems and digital experiences that support visibility and results.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Process</span>
+              <h2>A simple path to a stronger brand.</h2>
+            </div>
+          </div>
+
+          <div class="process-grid">
+            <div class="step">
+              <div class="step-number">01</div>
+              <h3>Discover</h3>
+              <p>We learn about your business, goals, audience, and the value you want to communicate.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">02</div>
+              <h3>Design</h3>
+              <p>We shape the look, structure, and messaging into a polished digital experience.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">03</div>
+              <h3>Build</h3>
+              <p>We develop a responsive, professional website that reflects your brand and goals.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">04</div>
+              <h3>Launch</h3>
+              <p>We refine, optimize, and launch with confidence so your online presence is ready to perform.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-panel">
+              <span class="eyebrow">Let’s talk</span>
+              <h3>Ready to build something remarkable?</h3>
+              <p>
+                Whether you need a refined brand presence, a new website, or a clearer digital strategy,
+                we’re ready to help you move forward with clarity and confidence.
+              </p>
+              <a class="button button-primary" href="mailto:hello@zemal.example">hello@zemal.example</a>
+            </div>
+
+            <div class="contact-panel">
+              <h3>Contact Details</h3>
+              <ul class="contact-links">
+                <li>Email: hello@zemal.example</li>
+                <li>Phone: +1 (555) 123-4567</li>
+                <li>Location: Global / Remote</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div class="brand" aria-label="ZEMAL footer brand">
+          <span class="brand-mark">Z</span>
+          <span>ZEMAL</span>
+        </div>
+        <div>© <span id="year"></span> ZEMAL. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
