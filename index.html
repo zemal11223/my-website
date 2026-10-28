@@ -1,618 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calm Mind - Meet Your Emotions</title>
-    <meta
-      name="description"
-      content="Calm Mind is a modern emotional wellness landing page focused on mindfulness, happiness,stressful ,sadnessand calm small emojis."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --bg: #080b10;
-        --bg-soft: #101720;
-        --panel: #111923;
-        --panel-2: #171f2b;
-        --muted: #b7bfd1;
-        --muted-2: #8f99ab;
-        --primary: #8b7eff;
-        --primary-2: #a39cff;
-        --mint: #a7e9d9;
-        --line: rgba(255,255,255,0.08);
-        --white: #ffffff;
-        --shadow: rgba(104, 90, 220, 0.28);
-      }
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALM MIND - Official Website</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0B102E;color:white;font-family:Arial,sans-serif}
+nav{display:flex;justify-content:space-between;padding:18px 5%;align-items:center;background:#0f1535;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:700;color:#8ef0b6;letter-spacing:1px}
+.menu{display:flex;gap:25px}
+.menu a{color:#a5b4cf;text-decoration:none;font-size:14px;cursor:pointer}
+.menu a:hover{color:white}
+.hero{display:flex;padding:60px 5%;gap:40px;align-items:center}
+.left{flex:1}
+.left h1{font-size:55px;line-height:1.1}
+.left p{color:#9fb0d0;margin:20px 0;line-height:1.6;max-width:500px}
+.btn1{background:#8ef0b6;color:#0B102E;padding:12px 28px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+.btn2{background:transparent;color:#8ef0b6;padding:12px 28px;border-radius:8px;border:1px solid #8ef0b6;cursor:pointer;margin-left:10px}
+.right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border-radius:20px;height:190px;display:flex;align-items:center;justify-content:center;font-size:70px;box-shadow:0 0 25px rgba(142,240,182,0.25)}
+.c1{background:linear-gradient(135deg,#ffeaa7,#ffec99)}
+.c2{background:linear-gradient(135deg,#a8d8ff,#8ec5ff)}
+.c3{background:linear-gradient(135deg,#d7b8ff,#b89cff)}
+.c4{background:linear-gradient(135deg,#ffddb3,#ffc999)}
+
+.reviews{padding:50px 5%;background:#0f1535}
+.reviews h2{text-align:center;font-size:30px;margin-bottom:30px}
+.r-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.r-card{background:#1a234a;padding:25px;border-radius:15px;text-align:center;line-height:1.5}
+
+.contact{padding:60px 5%;display:flex;gap:40px}
+.contact-left{flex:1}
+.contact-right{flex:1;background:#1a234a;padding:30px;border-radius:15px}
+.info-card{background:#1a234a;padding:18px;border-radius:12px;margin-bottom:12px;border:1px solid #26325f}
+input,textarea{width:100%;padding:12px;margin:8px 0;background:#0B102E;border:1px solid #334155;border-radius:8px;color:white}
+.send-btn{background:#8ef0b6;color:#0B102E;padding:12px 25px;border:none;border-radius:8px;font-weight:700;cursor:pointer;width:100%;margin-top:10px}
+footer{text-align:center;padding:20px;color:#5a6b8c;font-size:13px;border-top:1px solid #1a234a}
+@media(max-width:800px){.hero,.contact,.r-grid{flex-direction:column;grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">🍃 CALM MIND</div>
+<div class="menu">
+<a onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</a>
+<a onclick="document.getElementById('meditate').scrollIntoView({behavior:'smooth'})">Meditate</a>
+<a onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">Reviews</a>
+<a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+<a onclick="document.getElementById('feedback').scrollIntoView({behavior:'smooth'})">Feedback</a>
+</div>
+</nav>
+
+<!-- HOME SECTION -->
+<div class="hero" id="home">
+<div class="left" id="meditate">
+<h1>Meet Your<br>Emotions</h1>
+<p>Track, understand, and calm your emotions with guided meditations, mindful check-ins, and gentle support. Start your journey to a calmer, clearer mind today.</p>
+<button class="btn1">Begin Now</button><button class="btn2">Learn More</button>
+</div>
+<div class="right">
+<div class="card c1">😊</div>
+<div class="card c2">😢</div>
+<div class="card c3">😴</div>
+<div class="card c4">😰</div>
+</div>
+</div>
+
+<!-- REVIEWS SECTION -->
+<div class="reviews" id="reviews">
+<h2>What Our Users Say</h2>
+<div class="r-grid">
+<div class="r-card">⭐⭐⭐⭐⭐<br><br>"This app helped me calm my anxiety before bed. So peaceful and easy."<br><br><b style="color:#8ef0b6">— Maya, 28</b></div>
+<div class="r-card">⭐⭐⭐⭐⭐<br><br>"Love the emotion check-ins. I finally feel aware of what I'm feeling."<br><br><b style="color:#8ef0b6">— Jordan, 34</b></div>
+<div class="r-card">⭐⭐⭐⭐⭐<br><br>"The meditations are gentle and calming. My daily calm now."<br><br><b style="color:#8ef0b6">— Priya, 41</b></div>
+</div>
+</div>
+
+<!-- CONTACT + FEEDBACK SECTION (Sari Info Ek Jagah) -->
+<div class="contact" id="contact">
+<div class="contact-left">
+<h1 style="font-size:40px">Get in Touch</h1>
+<p style="color:#9fb0d0;margin:20px 0">We'd love to hear from you. Official contact of CALM MIND wellness platform.</p>
+
+<div class="info-card">📧 <b>Email:</b> hello@calmmind.com<br>support@calmmind.com</div>
+<div class="info-card">📱 <b>Phone:</b> +92 300 1234567</div>
+<div class="info-card">📍 <b>Location:</b> Bahawalpur, Punjab, Pakistan</div>
+<div class="info-card">🕒 <b>Working Hours:</b> Mon - Fri, 9AM - 6PM PKT</div>
+<div class="info-card">🌐 <b>Social:</b> @calmmind (Instagram, Twitter, Facebook)</div>
+<div class="info-card">💼 <b>Official Website:</b> www.calmmind.com</div>
+</div>
+
+<div class="contact-right" id="feedback">
+<h3>Send Feedback / Contact Us</h3>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<input type="text" placeholder="Subject (Feedback / Support)">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button class="send-btn">Send Message</button>
+<p style="margin-top:15px;color:#5a6b8c;font-size:12px;text-align:center">Your official emotional wellness partner 💜</p>
+</div>
+</div>
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(139, 126, 255, 0.18), transparent 25%),
-          radial-gradient(circle at bottom right, rgba(167, 233, 217, 0.10), transparent 25%),
-          var(--bg);
-        color: var(--white);
-        overflow-x: hidden;
-      }
+<footer>© 2026 CALM MIND - Official Emotional Wellness Platform | All Rights Reserved</footer>
 
-      a { text-decoration: none; color: inherit; }
-      img { max-width: 100%; display: block; }
-      .container { width: min(1200px, calc(100% - 32px)); margin: 0 auto; }
-
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(8, 11, 16, 0.72);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255,255,255,0.04);
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 78px;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 0.82rem;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        font-weight: 800;
-        color: var(--mint);
-      }
-
-      .logo-mark {
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--mint), #ebfff9);
-        box-shadow: 0 0 18px rgba(167, 233, 217, 0.5);
-        position: relative;
-      }
-
-      .logo-mark::before {
-        content: "";
-        position: absolute;
-        inset: 4px 3px 6px 3px;
-        border-radius: 50% 50% 50% 0;
-        background: rgba(8, 11, 16, 0.35);
-        transform: rotate(-25deg);
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        color: var(--muted-2);
-        font-size: 0.92rem;
-        font-weight: 600;
-      }
-
-      .nav-links a:hover { color: var(--white); }
-
-      .nav-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 138px;
-        padding: 0.9rem 1.25rem;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--primary), var(--primary-2));
-        color: var(--white);
-        font-weight: 700;
-        box-shadow: 0 18px 40px rgba(139, 126, 255, 0.25);
-      }
-
-      .hero {
-        display: flex;
-        align-items: center;
-        gap: 44px;
-        min-height: 82vh;
-        padding: 50px 0 42px;
-      }
-
-      .hero-left {
-        width: 48%;
-        position: relative;
-        z-index: 2;
-      }
-
-      .eyebrow {
-        display: inline-block;
-        padding: 9px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.08);
-        background: rgba(255,255,255,0.02);
-        color: var(--mint);
-        font-size: 0.72rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 700;
-        margin-bottom: 26px;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(3.1rem, 5vw, 5.5rem);
-        line-height: 0.93;
-        letter-spacing: -0.07em;
-      }
-
-      .hero p {
-        margin: 26px 0 0;
-        max-width: 600px;
-        color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.75;
-      }
-
-      .btn-row {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 34px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 999px;
-        padding: 1rem 1.6rem;
-        font-size: 1rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .btn:hover { transform: translateY(-2px); }
-      .btn-primary {
-        background: linear-gradient(90deg, var(--primary), var(--primary-2));
-        color: var(--white);
-        box-shadow: 0 18px 38px rgba(139, 126, 255, 0.35);
-      }
-
-      .btn-secondary {
-        background: rgba(255,255,255,0.02);
-        color: var(--white);
-        border: 1px solid rgba(255,255,255,0.12);
-      }
-
-      .tags {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 40px;
-      }
-
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid rgba(255,255,255,0.08);
-        color: #e1e7f6;
-        font-size: 0.82rem;
-        font-weight: 600;
-      }
-
-      .hero-right {
-        width: 52%;
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(180px, 1fr));
-        gap: 18px;
-        align-items: center;
-        min-height: 560px;
-        padding-top: 18px;
-      }
-
-      .card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-        border: 1px solid rgba(255,255,255,0.08);
-        box-shadow: 0 20px 48px rgba(0,0,0,0.32);
-      }
-
-      .card img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: saturate(0.85) contrast(1.04);
-      }
-
-      .card-1 { height: 410px; transform: translateY(30px); }
-      .card-2 { height: 280px; transform: translateY(-10px); }
-      .card-3 {
-        height: 180px;
-        grid-column: 1 / span 2;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 22px 24px;
-        background: linear-gradient(135deg, rgba(139,126,255,0.18), rgba(167,233,217,0.08));
-        border: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .stat {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .stat strong {
-        font-size: 2.15rem;
-        line-height: 1;
-        letter-spacing: -0.06em;
-      }
-
-      .stat span {
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      .mini-badge {
-        padding: 10px 14px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.12);
-        color: #eff3ff;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: 700;
-      }
-
-      .glow {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(139, 126, 255, 0.28), transparent 62%);
-        right: -40px;
-        top: 20px;
-        filter: blur(32px);
-        pointer-events: none;
-      }
-
-      .section { padding: 54px 0; }
-      .section-header {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 20px;
-        margin-bottom: 24px;
-      }
-
-      .section-header h2 {
-        margin: 0;
-        font-size: clamp(2rem, 3vw, 3rem);
-        letter-spacing: 0.06em;
-      }
-
-      .section-header p {
-        max-width: 500px;
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .features {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .feature {
-        padding: 28px 22px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 24px;
-      }
-
-      .feature-icon {
-        width: 54px;
-        height: 54px;
-        border-radius: 18px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(139,126,255,0.12), rgba(167,233,217,0.12));
-        font-size: 1.5rem;
-        margin-bottom: 18px;
-      }
-
-      .feature h3 {
-        margin: 0 0 10px;
-        font-size: 1.2rem;
-      }
-
-      .feature p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .quote-box {
-        background: rgba(255,255,255,0.02);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 26px;
-        padding: 28px 26px;
-      }
-
-      .quote-box p {
-        margin: 0 0 18px;
-        color: var(--muted);
-        line-height: 1.8;
-        font-size: 1.05rem;
-      }
-
-      .person {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(139,126,255,0.18), rgba(167,233,217,0.18));
-        font-weight: 800;
-        color: var(--mint);
-      }
-
-      .person strong { display: block; }
-      .person span { font-size: 0.78rem; color: var(--muted-2); }
-
-      .cta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        background: linear-gradient(135deg, rgba(139,126,255,0.12), rgba(167,233,217,0.06));
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 28px;
-        padding: 28px 30px;
-      }
-
-      .cta h3 {
-        margin: 0 0 8px;
-        font-size: clamp(1.8rem, 2.5vw, 2.6rem);
-        letter-spacing: -0.06em;
-      }
-
-      .cta p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      footer {
-        padding: 30px 0 46px;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      .footer-wrap {
-        border-top: 1px solid rgba(255,255,255,0.06);
-        padding-top: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-      }
-
-      .socials {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .socials a { color: var(--white); font-weight: 600; }
-
-      @media (max-width: 980px) {
-        .hero {
-          flex-direction: column;
-          padding-top: 34px;
-        }
-
-        .hero-left, .hero-right { width: 100%; }
-        .hero-right { max-width: 640px; }
-        .features { grid-template-columns: 1fr 1fr; }
-        .cta { flex-direction: column; align-items: flex-start; }
-      }
-
-      @media (max-width: 760px) {
-        .nav-links { display: none; }
-        .btn { width: 100%; }
-        .btn-row {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .hero { padding: 20px 0 28px; }
-        .hero-right {
-          grid-template-columns: 1fr 1fr;
-          min-height: 420px;
-        }
-
-        .card-1 { height: 280px; }
-        .card-2 { height: 210px; }
-        .card-3 {
-          grid-column: 1 / span 2;
-          padding: 18px 16px;
-        }
-
-        .features { grid-template-columns: 1fr; }
-        .section-header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .footer-wrap {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container nav">
-        <div class="logo">
-          <span class="logo-mark"></span>
-          <span>Calm Mind</span>
-        </div>
-
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#features">Mediation</a>
-          <a href="#stories">Stories</a>
-          <a href="#contact">Contact</a>
-          <a href="#contact">Feedback</a>
-        </div>
-
-        <a href="#contact" class="nav-btn">Begin Now</a>
-      </div>
-    </header>
-
-    <main id="home">
-      <section class="container hero">
-        <div class="hero-left">
-          <div class="eyebrow">Emotional wellness</div>
-          <h1>Meet Your<br />Emotions</h1>
-          <p>
-            Track how you feel. Build calm. Be present. A gentle space to check in,
-            reflect, and breathe — designed to support your mental well-being with balance,
-            clarity, and self-kindness.
-          </p>
-
-          <div class="btn-row">
-            <a href="#contact" class="btn btn-primary">Begin Now →</a>
-            <a href="#features" class="btn btn-secondary">Learn More</a>
-          </div>
-
-          <div class="tags">
-            <div class="tag">🍃 Mindful</div>
-            <div class="tag">✨ Daily Check-ins</div>
-            <div class="tag">🛡️ Private &amp; Safe</div>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="glow"></div>
-
-          <div class="card card-1">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Relaxed person smiling" />
-          </div>
-
-          <div class="card card-2">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="People sitting in calm environment" />
-          </div>
-
-          <div class="card card-3">
-            <div class="stat">
-              <strong>12k+</strong>
-              <span>daily check-ins</span>
-            </div>
-            <div class="mini-badge">Calm Track</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="features">
-        <div class="container">
-          <div class="section-header">
-            <h2>Feel more grounded each day.</h2>
-            <p>
-              Everyday tools for reflection, emotional awareness, and a calmer rhythm that supports your well-being.
-            </p>
-          </div>
-
-          <div class="features">
-            <article class="feature">
-              <div class="feature-icon">🌙</div>
-              <h3>Daily Mood Check-ins</h3>
-              <p>Track your energy, thoughts, and emotions in a quiet routine that makes self-awareness easier.</p>
-            </article>
-
-            <article class="feature">
-              <div class="feature-icon">🧘</div>
-              <h3>Breath &amp; Focus</h3>
-              <p>Restore calm with guided breathing practices designed to help you pause and reset when life feels busy.</p>
-            </article>
-
-            <article class="feature">
-              <div class="feature-icon">💭</div>
-              <h3>Reflective Journaling</h3>
-              <p>Capture thoughts and patterns in a safe, encouraging space that helps you understand yourself better.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="stories">
-        <div class="container">
-          <div class="section-header">
-            <h2>Real feelings. Real support.</h2>
-            <p>People come to Calm Mind for clarity, comfort, and a more intentional way of caring for themselves.</p>
-          </div>
-
-          <div class="quote-box">
-            <p>
-              “This space helped me slow down and understand my emotions instead of pushing them away. I feel more peaceful and more present in my daily life.”
-            </p>
-            <div class="person">
-              <div class="avatar">A</div>
-              <div>
-                <strong>Aisha</strong>
-                <span>Daily user</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="container">
-          <div class="cta">
-            <div>
-              <h3>Ready to begin your calm journey?</h3>
-              <p>Start small, reflect honestly, and build a healthier relationship with your emotions.</p>
-            </div>
-            <a href="#" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-wrap">
-        <div>© 2026 Calm Mind</div>
-        <div class="socials">
-          <a href="#">Instagram</a>
-          <a href="#">Community</a>
-          <a href="#">Support</a>
-        </div>
-      </div>
-    </footer>
-  </body>
+</body>
 </html>
