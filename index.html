@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Calm Mind — emotional wellness, anxiety support, happiness habits, and depression care for everyday balance."
+      content="Calm Mind — a mindful wellness website for emotional awareness, meditation, journaling, and sessions."
     />
     <title>Calm Mind | Emotional Wellness</title>
     <style>
       :root {
-        --bg: #09131f;
-        --bg-2: #111d2d;
-        --panel: #122033;
-        --card: #1b2d42;
-        --primary: #9be7d4;
-        --primary-2: #b8a7ff;
-        --warm: #ffd58a;
-        --pink: #ffb5c7;
-        --text: #f4fbff;
-        --muted: #c3d1e1;
-        --soft: #90a9bf;
-        --line: rgba(255,255,255,0.08);
-        --shadow: rgba(11, 20, 32, 0.55);
+        --bg: #050b14;
+        --bg-2: #0b1420;
+        --panel: rgba(17, 27, 39, 0.85);
+        --panel-strong: rgba(20, 32, 46, 0.96);
+        --card: rgba(26, 39, 58, 0.9);
+        --line: rgba(255, 255, 255, 0.08);
+        --line-soft: rgba(255, 255, 255, 0.14);
+        --text: #edf6ff;
+        --muted: #bfd0e3;
+        --soft: #8ca8c0;
+        --primary: #a8d9ff;
+        --primary-2: #b9a4ff;
+        --mint: #b7f3d4;
+        --peach: #ffcfb1;
+        --pink: #ffc9d8;
+        --gold: #f5d99d;
+        --shadow: rgba(10, 16, 24, 0.65);
+        --radius: 28px;
       }
 
       * { box-sizing: border-box; }
@@ -30,24 +35,29 @@
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: radial-gradient(circle at top, #12263c 0%, var(--bg) 45%, #060d15 100%);
+        background:
+          radial-gradient(circle at 50% 12%, rgba(120, 164, 255, 0.16), transparent 20%),
+          radial-gradient(circle at 25% 28%, rgba(180, 173, 255, 0.08), transparent 26%),
+          linear-gradient(180deg, #020912 0%, #050b14 32%, #030a12 100%);
         color: var(--text);
         line-height: 1.6;
       }
+
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
-      button { font: inherit; }
+      ul { list-style: none; margin: 0; padding: 0; }
+      button, input, textarea { font: inherit; }
 
       .container {
-        width: min(1160px, calc(100% - 32px));
+        width: min(1200px, calc(100% - 32px));
         margin: 0 auto;
       }
 
-      .topbar {
+      .nav-wrap {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(9, 19, 31, 0.75);
+        background: rgba(4, 10, 17, 0.7);
         backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--line);
       }
@@ -56,27 +66,52 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 76px;
-        gap: 20px;
+        min-height: 82px;
+        gap: 22px;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 12px;
+        font-size: 1.02rem;
+        letter-spacing: 0.28rem;
         font-weight: 800;
-        letter-spacing: 3px;
+        text-transform: uppercase;
       }
 
       .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-2));
-        display: grid;
-        place-items: center;
-        color: #081823;
-        font-weight: 900;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        position: relative;
+        background: linear-gradient(135deg, rgba(181, 240, 255, 0.7), rgba(181, 214, 255, 0.8));
+        box-shadow: inset 0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(140, 200, 255, 0.18);
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: 50%;
+      }
+
+      .brand-mark::before {
+        width: 16px;
+        height: 10px;
+        border: 2px solid rgba(12, 25, 35, 0.9);
+        border-color: rgba(12, 25, 35, 0.9) transparent transparent transparent;
+        transform: rotate(-18deg) translateY(1px);
+      }
+
+      .brand-mark::after {
+        width: 13px;
+        height: 13px;
+        border: 2px solid rgba(12,25,35,0.9);
+        border-radius: 50% 50% 45% 55%;
+        transform: rotate(-22deg) scale(0.8);
       }
 
       .nav-links {
@@ -84,338 +119,792 @@
         align-items: center;
         gap: 28px;
         color: var(--muted);
+        font-size: 0.95rem;
       }
-      .nav-links a { transition: color 0.25s ease; }
-      .nav-links a:hover { color: var(--text); }
 
-      .nav-actions {
-        display: flex;
+      .nav-links a {
+        opacity: 0.9;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+
+      .nav-links a:hover { color: var(--text); opacity: 1; }
+
+      .nav-cta {
+        display: inline-flex;
         align-items: center;
-        gap: 12px;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0.9rem 1.4rem;
+        color: var(--text);
+        border: 1px solid var(--line-soft);
+        background: rgba(255,255,255,0.02);
+      }
+
+      .hero {
+        padding: 58px 0 28px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 34px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--primary);
+        background: rgba(168, 217, 255, 0.08);
+        border: 1px solid rgba(168, 217, 255, 0.2);
+        padding: 0.48rem 0.8rem;
+        border-radius: 999px;
+      }
+
+      .hero h1 {
+        margin: 22px 0 18px;
+        font-size: clamp(4rem, 5.8vw, 8rem);
+        line-height: 0.9;
+        letter-spacing: -0.07em;
+        font-weight: 800;
+      }
+
+      .hero-copy p {
+        margin: 0;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 1.12rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 28px;
       }
 
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0.9rem 1.5rem;
+        min-height: 64px;
+        padding: 0.9rem 1.7rem;
         border-radius: 999px;
         border: 1px solid transparent;
         font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
         cursor: pointer;
       }
-      .btn:hover { transform: translateY(-1px); }
-      .btn-primary {
-        background: linear-gradient(90deg, var(--primary), var(--primary-2));
-        color: #091821;
-        box-shadow: 0 18px 32px rgba(158, 169, 255, 0.25);
+
+      .btn:hover {
+        transform: translateY(-2px);
       }
+
+      .btn-primary {
+        background: linear-gradient(90deg, rgba(159, 205, 255, 0.95), rgba(196, 175, 255, 0.9));
+        color: #0a1320;
+        box-shadow: 0 18px 28px rgba(142, 178, 255, 0.25);
+      }
+
       .btn-secondary {
-        background: transparent;
-        border-color: rgba(255,255,255,0.14);
+        border-color: rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.015);
         color: var(--text);
       }
 
-      .hero {
-        padding: 72px 0 44px;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: center;
-        gap: 40px;
-      }
-
-      .eyebrow {
-        display: inline-block;
-        padding: 0.45rem 0.8rem;
-        border-radius: 999px;
-        background: rgba(155, 231, 212, 0.08);
-        border: 1px solid rgba(155,231,212,0.2);
-        color: var(--primary);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 5vw, 5rem);
-        line-height: 1.08;
-        margin: 18px 0 18px;
-        letter-spacing: -0.06em;
-      }
-
-      .hero-copy p {
-        color: var(--muted);
-        font-size: 1.08rem;
-        max-width: 620px;
-      }
-
-      .cta-row {
+      .feature-badges {
         display: flex;
         flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 28px;
-      }
-
-      .stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
+        gap: 14px;
         margin-top: 30px;
       }
 
-      .stat {
-        min-width: 130px;
-      }
-      .stat strong {
-        display: block;
-        font-size: clamp(1.5rem, 2vw, 2.1rem);
-      }
-      .stat span {
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.8rem 1rem;
+        min-width: 180px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(11,18,28,0.8);
         color: var(--muted);
-        font-size: 0.84rem;
+        font-weight: 600;
       }
 
-      .hero-visual {
+      .badge-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #e2f1ff, #d5d0ff);
+        box-shadow: inset 0 0 6px rgba(255,255,255,0.4);
+      }
+
+      .hero-art {
         position: relative;
-        min-height: 500px;
+        min-height: 600px;
       }
 
-      .panel {
-        background: linear-gradient(180deg, rgba(20,31,45,0.95), rgba(12,18,27,0.96));
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        box-shadow: 0 28px 60px var(--shadow);
-      }
-
-      .dashboard {
+      .float-wrap {
         position: absolute;
-        right: 0;
-        top: 26px;
-        width: min(100%, 460px);
-        padding: 22px;
+        inset: 0;
       }
 
-      .mini-card {
+      .mood-card {
+        position: absolute;
+        right: 40px;
+        top: 30px;
+        width: 250px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: rgba(20, 34, 48, 0.9);
+        box-shadow: 0 28px 40px rgba(0,0,0,0.18);
+        padding: 18px 16px;
+      }
+
+      .mood-card-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.02);
-        border-radius: 18px;
-        padding: 14px 16px;
+        gap: 10px;
       }
-      .mini-card strong { display: block; font-size: 1.05rem; }
-      .mini-card span { color: var(--muted); font-size: 0.8rem; }
-      .avatar {
-        width: 52px;
-        height: 52px;
+
+      .tiny-avatar {
+        width: 50px;
+        height: 50px;
         border-radius: 16px;
-        background: linear-gradient(135deg, rgba(155,231,212,0.3), rgba(184,167,255,0.35));
+        background: linear-gradient(135deg, rgba(166, 217, 255, 0.35), rgba(195, 171, 255, 0.35));
         display: grid;
         place-items: center;
         font-weight: 800;
+        color: var(--text);
       }
 
-      .chart {
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 18px;
-        margin-top: 22px;
+      .mood-card h4 {
+        margin: 0;
+        font-size: 1rem;
       }
-      .bars {
+
+      .mood-card small {
+        color: var(--muted);
+      }
+
+      .state-bars {
         display: flex;
         align-items: end;
-        gap: 12px;
-        height: 160px;
-        margin-top: 20px;
+        justify-content: space-between;
+        gap: 10px;
+        height: 110px;
+        margin-top: 18px;
       }
-      .bars span {
+
+      .state-bars span {
         display: block;
         width: 18%;
         border-radius: 12px 12px 0 0;
-        background: linear-gradient(180deg, var(--primary), var(--primary-2));
-        box-shadow: 0 18px 28px rgba(184,167,255,0.15);
+        background: linear-gradient(180deg, rgba(177, 236, 203, 0.92), rgba(164, 197, 255, 0.9));
+        box-shadow: 0 18px 24px rgba(164,197,255,0.15);
       }
-      .bars span:nth-child(1) { height: 42%; }
-      .bars span:nth-child(2) { height: 60%; }
-      .bars span:nth-child(3) { height: 52%; }
-      .bars span:nth-child(4) { height: 88%; }
-      .bars span:nth-child(5) { height: 75%; }
 
-      .floating-card {
+      .state-bars span:nth-child(1) { height: 38%; }
+      .state-bars span:nth-child(2) { height: 56%; }
+      .state-bars span:nth-child(3) { height: 48%; }
+      .state-bars span:nth-child(4) { height: 76%; }
+      .state-bars span:nth-child(5) { height: 60%; }
+
+      .floating-note {
         position: absolute;
-        left: 12px;
-        bottom: 14px;
-        width: min(220px, 62%);
-        padding: 18px 18px 14px;
+        left: 24px;
+        bottom: 44px;
+        width: 180px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: rgba(19, 28, 35, 0.9);
+        padding: 16px 18px;
+        box-shadow: 0 24px 32px rgba(0,0,0,0.18);
       }
+
       .pill {
         display: inline-block;
-        padding: 0.38rem 0.7rem;
+        padding: 0.35rem 0.7rem;
         border-radius: 999px;
-        font-size: 0.72rem;
-        font-weight: 700;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: rgba(255, 197, 214, 0.14);
+        border: 1px solid rgba(255, 197, 214, 0.2);
+        color: #ffdeea;
       }
-      .pill-pink { background: rgba(255,181,199,0.11); color: #ffd8e3; }
 
-      .emotion-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
+      .floating-note h3 {
+        margin: 12px 0 0;
+        font-size: 1.05rem;
       }
-      .emotion-card {
-        border-radius: 28px;
-        padding: 24px 20px;
-        text-align: center;
-        border: 1px solid var(--line);
-        box-shadow: 0 18px 36px rgba(6, 12, 18, 0.2);
-        cursor: pointer;
-        transition: transform 0.25s ease, box-shadow 0.2s ease;
+
+      .face {
+        position: absolute;
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        box-shadow: inset -12px -12px 24px rgba(255,255,255,0.18), inset 10px 12px 18px rgba(255,255,255,0.12), 0 24px 30px rgba(18, 26, 38, 0.3);
       }
-      .emotion-card:hover {
-        transform: translateY(-4px) scale(1.01);
+
+      .face-large {
+        width: 220px;
+        height: 220px;
       }
-      .emotion-card .emoji {
-        font-size: 60px;
-        display: block;
-        margin-bottom: 12px;
+
+      .happy {
+        right: 240px;
+        top: 30px;
+        background: radial-gradient(circle at 35% 26%, #f6f2d4 0%, rgba(242, 224, 180, 0.9) 20%, rgba(241, 190, 132, 0.9) 56%, #f2d0a2 100%);
       }
-      .emotion-card h3 {
-        margin: 0 0 8px;
-        font-size: 1.15rem;
+
+      .happy::before, .happy::after,
+      .sleep::before, .sleep::after,
+      .sad::before, .sad::after,
+      .stress::before, .stress::after {
+        content: "";
+        position: absolute;
       }
-      .emotion-card p {
-        color: var(--muted);
-        margin: 0;
-        font-size: 0.92rem;
+
+      .happy::before {
+        width: 32px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+        right: 30px;
+        top: 10px;
       }
-      .c1 { background: linear-gradient(160deg, #fff3cc, #ffdb7d); color: #1b1b1b; }
-      .c2 { background: linear-gradient(160deg, #d8ebff, #9ecbff); color: #132535; }
-      .c3 { background: linear-gradient(160deg, #ffdbe8, #ff9fb5); color: #321d25; }
-      .c4 { background: linear-gradient(160deg, #dfe9ff, #b5c5ff); color: #17253d; }
+
+      .happy::after {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 70%);
+        left: 18px;
+        top: 8px;
+      }
+
+      .eyes {
+        position: absolute;
+        inset: 0;
+      }
+
+      .eyes span {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #1a1a1a;
+        top: 90px;
+      }
+
+      .eyes span:first-child { left: 62px; }
+      .eyes span:last-child { right: 62px; }
+
+      .smile {
+        position: absolute;
+        width: 90px;
+        height: 50px;
+        border: 7px solid rgba(0,0,0,0.7);
+        border-color: transparent transparent rgba(0,0,0,0.72) transparent;
+        border-radius: 0 0 120px 120px;
+        left: 50%;
+        bottom: 45px;
+        transform: translateX(-50%);
+      }
+
+      .blush {
+        position: absolute;
+        width: 24px;
+        height: 16px;
+        background: rgba(255, 131, 161, 0.45);
+        border-radius: 50%;
+        bottom: 58px;
+      }
+
+      .blush.left { left: 34px; }
+      .blush.right { right: 34px; }
+
+      .flower {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background: linear-gradient(135deg, #a8e7b2, #6ec785);
+        border-radius: 50%;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 0 6px rgba(122, 162, 98, 0.4);
+      }
+
+      .flower::before,
+      .flower::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c6efd6, #8fcc9a);
+        top: 12px;
+        left: -10px;
+        box-shadow: 0 0 0 5px rgba(125, 170, 112, 0.15);
+      }
+
+      .flower::after {
+        left: auto;
+        right: -10px;
+      }
+
+      .sleep {
+        left: 110px;
+        bottom: 20px;
+        background: radial-gradient(circle at 35% 26%, #f9f4e5 0%, #e7e1f9 38%, #c8c4ee 100%);
+      }
+
+      .sleep .eyes span {
+        width: 18px;
+        height: 8px;
+        border-radius: 60px;
+        background: rgba(25,25,25,0.7);
+        top: 102px;
+      }
+
+      .sleep .smile {
+        width: 70px;
+        height: 36px;
+        border-width: 5px;
+        border-color: rgba(0,0,0,0.72) transparent transparent transparent;
+        border-radius: 70px 70px 0 0;
+        bottom: 56px;
+      }
+
+      .sleep .cap {
+        position: absolute;
+        width: 150px;
+        height: 70px;
+        background: linear-gradient(180deg, rgba(200, 211, 255, 0.9), rgba(168,179,255,0.7));
+        border-radius: 50% 50% 45% 45%;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .sleep .cap::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        top: 15px;
+        left: 28px;
+      }
+
+      .sleep .cap::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.45);
+        right: 26px;
+        top: 12px;
+      }
+
+      .sad {
+        right: 22px;
+        bottom: 30px;
+        background: radial-gradient(circle at 35% 26%, #eef4ff 0%, #c8d8ee 36%, #a5b1e3 100%);
+      }
+
+      .sad .eyes span {
+        width: 16px;
+        height: 16px;
+        background: #1d1d1d;
+        top: 92px;
+      }
+
+      .sad .eyes span:first-child { left: 56px; }
+      .sad .eyes span:last-child { right: 56px; }
+
+      .sad .smile {
+        width: 72px;
+        height: 52px;
+        border: 6px solid rgba(0,0,0,0.72);
+        border-color: rgba(0,0,0,0.72) transparent transparent transparent;
+        border-radius: 100px 100px 0 0;
+        bottom: 42px;
+      }
+
+      .drop {
+        position: absolute;
+        width: 10px;
+        height: 18px;
+        background: linear-gradient(180deg, #c3f2ff, rgba(128, 204, 255, 0.8));
+        border-radius: 0 0 12px 12px;
+        transform: rotate(30deg);
+      }
+
+      .drop::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50% 50% 50% 0;
+        background: linear-gradient(135deg, rgba(163, 220, 255, 0.75), rgba(138, 194, 255, 0.9));
+        top: -8px;
+        left: -2px;
+        transform: rotate(-45deg);
+      }
+
+      .drop.a { right: 20px; top: 54px; }
+      .drop.b { right: 42px; top: 76px; }
+      .drop.c { right: 10px; top: 90px; }
+
+      .stress {
+        right: 230px;
+        bottom: 24px;
+        background: radial-gradient(circle at 30% 25%, #f6ecdb 0%, #e4d2b8 28%, #c7d0e6 100%);
+      }
+
+      .stress .eyes span {
+        width: 18px;
+        height: 18px;
+        background: #1b1b1b;
+        top: 90px;
+      }
+
+      .stress .smile {
+        width: 58px;
+        height: 34px;
+        border-width: 6px;
+        border-color: rgba(0,0,0,0.72) transparent transparent transparent;
+        border-radius: 120px 120px 0 0;
+        bottom: 48px;
+      }
+
+      .stress .scarf {
+        position: absolute;
+        width: 90px;
+        height: 28px;
+        background: linear-gradient(135deg, #ffd7bf, #eead7a);
+        border-radius: 25px;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .stress .scarf::before,
+      .stress .scarf::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 32px;
+        background: linear-gradient(135deg, #f6ceb7, #f3b585);
+        border-radius: 12px;
+        top: -5px;
+      }
+
+      .stress .scarf::before { left: 18px; }
+      .stress .scarf::after { right: 18px; }
 
       .section {
-        padding: 86px 0;
+        padding: 78px 0;
       }
-      .section-head {
+
+      .section-header {
         display: flex;
         align-items: end;
         justify-content: space-between;
         gap: 22px;
         margin-bottom: 28px;
       }
-      .section-head h2 {
-        margin: 0;
-        font-size: clamp(2rem, 3vw, 3rem);
-        letter-spacing: -0.04em;
+
+      .section-header h2 {
+        margin: 12px 0 0;
+        font-size: clamp(2.4rem, 3vw, 3.4rem);
+        letter-spacing: -0.06em;
       }
-      .section-head p {
-        color: var(--muted);
+
+      .section-header p {
         max-width: 560px;
         margin: 0;
-      }
-
-      .about-grid, .feature-grid, .support-grid, .contact-grid {
-        display: grid;
-        gap: 24px;
-      }
-      .about-grid { grid-template-columns: 1fr 1fr; }
-      .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .support-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
-
-      .story, .feature, .support, .contact-panel {
-        background: rgba(18, 32, 51, 0.8);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 26px;
-      }
-      .story p, .feature p, .support p, .contact-panel p {
         color: var(--muted);
       }
-      .story ul {
-        list-style: none;
-        padding: 0;
-        margin: 18px 0 0;
+
+      .card-grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .panel {
+        background: linear-gradient(180deg, rgba(18, 29, 41, 0.8), rgba(11, 17, 25, 0.8));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px;
+        box-shadow: 0 22px 36px rgba(0,0,0,0.16);
+      }
+
+      .icon-box {
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        font-size: 1.4rem;
+        background: linear-gradient(135deg, rgba(166, 217, 255, 0.16), rgba(192, 172, 255, 0.17));
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .panel h3 {
+        margin: 18px 0 10px;
+        font-size: 1.4rem;
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .meditation-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 22px;
+      }
+
+      .mini-quote {
+        font-size: 1.1rem;
+        color: var(--text);
+        margin-bottom: 18px;
+      }
+
+      .list-check {
         display: grid;
         gap: 12px;
+        margin-top: 16px;
       }
-      .story li {
+
+      .list-check li {
         display: flex;
         align-items: center;
         gap: 10px;
-      }
-      .story li::before {
-        content: "•";
-        color: var(--primary);
-        font-size: 1.2rem;
+        color: var(--muted);
       }
 
-      .feature .icon, .support .icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, rgba(155,231,212,0.18), rgba(184,167,255,0.2));
+      .list-check li::before {
+        content: "✓";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(154, 234, 201, 0.12);
+        color: #aaf0cc;
+        font-weight: 700;
+      }
+
+      .session-card {
+        background: rgba(18, 29, 41, 0.8);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px 20px;
+      }
+
+      .session-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 0.42rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(180, 166, 255, 0.12);
+        color: #e5dcff;
+        border: 1px solid rgba(180,166,255,0.22);
+      }
+
+      .session-card h3 {
+        margin: 0 0 10px;
+      }
+
+      .meta {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 18px 0 0;
+      }
+
+      .profile-box {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 22px;
+      }
+
+      .profile-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .avatar-large {
+        width: 120px;
+        height: 120px;
+        border-radius: 32px;
+        background: linear-gradient(135deg, rgba(170, 222, 255, 0.35), rgba(191, 173, 255, 0.5));
         display: grid;
         place-items: center;
-        font-size: 1.4rem;
-      }
-      .feature h3, .support h3, .contact-panel h3 {
-        margin: 18px 0 12px;
-        font-size: 1.35rem;
+        font-size: 2.1rem;
+        font-weight: 800;
+        box-shadow: inset 0 0 10px rgba(255,255,255,0.4);
       }
 
-      .tracker {
-        background: rgba(18, 32, 51, 0.9);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 30px 26px;
-        margin-top: 28px;
-        display: none;
-      }
-      .tracker h3 {
-        margin: 0 0 6px;
-        font-size: clamp(2rem, 2.8vw, 2.8rem);
-      }
-      .tracker p {
-        color: var(--muted);
-      }
-      .tracker-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
         margin-top: 20px;
       }
-      .track-btn {
-        background: rgba(255,255,255,0.04);
-        color: var(--text);
+
+      .stat-box {
+        padding: 18px 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 0.8rem 1rem;
-        cursor: pointer;
       }
 
-      .contact-panel .btn { margin-top: 12px; }
-      .contact-list {
-        list-style: none;
-        padding: 0;
-        margin: 18px 0 0;
-        display: grid;
-        gap: 12px;
+      .stat-box strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+      }
+
+      .stat-box span {
         color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .progress-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .progress-item {
+        padding: 18px 16px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+      }
+
+      .progress-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .bar {
+        width: 100%;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.06);
+        overflow: hidden;
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, rgba(176, 219, 255, 0.95), rgba(183, 165, 255, 0.9));
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 22px;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--line-soft);
+        background: rgba(255,255,255,0.02);
+        border-radius: 16px;
+        padding: 0.9rem 1rem;
+        color: var(--text);
+      }
+
+      .field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+      }
+
+      .contact-item .icon-box {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+      }
+
+      .small-muted {
+        color: var(--muted);
+        font-size: 0.9rem;
       }
 
       footer {
         border-top: 1px solid var(--line);
-        padding: 26px 0 34px;
+        padding: 24px 0 36px;
       }
+
       .footer-inner {
         display: flex;
         align-items: center;
@@ -424,40 +913,81 @@
         color: var(--muted);
       }
 
-      @media (max-width: 900px) {
-        .hero-grid, .about-grid, .feature-grid, .support-grid, .contact-grid, .emotion-grid {
+      @media (max-width: 980px) {
+        .hero-grid,
+        .meditation-grid,
+        .profile-box,
+        .contact-wrap {
           grid-template-columns: 1fr;
         }
-        .nav-links { display: none; }
-        .nav { justify-content: space-between; }
+
+        .cards-3,
+        .cards-4,
+        .cards-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
       }
 
-      @media (max-width: 520px) {
-        .btn { width: 100%; }
-        .cta-row, .nav-actions { width: 100%; }
-        .hero { padding-top: 46px; }
+      @media (max-width: 620px) {
+        .hero {
+          padding-top: 30px;
+        }
+
+        .hero-grid {
+          gap: 10px;
+        }
+
+        .hero h1 {
+          font-size: 3.6rem;
+        }
+
+        .cta-row,
+        .feature-badges {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn,
+        .nav-cta {
+          width: 100%;
+        }
+
+        .cards-3,
+        .cards-4,
+        .cards-2,
+        .stats-row {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-art { min-height: 520px; }
+        .happy { right: 150px; }
+        .sad { right: 10px; }
+        .sleep { left: 40px; }
+        .stress { right: 150px; }
       }
     </style>
   </head>
   <body>
-    <header class="topbar">
+    <header class="nav-wrap">
       <div class="container nav">
         <a href="#home" class="brand" aria-label="Calm Mind home">
-          <span class="brand-mark">C</span>
-          <span>CALM MIND</span>
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Calm Mind</span>
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#feelings">Feelings</a>
-          <a href="#support">Support</a>
-          <a href="#contact">Contact</a>
+          <a href="#meditate">Meditate</a>
+          <a href="#journal">Journal</a>
+          <a href="#sessions">Sessions</a>
+          <a href="#profile">Profile</a>
         </nav>
 
-        <div class="nav-actions">
-          <a class="btn btn-secondary" href="#contact">Talk to us</a>
-        </div>
+        <a class="nav-cta" href="#contact">Talk to us</a>
       </div>
     </header>
 
@@ -466,52 +996,65 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Emotional wellness</span>
-            <h1>Take a breath. You are not alone.</h1>
+            <h1>Meet Your<br>Emotions</h1>
             <p>
-              Calm Mind supports people facing anxiety, stress, sadness, low mood, and emotional exhaustion
-              with gentle guidance, practical routines, and compassionate tools for healing and balance.
+              Track how you feel. Build calm. Be present. A gentle space to check in,
+              reflect, and breathe — designed for your mental well-being.
             </p>
 
             <div class="cta-row">
-              <button class="btn btn-primary" onclick="showTracker()">Check how you feel</button>
-              <a class="btn btn-secondary" href="#support">Explore support</a>
+              <a class="btn btn-primary" href="#sessions">Begin Now</a>
+              <a class="btn btn-secondary" href="#meditate">Learn More</a>
             </div>
 
-            <div class="stats" aria-label="Wellness stats">
-              <div class="stat">
-                <strong>1,200+</strong>
-                <span>People supported</span>
-              </div>
-              <div class="stat">
-                <strong>4.9/5</strong>
-                <span>Trust & care</span>
-              </div>
-              <div class="stat">
-                <strong>Daily</strong>
-                <span>Small reset tools</span>
-              </div>
+            <div class="feature-badges" aria-label="Wellness features">
+              <div class="badge"><span class="badge-dot"></span> Mindful</div>
+              <div class="badge"><span class="badge-dot"></span> Daily Check-ins</div>
+              <div class="badge"><span class="badge-dot"></span> Private &amp; Safe</div>
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="Calm Mind emotional dashboard">
-            <div class="panel dashboard">
-              <div class="mini-card">
-                <div>
-                  <strong>Today's emotional check</strong>
-                  <span>Gentle self-awareness</span>
+          <div class="hero-art" aria-label="Illustrated emotion cards">
+            <div class="float-wrap">
+              <div class="face happy face-large">
+                <div class="flowers" style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); width:40px; height:40px;">
+                  <div class="flower"></div>
                 </div>
-                <div class="avatar">C</div>
+                <div class="eyes"><span></span><span></span></div>
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="smile"></div>
               </div>
 
-              <div class="chart">
-                <div style="display:flex; justify-content:space-between; color: var(--muted); font-size:0.8rem;">
-                  <span>Mon</span>
-                  <span>Tue</span>
-                  <span>Wed</span>
-                  <span>Thu</span>
-                  <span>Fri</span>
+              <div class="face sad" style="bottom: 42px;">
+                <div class="drop a"></div>
+                <div class="drop b"></div>
+                <div class="drop c"></div>
+                <div class="eyes"><span></span><span></span></div>
+                <div class="smile"></div>
+              </div>
+
+              <div class="face sleep" style="left: 80px; bottom: 18px;">
+                <div class="cap"></div>
+                <div class="eyes"><span></span><span></span></div>
+                <div class="smile"></div>
+              </div>
+
+              <div class="face stress" style="right: 200px; bottom: 40px;">
+                <div class="eyes"><span></span><span></span></div>
+                <div class="smile"></div>
+                <div class="scarf"></div>
+              </div>
+
+              <div class="mood-card">
+                <div class="mood-card-head">
+                  <div>
+                    <h4>Today's emotional check</h4>
+                    <small>Gentle self-awareness</small>
+                  </div>
+                  <div class="tiny-avatar">C</div>
                 </div>
-                <div class="bars" aria-hidden="true">
+                <div class="state-bars" aria-hidden="true">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -519,154 +1062,194 @@
                   <span></span>
                 </div>
               </div>
-            </div>
 
-            <div class="panel floating-card">
-              <span class="pill pill-pink">Mindful living</span>
-              <h3 style="margin: 14px 0 0; font-size: 1.2rem;">Calm · Clear · Stronger</h3>
+              <div class="floating-note">
+                <span class="pill">Mindful living</span>
+                <h3>Calm · Clear · Stronger</h3>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="feelings" class="section">
+      <section id="meditate" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-header">
             <div>
-              <span class="eyebrow">How do you feel?</span>
-              <h2>Feelings we understand.</h2>
+              <span class="eyebrow">How it works</span>
+              <h2>Build a calmer rhythm.</h2>
             </div>
-            <p>
-              Anxiety, happiness, sadness, and depression are all part of being human. We meet every feeling with kindness and practical care.
-            </p>
+            <p>Support for reflection, rest, and emotional health through simple routines that feel realistic and kind.</p>
           </div>
 
-          <div class="emotion-grid">
-            <div class="emotion-card c1" onclick="selectEmotion('Happy 😊')">
-              <span class="emoji">😊</span>
-              <h3>Happy</h3>
-              <p>Joyful moments, gratitude, and positivity</p>
-            </div>
-            <div class="emotion-card c2" onclick="selectEmotion('Anxious 😟')">
-              <span class="emoji">😟</span>
-              <h3>Anxious</h3>
-              <p>Stress, worry, fear, and nervous tension</p>
-            </div>
-            <div class="emotion-card c3" onclick="selectEmotion('Depressed 😔')">
-              <span class="emoji">😔</span>
-              <h3>Depressed</h3>
-              <p>Low mood, heaviness, silence, and exhaustion</p>
-            </div>
-            <div class="emotion-card c4" onclick="selectEmotion('Calm 😌')">
-              <span class="emoji">😌</span>
-              <h3>Calm</h3>
-              <p>Balanced, peaceful, grounded energy</p>
-            </div>
-          </div>
-
-          <div id="tracker" class="tracker" aria-live="polite">
-            <h3 id="result">How are you feeling today?</h3>
-            <p>Choose an emotion and take a gentle step toward balance.</p>
-            <div class="tracker-options">
-              <button class="track-btn" onclick="selectEmotion('Anxious 😟')">Anxious</button>
-              <button class="track-btn" onclick="selectEmotion('Happy 😊')">Happy</button>
-              <button class="track-btn" onclick="selectEmotion('Depressed 😔')">Depressed</button>
-              <button class="track-btn" onclick="selectEmotion('Calm 😌')">Calm</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="eyebrow">About Calm Mind</span>
-              <h2>We believe healing begins with kindness.</h2>
-            </div>
-            <p>
-              Calm Mind was created to help people find emotional balance, build healthy routines, and feel more supported in difficult moments.
-            </p>
-          </div>
-
-          <div class="about-grid">
-            <div class="story">
-              <p>
-                Life can feel heavy when anxiety keeps racing, sadness feels constant, or happiness becomes difficult to hold onto.
-                We offer simple, supportive tools that help you pause, reflect, and recover one step at a time.
-              </p>
-              <ul>
-                <li>Gentle emotional guidance and self-check-ins</li>
-                <li>Support for anxiety, stress, and low mood</li>
-                <li>Healthy habits for hope, calm, and resilience</li>
+          <div class="meditation-grid">
+            <div class="panel">
+              <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
+                <div class="icon-box">🌿</div>
+                <h3 style="margin:0;">Meditation &amp; grounding</h3>
+              </div>
+              <div class="mini-quote">“Small moments of quiet can create a stronger mind.”</div>
+              <ul class="list-check">
+                <li>Breathing exercises for stress relief</li>
+                <li>Guided resets during busy or overwhelming days</li>
+                <li>Gentle, private support for emotional regulation</li>
               </ul>
             </div>
 
-            <div class="story">
-              <p>
-                At Calm Mind, we focus on emotional wellness with compassion rather than pressure. We believe every person deserves access to space,
-                understanding, and practical tools that help them feel stronger, lighter, and more connected to themselves.
-              </p>
+            <div class="panel">
+              <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
+                <div class="icon-box">🧠</div>
+                <h3 style="margin:0;">Daily check-ins</h3>
+              </div>
+              <p>See your emotional trend over time and notice what truly helps you feel safe, steady, and supported.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="support" class="section">
+      <section id="journal" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-header">
             <div>
-              <span class="eyebrow">How we help</span>
-              <h2>Support for anxiety, happiness, and depression.</h2>
+              <span class="eyebrow">Inner reflection</span>
+              <h2>Journal your path to clarity.</h2>
             </div>
+            <p>Capture thoughts, patterns, wins, and emotions in a space designed for gentleness and honesty.</p>
           </div>
 
-          <div class="feature-grid">
-            <article class="feature">
-              <div class="icon">🌿</div>
-              <h3>Anxiety Relief</h3>
-              <p>
-                Guided breathing, grounding techniques, and calming routines to help reduce stress and overwhelm.
-              </p>
+          <div class="card-grid cards-3">
+            <article class="panel">
+              <div class="icon-box">✍️</div>
+              <h3>Daily journal</h3>
+              <p>Write short reflections that help you notice your mood, habits, and growth without pressure.</p>
             </article>
 
-            <article class="feature">
-              <div class="icon">✨</div>
-              <h3>Happiness Habits</h3>
-              <p>
-                Daily micro-practices that help you notice joy, gratitude, connection, and emotional balance.
-              </p>
+            <article class="panel">
+              <div class="icon-box">🌤️</div>
+              <h3>Emotion prompts</h3>
+              <p>Reflect on what drained you, what lifted you, and what you need more of in your daily life.</p>
             </article>
 
-            <article class="feature">
-              <div class="icon">💛</div>
-              <h3>Depression Support</h3>
-              <p>
-                Gentle routines and supportive tools for low mood, emotional exhaustion, and rebuilding hope.
-              </p>
+            <article class="panel">
+              <div class="icon-box">💬</div>
+              <h3>Thought tracking</h3>
+              <p>Reconnect with cause and effect so you can act with more calm, patience, and awareness.</p>
             </article>
           </div>
+        </div>
+      </section>
 
-          <div class="support-grid" style="margin-top: 24px;">
-            <div class="support">
-              <div class="icon">🫁</div>
-              <h3>Breathing</h3>
-              <p>Calming breath practices to reduce panic and restore focus.</p>
+      <section id="sessions" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Choose support</span>
+              <h2>Sessions built around your needs.</h2>
             </div>
-            <div class="support">
-              <div class="icon">📝</div>
-              <h3>Journaling</h3>
-              <p>Daily reflection prompts to help process thoughts and emotions.</p>
+            <p>From quiet breathing to guided reflection, you can choose a rhythm that feels supportive, safe, and sustainable.</p>
+          </div>
+
+          <div class="card-grid cards-3">
+            <div class="session-card">
+              <div class="session-head">
+                <h3>Breathing Reset</h3>
+                <span class="tag">5 min</span>
+              </div>
+              <p>Calm racing thoughts and restore focus when stress begins to rise.</p>
+              <div class="meta">
+                <span>Beginner</span>
+                <span>Stress relief</span>
+              </div>
             </div>
-            <div class="support">
-              <div class="icon">🧠</div>
-              <h3>Mindfulness</h3>
-              <p>Simple grounding exercises to reconnect with the present moment.</p>
+
+            <div class="session-card">
+              <div class="session-head">
+                <h3>Mindful Check-in</h3>
+                <span class="tag">10 min</span>
+              </div>
+              <p>Slow down and notice what you are feeling without judgment or pressure.</p>
+              <div class="meta">
+                <span>Reflective</span>
+                <span>Daily habit</span>
+              </div>
             </div>
-            <div class="support">
-              <div class="icon">🤝</div>
-              <h3>Connection</h3>
-              <p>Encouragement to reach out, speak honestly, and feel less alone.</p>
+
+            <div class="session-card">
+              <div class="session-head">
+                <h3>Night Calm</h3>
+                <span class="tag">15 min</span>
+              </div>
+              <p>Wind down and support deeper rest with grounding practices and peaceful focus.</p>
+              <div class="meta">
+                <span>Sleep</span>
+                <span>Recovery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Your progress</span>
+              <h2>Keep growing with gentle momentum.</h2>
+            </div>
+            <p>Personal insight gives direction. A little consistency can create lasting emotional healing.</p>
+          </div>
+
+          <div class="profile-box">
+            <div class="panel profile-hero">
+              <div class="avatar-large">CM</div>
+              <div>
+                <h3 style="margin:0 0 8px;">Calm Mind Profile</h3>
+                <p>Mindfulness routines and emotional check-ins from your weekly journey.</p>
+              </div>
+
+              <div class="stats-row">
+                <div class="stat-box">
+                  <strong>12</strong>
+                  <span>Sessions</span>
+                </div>
+                <div class="stat-box">
+                  <strong>8</strong>
+                  <span>Journal entries</span>
+                </div>
+                <div class="stat-box">
+                  <strong>86%</strong>
+                  <span>Consistency</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h3 style="margin:0 0 18px;">Current progress</h3>
+              <div class="progress-list">
+                <div class="progress-item">
+                  <div class="progress-head">
+                    <strong>Mindfulness</strong>
+                    <span>80%</span>
+                  </div>
+                  <div class="bar"><span style="width:80%"></span></div>
+                </div>
+
+                <div class="progress-item">
+                  <div class="progress-head">
+                    <strong>Stress awareness</strong>
+                    <span>72%</span>
+                  </div>
+                  <div class="bar"><span style="width:72%"></span></div>
+                </div>
+
+                <div class="progress-item">
+                  <div class="progress-head">
+                    <strong>Sleep routine</strong>
+                    <span>90%</span>
+                  </div>
+                  <div class="bar"><span style="width:90%"></span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -674,25 +1257,72 @@
 
       <section id="contact" class="section">
         <div class="container">
-          <div class="contact-grid">
-            <div class="contact-panel">
-              <span class="eyebrow">Reach out</span>
-              <h3>Need support? We are here for you.</h3>
-              <p>
-                Calm Mind is a compassionate space for emotional support, reflection, and healing. If you are feeling overwhelmed,
-                anxious, low, or lost, you do not have to carry it alone.
-              </p>
-              <a class="btn btn-primary" href="mailto:hello@calmmind.example">hello@calmmind.example</a>
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Contact &amp; feedback</span>
+              <h2>We’re here for you.</h2>
+            </div>
+            <p>Reach out with questions, feedback, or support requests. We welcome honest conversations and thoughtful ideas.</p>
+          </div>
+
+          <div class="contact-wrap">
+            <div class="panel">
+              <h3 style="margin-top:0;">Send a message</h3>
+              <form class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your name" />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="you@example.com" />
+                </div>
+
+                <div class="field">
+                  <label for="message">Message or feedback</label>
+                  <textarea id="message" placeholder="Share how we can support you..."></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Send message</button>
+              </form>
             </div>
 
-            <div class="contact-panel">
-              <h3>Helpful contact info</h3>
-              <ul class="contact-list">
-                <li>Email: hello@calmmind.example</li>
-                <li>Phone: +1 (555) 234-6789</li>
-                <li>Support Hours: 9:00 AM – 7:00 PM</li>
-                <li>Location: Online / Global</li>
-              </ul>
+            <div class="panel">
+              <h3 style="margin-top:0;">Helpful information</h3>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <div class="icon-box">✉️</div>
+                  <div>
+                    <strong>Email</strong>
+                    <div class="small-muted">hello@calmmind.example</div>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="icon-box">📞</div>
+                  <div>
+                    <strong>Phone</strong>
+                    <div class="small-muted">+1 (555) 234-6789</div>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="icon-box">🕒</div>
+                  <div>
+                    <strong>Support hours</strong>
+                    <div class="small-muted">9:00 AM – 7:00 PM</div>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="icon-box">🌍</div>
+                  <div>
+                    <strong>Location</strong>
+                    <div class="small-muted">Online / Global</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -701,30 +1331,22 @@
 
     <footer>
       <div class="container footer-inner">
-        <div class="brand" aria-label="Calm Mind brand footer">
-          <span class="brand-mark">C</span>
-          <span>CALM MIND</span>
+        <div class="brand" aria-label="Calm Mind footer brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Calm Mind</span>
         </div>
         <div>© <span id="year"></span> Calm Mind. All rights reserved.</div>
       </div>
     </footer>
 
     <script>
-      function showTracker() {
-        const tracker = document.getElementById('tracker');
-        tracker.style.display = 'block';
-        tracker.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-
-      function selectEmotion(value) {
-        const tracker = document.getElementById('tracker');
-        const result = document.getElementById('result');
-        tracker.style.display = 'block';
-        result.innerHTML = 'You are feeling: ' + value + ' <br><span style="font-size:18px;color:#c3d1e1;">Take 3 slow breaths. You are doing your best.</span>';
-        tracker.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-
       document.getElementById('year').textContent = new Date().getFullYear();
+      document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const button = event.target.querySelector('button');
+        button.textContent = 'Message Sent';
+        button.disabled = true;
+      });
     </script>
   </body>
 </html>
