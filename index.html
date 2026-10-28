@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BrightNest Studio | Professional Digital Growth</title>
+    <title>Calm Mind - Meet Your Emotions</title>
     <meta
       name="description"
-      content="Professional digital agency landing page with cute cartoon branding, services, testimonials, and contact sections."
+      content="Calm Mind is a modern emotional wellness landing page focused on mindfulness, reflection, and calm living."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #f4f7ff;
-        --bg-soft: #eef4ff;
-        --panel: #ffffff;
-        --panel-deep: #f9fafe;
-        --text: #1a2340;
-        --muted: #5f6f8d;
-        --line: rgba(42, 68, 122, 0.12);
-        --primary: #6a7cff;
-        --primary-dark: #4154d6;
-        --secondary: #ffb86c;
-        --accent: #7ad9c6;
-        --pink: #ffd6e6;
-        --shadow: 0 25px 60px rgba(79, 96, 181, 0.18);
+        --bg: #07090d;
+        --bg-soft: #0f1219;
+        --panel: #121722;
+        --panel-2: #171d2a;
+        --muted: #b7bfcc;
+        --muted-2: #8d96a8;
+        --primary: #8b7eff;
+        --primary-2: #a39bff;
+        --mint: #a7e7d9;
+        --mint-deep: #7dd7c0;
+        --line: rgba(255, 255, 255, 0.08);
+        --shadow: rgba(123, 110, 255, 0.28);
+        --white: #ffffff;
       }
 
       * {
@@ -41,14 +41,13 @@
 
       body {
         margin: 0;
-        font-family: "Manrope", sans-serif;
-        background: linear-gradient(180deg, #f7f9ff 0%, #eef4ff 100%);
-        color: var(--text);
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(139, 126, 255, 0.18), transparent 26%),
+          radial-gradient(circle at bottom right, rgba(167, 231, 217, 0.12), transparent 28%),
+          var(--bg);
+        color: var(--white);
+        overflow-x: hidden;
       }
 
       a {
@@ -56,8 +55,13 @@
         color: inherit;
       }
 
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
       .container {
-        width: min(1180px, calc(100% - 32px));
+        width: min(1200px, calc(100% - 32px));
         margin: 0 auto;
       }
 
@@ -65,156 +69,134 @@
         position: sticky;
         top: 0;
         z-index: 20;
+        background: rgba(7, 9, 13, 0.72);
         backdrop-filter: blur(12px);
-        background: rgba(247, 249, 255, 0.8);
-        border-bottom: 1px solid rgba(26, 35, 64, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       }
 
-      .nav {
+      nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
         min-height: 78px;
-        gap: 20px;
+        gap: 18px;
       }
 
-      .brand {
+      .logo {
         display: flex;
         align-items: center;
         gap: 12px;
+        font-size: 0.82rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
         font-weight: 800;
-        letter-spacing: -0.04em;
-        font-size: 1.2rem;
+        color: var(--mint);
       }
 
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, var(--primary), #8eb9ff);
-        box-shadow: 0 12px 24px rgba(106, 124, 255, 0.35);
+      .logo-mark {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--mint), #ebfff9);
+        box-shadow: 0 0 18px rgba(167, 231, 217, 0.5);
         position: relative;
       }
 
-      .brand-mark::before,
-      .brand-mark::after {
+      .logo-mark::before {
         content: "";
         position: absolute;
-      }
-
-      .brand-mark::before {
-        width: 18px;
-        height: 18px;
-        left: 10px;
-        top: 8px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.8);
-      }
-
-      .brand-mark::after {
-        width: 10px;
-        height: 10px;
-        right: 7px;
-        bottom: 7px;
-        border-radius: 50%;
-        background: var(--secondary);
+        inset: 4px 3px 6px 3px;
+        border-radius: 50% 50% 50% 0;
+        background: rgba(7, 9, 13, 0.35);
+        transform: rotate(-25deg);
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 28px;
-        color: var(--muted);
-        font-size: 0.96rem;
+        gap: 30px;
+        color: var(--muted-2);
+        font-size: 0.92rem;
         font-weight: 600;
       }
 
-      .nav-links a {
-        transition: color 0.2s ease;
-      }
-
       .nav-links a:hover {
-        color: var(--text);
+        color: var(--white);
       }
 
-      .nav-cta {
+      .nav-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0.9rem 1.3rem;
+        min-width: 138px;
+        padding: 0.9rem 1.25rem;
         border-radius: 999px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        color: white;
+        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+        color: var(--white);
         font-weight: 700;
-        box-shadow: 0 18px 35px rgba(90, 104, 235, 0.28);
+        box-shadow: 0 18px 40px rgba(139, 126, 255, 0.25);
       }
 
       .hero {
-        padding: 64px 0 32px;
+        display: flex;
+        align-items: center;
+        gap: 44px;
+        min-height: 82vh;
+        padding: 50px 0 40px;
       }
 
-      .hero-wrap {
-        display: grid;
-        grid-template-columns: 1.06fr 0.94fr;
-        align-items: center;
-        gap: 52px;
+      .hero-left {
+        width: 48%;
+        position: relative;
+        z-index: 2;
       }
 
       .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 16px;
+        display: inline-block;
+        padding: 9px 14px;
         border-radius: 999px;
-        background: rgba(106, 124, 255, 0.08);
-        color: var(--primary-dark);
-        border: 1px solid rgba(106, 124, 255, 0.12);
-        font-size: 0.75rem;
-        font-weight: 800;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--mint);
+        font-size: 0.72rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 0 5px rgba(122, 217, 198, 0.18);
+        font-weight: 700;
+        margin-bottom: 26px;
       }
 
       h1 {
-        margin: 22px 0 18px;
-        font-size: clamp(2.8rem, 5vw, 5rem);
-        line-height: 0.94;
-        letter-spacing: -0.06em;
+        margin: 0;
+        font-size: clamp(3.2rem, 5vw, 5.5rem);
+        line-height: 0.93;
+        letter-spacing: -0.07em;
       }
 
       .hero p {
-        max-width: 580px;
+        margin: 26px 0 0;
+        max-width: 600px;
         color: var(--muted);
-        font-size: 1.09rem;
-        line-height: 1.8;
+        font-size: 1.08rem;
+        line-height: 1.75;
       }
 
-      .hero-actions {
+      .btn-row {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 16px;
-        margin-top: 30px;
+        margin-top: 34px;
       }
 
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        padding: 1rem 1.5rem;
+        border: none;
         border-radius: 999px;
-        font-weight: 800;
-        border: 1px solid transparent;
+        padding: 1rem 1.6rem;
+        font-size: 1rem;
+        font-weight: 700;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
@@ -224,317 +206,125 @@
       }
 
       .btn-primary {
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        color: white;
-        box-shadow: 0 20px 36px rgba(80, 99, 223, 0.22);
+        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+        color: var(--white);
+        box-shadow: 0 18px 38px rgba(139, 126, 255, 0.35);
       }
 
       .btn-secondary {
-        background: rgba(255, 255, 255, 0.8);
-        color: var(--text);
-        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.12);
       }
 
-      .hero-meta {
+      .tags {
         display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
         align-items: center;
-        margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 40px;
       }
 
-      .mini-pill {
+      .tag {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 10px 14px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid var(--line);
-        color: var(--text);
-        font-weight: 700;
-        font-size: 0.8rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #e1e7f6;
+        font-size: 0.82rem;
+        font-weight: 600;
       }
 
-      .mini-pill::before {
-        content: "★";
-        color: var(--secondary);
-      }
-
-      .hero-visual {
+      .hero-right {
+        width: 52%;
         position: relative;
-      }
-
-      .visual-shell {
-        position: relative;
-        width: min(100%, 520px);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 18px;
+        align-items: center;
         min-height: 560px;
-        margin: 0 auto;
+        padding-top: 18px;
       }
 
-      .orbit, .halo {
-        position: absolute;
-        inset: auto;
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      .orbit {
-        width: 430px;
-        height: 430px;
-        right: 20px;
-        top: 38px;
-        background: radial-gradient(circle, rgba(111, 126, 255, 0.18), rgba(111, 126, 255, 0.02) 52%, transparent 70%);
-      }
-
-      .halo {
-        width: 340px;
-        height: 340px;
-        left: 35px;
-        bottom: 50px;
-        background: radial-gradient(circle, rgba(122, 217, 198, 0.2), transparent 62%);
-      }
-
-      .cartoon-card {
+      .card {
         position: relative;
-        width: 100%;
-        height: 540px;
-        padding: 30px;
-        border-radius: 32px;
-        background: linear-gradient(175deg, rgba(255,255,255,0.8), rgba(242,246,255,0.8));
-        border: 1px solid rgba(84, 100, 160, 0.08);
-        box-shadow: var(--shadow);
         overflow: hidden;
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 20px 48px rgba(0,0,0,0.32);
       }
 
-      .cartoon-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(106,124,255,0.06), rgba(122,217,198,0.04));
+      .card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.85) contrast(1.04);
       }
 
-      .speech {
-        position: absolute;
-        top: 35px;
-        left: 34px;
-        z-index: 2;
+      .card-1 {
+        height: 410px;
+        transform: translateY(30px);
+      }
+
+      .card-2 {
+        height: 280px;
+        transform: translateY(-10px);
+      }
+
+      .card-3 {
+        height: 180px;
+        grid-column: 1 / span 2;
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 14px 18px;
-        background: rgba(255, 255, 255, 0.88);
-        border-radius: 18px;
-        border: 1px solid rgba(95, 111, 141, 0.08);
-        box-shadow: 0 12px 28px rgba(33, 43, 70, 0.08);
-        font-weight: 800;
-        color: var(--text);
+        justify-content: space-between;
+        padding: 22px 24px;
+        background: linear-gradient(135deg, rgba(139,126,255,0.18), rgba(167,231,217,0.08));
+        border: 1px solid rgba(255,255,255,0.08);
       }
 
-      .speech::after {
-        content: "";
-        position: absolute;
-        left: 28px;
-        bottom: -8px;
-        width: 14px;
-        height: 14px;
-        background: rgba(255,255,255,0.88);
-        border-right: 1px solid rgba(95,111,141,0.08);
-        border-bottom: 1px solid rgba(95,111,141,0.08);
-        transform: rotate(45deg);
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
       }
 
-      .emoji {
-        font-size: 1.5rem;
-      }
-
-      .character {
-        position: absolute;
-        right: 86px;
-        bottom: 38px;
-        width: 290px;
-        height: 350px;
-        z-index: 2;
-      }
-
-      .head {
-        position: absolute;
-        left: 58px;
-        top: 48px;
-        width: 150px;
-        height: 150px;
-        background: linear-gradient(180deg, #ffdfb7, #f7c993);
-        border-radius: 50%;
-        box-shadow: inset 0 -10px 0 rgba(222, 160, 101, 0.12);
-      }
-
-      .hair {
-        position: absolute;
-        width: 174px;
-        height: 95px;
-        left: 46px;
-        top: 30px;
-        background: linear-gradient(180deg, #5d4b7e, #4a3865);
-        border-radius: 80px 80px 40px 40px;
-      }
-
-      .bang {
-        position: absolute;
-        width: 44px;
-        height: 32px;
-        background: #4a3865;
-        border-radius: 50% 30% 50% 40%;
-        top: 42px;
-      }
-
-      .bang.left { left: 52px; transform: rotate(-12deg); }
-      .bang.right { left: 165px; transform: rotate(12deg); }
-
-      .eye {
-        position: absolute;
-        top: 102px;
-        width: 12px;
-        height: 16px;
-        background: #1d2440;
-        border-radius: 50%;
-      }
-
-      .eye.left { left: 98px; }
-      .eye.right { left: 160px; }
-
-      .smile {
-        position: absolute;
-        left: 112px;
-        top: 135px;
-        width: 52px;
-        height: 28px;
-        border-bottom: 5px solid #d85d5d;
-        border-radius: 0 0 35px 35px;
-      }
-
-      .body {
-        position: absolute;
-        left: 68px;
-        top: 184px;
-        width: 154px;
-        height: 126px;
-        background: linear-gradient(180deg, #7f8cff, #5b6ef5);
-        border-radius: 34px 34px 26px 26px;
-      }
-
-      .body::before {
-        content: "";
-        position: absolute;
-        left: 10px;
-        top: 18px;
-        width: 36px;
-        height: 60px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.24);
-      }
-
-      .body::after {
-        content: "";
-        position: absolute;
-        right: 10px;
-        top: 18px;
-        width: 36px;
-        height: 60px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.14);
-      }
-
-      .arm {
-        position: absolute;
-        width: 50px;
-        height: 110px;
-        background: linear-gradient(180deg, #f6d1a2, #f0bd81);
-        border-radius: 30px;
-        top: 188px;
-      }
-
-      .arm.left { left: 36px; transform: rotate(22deg); }
-      .arm.right { right: 30px; transform: rotate(-22deg); }
-
-      .leg {
-        position: absolute;
-        width: 42px;
-        height: 88px;
-        background: linear-gradient(180deg, #f8dca9, #f0cd90);
-        border-radius: 28px;
-        bottom: 32px;
-      }
-
-      .leg.left { left: 90px; }
-      .leg.right { left: 155px; }
-
-      .shoe {
-        position: absolute;
-        bottom: 18px;
-        width: 60px;
-        height: 24px;
-        border-radius: 30px 30px 18px 18px;
-        background: #4a3865;
-      }
-
-      .shoe.left { left: 78px; }
-      .shoe.right { left: 150px; }
-
-      .desktop {
-        position: absolute;
-        left: 35px;
-        bottom: 0;
-        width: 196px;
-        height: 145px;
-        background: linear-gradient(180deg, #dfe7ff, #cfe0ff);
-        border: 3px solid rgba(64, 88, 160, 0.3);
-        border-radius: 18px 18px 20px 20px;
-        box-shadow: var(--shadow);
-      }
-
-      .desktop::before {
-        content: "";
-        position: absolute;
-        inset: 12px 12px auto 12px;
-        height: 82px;
-        border-radius: 12px;
-        background: linear-gradient(180deg, #16b0b7, #62d5a8);
-      }
-
-      .desktop::after {
-        content: "";
-        position: absolute;
-        left: 20px;
-        right: 20px;
-        bottom: -20px;
-        height: 22px;
-        border-radius: 14px;
-        background: #cfe0ff;
-      }
-
-      .stat-box {
-        position: absolute;
-        right: 18px;
-        bottom: 24px;
-        z-index: 3;
-        width: 170px;
-        padding: 16px 18px;
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(95,111,141,0.08);
-        box-shadow: 0 14px 28px rgba(35, 47, 80, 0.12);
-      }
-
-      .stat-box strong {
-        display: block;
-        font-size: 2rem;
+      .stat strong {
+        font-size: 2.15rem;
+        line-height: 1;
         letter-spacing: -0.06em;
       }
 
-      .stat-box span {
-        font-size: 0.78rem;
+      .stat span {
         color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .mini-badge {
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        color: #eff3ff;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
         font-weight: 700;
+      }
+
+      .glow {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(139, 126, 255, 0.28), transparent 62%);
+        right: -40px;
+        top: 20px;
+        filter: blur(32px);
+        pointer-events: none;
       }
 
       .section {
@@ -545,8 +335,8 @@
         display: flex;
         align-items: end;
         justify-content: space-between;
-        gap: 24px;
-        margin-bottom: 28px;
+        gap: 20px;
+        margin-bottom: 24px;
       }
 
       .section-header h2 {
@@ -556,35 +346,34 @@
       }
 
       .section-header p {
+        max-width: 500px;
         margin: 0;
         color: var(--muted);
-        max-width: 500px;
         line-height: 1.7;
       }
 
       .features {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 22px;
       }
 
       .feature {
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid var(--line);
-        border-radius: 26px;
-        padding: 28px 22px 24px;
-        box-shadow: 0 12px 18px rgba(38, 54, 105, 0.04);
+        padding: 28px 22px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 24px;
       }
 
       .feature-icon {
-        width: 58px;
-        height: 58px;
+        width: 54px;
+        height: 54px;
         border-radius: 18px;
         display: grid;
         place-items: center;
+        background: linear-gradient(135deg, rgba(139,126,255,0.12), rgba(167,231,217,0.12));
         font-size: 1.5rem;
-        margin-bottom: 22px;
-        background: linear-gradient(135deg, rgba(106,124,255,0.12), rgba(122,217,198,0.14));
+        margin-bottom: 18px;
       }
 
       .feature h3 {
@@ -598,158 +387,24 @@
         line-height: 1.7;
       }
 
-      .metrics {
-        display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 30px;
-        align-items: center;
+      .quote-box {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 26px;
+        padding: 28px 26px;
       }
 
-      .metric-panel {
-        background: linear-gradient(135deg, #fff, #f0f6ff);
-        border: 1px solid var(--line);
-        border-radius: 30px;
-        padding: 30px;
-        box-shadow: 0 16px 32px rgba(41, 55, 93, 0.06);
-      }
-
-      .metric-row {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .metric-box {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 18px 16px;
-      }
-
-      .metric-box strong {
-        display: block;
-        font-size: clamp(1.8rem, 3vw, 2.5rem);
-        letter-spacing: -0.06em;
-      }
-
-      .metric-box span {
-        color: var(--muted);
-        font-size: 0.88rem;
-        font-weight: 700;
-      }
-
-      .metric-story {
-        background: linear-gradient(180deg, rgba(106,124,255,0.95), rgba(76,93,209,0.94));
-        color: white;
-        border-radius: 30px;
-        padding: 30px 26px;
-        min-height: 240px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .metric-story::before {
-        content: "";
-        position: absolute;
-        width: 180px;
-        height: 180px;
-        right: -30px;
-        top: -30px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.08);
-      }
-
-      .metric-story h3 {
-        margin: 0 0 12px;
-        font-size: 1.4rem;
-      }
-
-      .metric-story p {
+      .quote-box p {
         margin: 0 0 18px;
-        line-height: 1.7;
-        color: rgba(255,255,255,0.8);
-      }
-
-      .rating-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 16px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.12);
-        border: 1px solid rgba(255,255,255,0.18);
-        font-weight: 800;
-      }
-
-      .process {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .step {
-        position: relative;
-        background: rgba(255,255,255,0.9);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 28px 22px 24px;
-      }
-
-      .step-num {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        font-weight: 800;
-        background: linear-gradient(135deg, rgba(106,124,255,0.12), rgba(255,184,108,0.2));
-        color: var(--primary-dark);
-        margin-bottom: 18px;
-      }
-
-      .step h3 {
-        margin: 0 0 10px;
-        font-size: 1.2rem;
-      }
-
-      .step p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .testimonials {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .quote {
-        background: rgba(255,255,255,0.88);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 30px 24px 22px;
-        box-shadow: 0 10px 18px rgba(38, 54, 105, 0.04);
-      }
-
-      .stars {
-        color: #ffb12e;
-        letter-spacing: 0.1em;
-        font-size: 1rem;
-        margin-bottom: 18px;
-      }
-
-      .quote p {
-        margin: 0 0 20px;
         color: var(--muted);
         line-height: 1.8;
+        font-size: 1.05rem;
       }
 
       .person {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 12px;
       }
 
       .avatar {
@@ -758,139 +413,41 @@
         border-radius: 50%;
         display: grid;
         place-items: center;
-        background: linear-gradient(135deg, #dfe8ff, #f7d9ec);
+        background: linear-gradient(135deg, rgba(139,126,255,0.18), rgba(167,231,217,0.18));
         font-weight: 800;
-        color: var(--primary-dark);
+        color: var(--mint);
       }
 
       .person strong {
         display: block;
-        font-size: 0.96rem;
       }
 
       .person span {
-        color: var(--muted);
         font-size: 0.78rem;
+        color: var(--muted-2);
       }
 
       .cta {
-        background: linear-gradient(135deg, #1f2a4d, #2a3458);
-        border-radius: 30px;
-        padding: 38px 36px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+        background: linear-gradient(135deg, rgba(139,126,255,0.12), rgba(167,231,217,0.06));
         border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 28px;
+        padding: 28px 30px;
       }
 
       .cta h3 {
         margin: 0 0 8px;
-        color: white;
-        font-size: clamp(2rem, 3vw, 2.8rem);
+        font-size: clamp(1.8rem, 2.5vw, 2.6rem);
         letter-spacing: -0.06em;
       }
 
       .cta p {
         margin: 0;
-        color: rgba(255,255,255,0.74);
+        color: var(--muted);
         line-height: 1.7;
-      }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: 0.92fr 1.08fr;
-        gap: 26px;
-        align-items: start;
-      }
-
-      .contact-card,
-      .contact-form {
-        background: rgba(255,255,255,0.85);
-        border: 1px solid var(--line);
-        border-radius: 30px;
-        padding: 26px;
-      }
-
-      .contact-list {
-        display: grid;
-        gap: 18px;
-        margin-top: 18px;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 14px;
-        padding: 16px 18px;
-        background: rgba(106,124,255,0.04);
-        border: 1px solid rgba(106,124,255,0.08);
-        border-radius: 18px;
-      }
-
-      .contact-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(106,124,255,0.15), rgba(122,217,198,0.18));
-        font-size: 1.2rem;
-      }
-
-      .contact-item strong {
-        display: block;
-        margin-bottom: 4px;
-      }
-
-      .contact-item span,
-      .contact-item a {
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      form {
-        display: grid;
-        gap: 16px;
-      }
-
-      .input-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      label {
-        display: grid;
-        gap: 8px;
-        font-size: 0.82rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-        font-weight: 800;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: rgba(244,247,255,0.9);
-        padding: 1rem 1rem;
-        font: inherit;
-        color: var(--text);
-        outline: none;
-      }
-
-      input:focus,
-      textarea:focus {
-        border-color: rgba(106,124,255,0.4);
-        box-shadow: 0 0 0 4px rgba(106,124,255,0.08);
-      }
-
-      textarea {
-        min-height: 140px;
-        resize: vertical;
       }
 
       footer {
@@ -900,12 +457,12 @@
       }
 
       .footer-wrap {
+        border-top: 1px solid rgba(255,255,255,0.06);
+        padding-top: 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 18px;
-        border-top: 1px solid var(--line);
-        padding-top: 24px;
       }
 
       .socials {
@@ -915,24 +472,27 @@
       }
 
       .socials a {
-        color: var(--text);
-        font-weight: 800;
+        color: var(--white);
+        font-weight: 600;
       }
 
       @media (max-width: 980px) {
-        .hero-wrap,
-        .metrics,
-        .contact-grid {
-          grid-template-columns: 1fr;
+        .hero {
+          flex-direction: column;
+          padding-top: 34px;
+        }
+
+        .hero-left,
+        .hero-right {
+          width: 100%;
+        }
+
+        .hero-right {
+          max-width: 640px;
         }
 
         .features {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .process,
-        .testimonials {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
         }
 
         .cta {
@@ -942,46 +502,52 @@
       }
 
       @media (max-width: 760px) {
+        nav {
+          padding: 14px 0;
+        }
+
         .nav-links {
           display: none;
         }
 
-        .nav {
-          min-height: 72px;
+        .btn {
+          width: 100%;
         }
 
-        .nav-cta {
-          padding: 0.75rem 1rem;
-          font-size: 0.8rem;
+        .btn-row {
+          flex-direction: column;
+          align-items: stretch;
         }
 
         .hero {
-          padding-top: 42px;
+          padding: 20px 0 28px;
         }
 
-        .hero-actions,
-        .input-row {
+        .hero-right {
+          grid-template-columns: 1fr 1fr;
+          min-height: 420px;
+        }
+
+        .card-1 {
+          height: 280px;
+        }
+
+        .card-2 {
+          height: 210px;
+        }
+
+        .card-3 {
+          grid-column: 1 / span 2;
+          padding: 18px 16px;
+        }
+
+        .features {
           grid-template-columns: 1fr;
-          display: grid;
         }
 
-        .features,
-        .metric-row {
-          grid-template-columns: 1fr;
-        }
-
-        .visual-shell {
-          min-height: 450px;
-        }
-
-        .cartoon-card {
-          height: 440px;
-        }
-
-        .character {
-          transform: scale(0.85);
-          transform-origin: bottom right;
-          right: 30px;
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         .footer-wrap {
@@ -994,306 +560,127 @@
   <body>
     <header class="topbar">
       <div class="container nav">
-        <a href="#home" class="brand" aria-label="BrightNest Studio home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>BrightNest</span>
-        </a>
+        <div class="logo">
+          <span class="logo-mark"></span>
+          <span>Calm Mind</span>
+        </div>
 
-        <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-links">
           <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#reviews">Reviews</a>
+          <a href="#features">Features</a>
+          <a href="#stories">Stories</a>
           <a href="#contact">Contact</a>
-        </nav>
+        </div>
 
-        <a href="#contact" class="nav-cta">Book a Call</a>
+        <a href="#contact" class="nav-btn">Begin Now</a>
       </div>
     </header>
 
     <main id="home">
-      <section class="hero">
-        <div class="container hero-wrap">
-          <div>
-            <div class="eyebrow">Design • Strategy • Growth</div>
-            <h1>Build a brand people remember.</h1>
-            <p>
-              We help businesses turn ideas into polished experiences — from
-              high-converting websites to memorable customer journeys that build
-              trust, spark action, and grow revenue.
-            </p>
+      <section class="container hero">
+        <div class="hero-left">
+          <div class="eyebrow">Emotional wellness</div>
+          <h1>Meet Your<br />Emotions</h1>
+          <p>
+            Track how you feel. Build calm. Be present. A gentle space to check in,
+            reflect, and breathe — designed to support your mental well-being with balance,
+            clarity, and self-kindness.
+          </p>
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Get Started</a>
-              <a class="btn btn-secondary" href="#services">View Services</a>
-            </div>
-
-            <div class="hero-meta">
-              <div class="mini-pill">Trusted by 250+ brands</div>
-              <div class="mini-pill">4.9/5 client rating</div>
-            </div>
+          <div class="btn-row">
+            <a href="#contact" class="btn btn-primary">Begin Now →</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
           </div>
 
-          <div class="hero-visual" aria-label="Cute brand illustration">
-            <div class="visual-shell">
-              <div class="orbit"></div>
-              <div class="halo"></div>
+          <div class="tags">
+            <div class="tag">🍃 Mindful</div>
+            <div class="tag">✨ Daily Check-ins</div>
+            <div class="tag">🛡️ Private &amp; Safe</div>
+          </div>
+        </div>
 
-              <div class="cartoon-card">
-                <div class="speech"><span class="emoji">✨</span> We grow with joy.</div>
+        <div class="hero-right">
+          <div class="glow"></div>
 
-                <div class="desktop" aria-hidden="true"></div>
+          <div class="card card-1">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Relaxed person smiling" />
+          </div>
 
-                <div class="character" aria-hidden="true">
-                  <div class="hair"></div>
-                  <div class="bang left"></div>
-                  <div class="bang right"></div>
-                  <div class="head"></div>
-                  <div class="eye left"></div>
-                  <div class="eye right"></div>
-                  <div class="smile"></div>
-                  <div class="arm left"></div>
-                  <div class="arm right"></div>
-                  <div class="body"></div>
-                  <div class="leg left"></div>
-                  <div class="leg right"></div>
-                  <div class="shoe left"></div>
-                  <div class="shoe right"></div>
-                </div>
+          <div class="card card-2">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="People sitting in calm environment" />
+          </div>
 
-                <div class="stat-box">
-                  <strong>+128%</strong>
-                  <span>brand engagement in 90 days</span>
-                </div>
-              </div>
+          <div class="card card-3">
+            <div class="stat">
+              <strong>12k+</strong>
+              <span>daily check-ins</span>
             </div>
+            <div class="mini-badge">Calm Track</div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="services">
+      <section class="section" id="features">
         <div class="container">
           <div class="section-header">
-            <h2>Everything you need to grow.</h2>
+            <h2>Feel more grounded each day.</h2>
             <p>
-              Our team blends strategy, design, and execution to create professional
-              digital experiences that feel warm, modern, and conversion-ready.
+              Everyday tools for reflection, emotional awareness, and a calmer rhythm that supports your well-being.
             </p>
           </div>
 
           <div class="features">
             <article class="feature">
-              <div class="feature-icon">🎨</div>
-              <h3>Brand Identity</h3>
-              <p>Logos, messaging, and visual systems that make your business feel premium and memorable.</p>
+              <div class="feature-icon">🌙</div>
+              <h3>Daily Mood Check-ins</h3>
+              <p>Track your energy, thoughts, and emotions in a quiet routine that makes self-awareness easier.</p>
             </article>
 
             <article class="feature">
-              <div class="feature-icon">💻</div>
-              <h3>Web Design</h3>
-              <p>Landing pages and websites built to look polished, perform smoothly, and convert visitors.</p>
+              <div class="feature-icon">🧘</div>
+              <h3>Breath &amp; Focus</h3>
+              <p>Restore calm with guided breathing practices designed to help you pause and reset when life feels busy.</p>
             </article>
 
             <article class="feature">
-              <div class="feature-icon">📈</div>
-              <h3>Growth Strategy</h3>
-              <p>Clear plans for content, campaigns, and performance improvements that generate real results.</p>
-            </article>
-
-            <article class="feature">
-              <div class="feature-icon">🤝</div>
-              <h3>Client Support</h3>
-              <p>Friendly guidance at every step so your next move feels confident, simple, and stress-free.</p>
+              <div class="feature-icon">💭</div>
+              <h3>Reflective Journaling</h3>
+              <p>Capture thoughts and patterns in a safe, encouraging space that helps you understand yourself better.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="container metrics">
-          <div class="metric-panel">
-            <div class="section-header" style="margin-bottom: 18px;">
-              <h2>We make growth feel effortless.</h2>
-            </div>
-            <div class="metric-row">
-              <div class="metric-box">
-                <strong>4.9/5</strong>
-                <span>Average review score</span>
-              </div>
-              <div class="metric-box">
-                <strong>250+</strong>
-                <span>Projects launched</span>
-              </div>
-              <div class="metric-box">
-                <strong>12k</strong>
-                <span>Monthly visitors</span>
-              </div>
-            </div>
+      <section class="section" id="stories">
+        <div class="container">
+          <div class="section-header">
+            <h2>Real feelings. Real support.</h2>
+            <p>People come to Calm Mind for clarity, comfort, and a more intentional way of caring for themselves.</p>
           </div>
 
-          <div class="metric-story">
-            <h3>Built for serious brands with a human touch.</h3>
+          <div class="quote-box">
             <p>
-              We mix strategy and creativity to build digital experiences that are both professional and approachable.
+              “This space helped me slow down and understand my emotions instead of pushing them away. I feel more peaceful and more present in my daily life.”
             </p>
-            <div class="rating-badge">★★★★★ Rated by clients</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <h2>How we work.</h2>
-            <p>Simple, structured, and focused on results so your project moves forward without the usual stress.</p>
-          </div>
-
-          <div class="process">
-            <article class="step">
-              <div class="step-num">01</div>
-              <h3>Discover</h3>
-              <p>We understand your goals, audience, and the story your brand should tell.</p>
-            </article>
-
-            <article class="step">
-              <div class="step-num">02</div>
-              <h3>Design</h3>
-              <p>We create polished concepts that balance clarity, style, and user experience.</p>
-            </article>
-
-            <article class="step">
-              <div class="step-num">03</div>
-              <h3>Launch</h3>
-              <p>We finalize, optimize, and launch your site with a focus on measurable growth.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="reviews">
-        <div class="container">
-          <div class="section-header">
-            <h2>Feedback that speaks for itself.</h2>
-            <p>Clients choose us for our professionalism, clarity, and the ability to make digital experiences feel effortless.</p>
-          </div>
-
-          <div class="testimonials">
-            <article class="quote">
-              <div class="stars">★★★★★</div>
-              <p>“The whole process felt smooth and highly professional. Our website now looks premium and converts far better.”</p>
-              <div class="person">
-                <div class="avatar">AS</div>
-                <div>
-                  <strong>Ayesha Siddiqui</strong>
-                  <span>Founder, Bloom Studio</span>
-                </div>
+            <div class="person">
+              <div class="avatar">A</div>
+              <div>
+                <strong>Aisha</strong>
+                <span>Daily user</span>
               </div>
-            </article>
-
-            <article class="quote">
-              <div class="stars">★★★★★</div>
-              <p>“They understood exactly what our brand needed and delivered a design that felt friendly yet very polished.”</p>
-              <div class="person">
-                <div class="avatar">MH</div>
-                <div>
-                  <strong>Mustafa Hassan</strong>
-                  <span>Director, NorthPeak</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="quote">
-              <div class="stars">★★★★★</div>
-              <p>“The communication was easy, the results were clear, and the final website looked fantastic on every device.”</p>
-              <div class="person">
-                <div class="avatar">RN</div>
-                <div>
-                  <strong>Rida Noor</strong>
-                  <span>Owner, Ember & Co.</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="cta">
-            <div>
-              <h3>Ready to build something beautiful?</h3>
-              <p>Let’s create a digital experience your customers can trust from the moment they land.</p>
             </div>
-            <a href="#contact" class="btn btn-primary">Start Your Project</a>
           </div>
         </div>
       </section>
 
       <section class="section" id="contact">
-        <div class="container contact-grid">
-          <div class="contact-card">
-            <div class="eyebrow" style="margin-bottom: 16px;">Get in touch</div>
-            <h2 style="margin: 0 0 8px; font-size: clamp(2rem, 3vw, 2.6rem); letter-spacing: -0.05em;">Let’s talk about your next step.</h2>
-            <p style="margin: 0; color: var(--muted); line-height: 1.8;">Tell us what you’re building and we’ll help shape a site that feels clear, confident, and conversion-ready.</p>
-
-            <div class="contact-list">
-              <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  <strong>Location</strong>
-                  <span>Remote worldwide</span>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">✉️</div>
-                <div>
-                  <strong>Email</strong>
-                  <a href="mailto:hello@brightnest.studio">hello@brightnest.studio</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">📞</div>
-                <div>
-                  <strong>Phone</strong>
-                  <a href="tel:+1234567890">+1 (234) 567-890</a>
-                </div>
-              </div>
+        <div class="container">
+          <div class="cta">
+            <div>
+              <h3>Ready to begin your calm journey?</h3>
+              <p>Start small, reflect honestly, and build a healthier relationship with your emotions.</p>
             </div>
-          </div>
-
-          <div class="contact-form">
-            <form>
-              <div class="input-row">
-                <label>
-                  First name
-                  <input type="text" placeholder="Your first name" />
-                </label>
-                <label>
-                  Last name
-                  <input type="text" placeholder="Your last name" />
-                </label>
-              </div>
-
-              <div class="input-row">
-                <label>
-                  Email
-                  <input type="email" placeholder="you@example.com" />
-                </label>
-                <label>
-                  Company
-                  <input type="text" placeholder="Your company" />
-                </label>
-              </div>
-
-              <label>
-                Project details
-                <textarea placeholder="Tell us about your website, goals, or brand."></textarea>
-              </label>
-
-              <button type="submit" class="btn btn-primary" style="width: fit-content; border: none;">Send Message</button>
-            </form>
+            <a href="#" class="btn btn-primary">Get Started</a>
           </div>
         </div>
       </section>
@@ -1301,11 +688,11 @@
 
     <footer>
       <div class="container footer-wrap">
-        <div>© 2026 BrightNest Studio. All rights reserved.</div>
+        <div>© 2026 Calm Mind</div>
         <div class="socials">
           <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Dribbble</a>
+          <a href="#">Community</a>
+          <a href="#">Support</a>
         </div>
       </div>
     </footer>
