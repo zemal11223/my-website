@@ -1,36 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calm Mind - Zemal</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calm Mind</title>
 <style>
-body{margin:0;background:#0a0a0f;color:white;font-family:sans-serif;text-align:center;padding:80px 20px}
-h1{font-size:50px} p{color:#aaa;font-size:20px}
-.btn{background:#8b5cf6;color:white;padding:15px 30px;border-radius:30px;text-decoration:none;display:inline-block;margin-top:20px;border:none;cursor:pointer;font-size:16px}
-.emotions{display:none;margin-top:40px;max-width:600px;margin-left:auto;margin-right:auto}
-.emo-box{background:#1e1e3a;padding:20px;margin:10px;border-radius:15px;display:inline-block;width:120px;cursor:pointer}
-.emo-box:hover{background:#2e2e5a}
-#msg{margin-top:30px;background:#1e1e3a;padding:20px;border-radius:15px;display:none}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#07070F;color:white;font-family:'Segoe UI',sans-serif;overflow-x:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;color:#aaa}
+nav b{letter-spacing:3px;color:#a8d8d0}
+nav span{margin-left:20px;cursor:pointer}
+.hero{display:flex;min-height:90vh;align-items:center;padding:0 5%;gap:20px}
+.left{flex:1}
+.left h1{font-size:70px;line-height:1.1;font-weight:800}
+.left p{margin:20px 0;color:#aaa;font-size:18px;max-width:500px;line-height:1.6}
+.btns{display:flex;gap:15px;margin-top:30px}
+.btn1{background:linear-gradient(90deg,#8b7eff,#a6b1ff);padding:14px 28px;border-radius:30px;border:none;color:white;font-weight:600;cursor:pointer;box-shadow:0 0 20px #8b7eff66}
+.btn2{background:transparent;padding:14px 28px;border-radius:30px;border:1px solid #444;color:white;cursor:pointer}
+.right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border-radius:30px;padding:20px;text-align:center;aspect-ratio:1; display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:70px;transition:0.3s;cursor:pointer}
+.card:hover{transform:scale(1.05)}
+.c1{background:radial-gradient(circle,#fff4c0,#ffcb6b);color:black}
+.c2{background:radial-gradient(circle,#d0e6ff,#8bb7ff)}
+.c3{background:radial-gradient(circle,#e0d4ff,#9d8bff)}
+.c4{background:radial-gradient(circle,#ffe9d0,#ffb894)}
+.label{font-size:14px;margin-top:10px;font-weight:600;color:#111;background:white;padding:4px 10px;border-radius:10px}
+#tracker{padding:80px 5%;text-align:center;display:none;background:#10101e}
+.emo{padding:12px 20px;background:#1e1e3a;margin:10px;border-radius:20px;display:inline-block;cursor:pointer;border:1px solid #333}
+.emo:hover{background:#8b7eff}
+@media(max-width:800px){.hero{flex-direction:column}.left h1{font-size:45px}}
 </style>
 </head>
 <body>
-<h1>Meet Your Emotions</h1>
-<p>Track how you feel. Build calm. Be present.</p>
-<button class="btn" onclick="show()">Begin Now</button>
+<nav><b>🍃 CALM MIND</b><div><span>Home</span><span>Meditate</span><span>Journal</span></div></nav>
+<div class="hero">
+<div class="left">
+<h1>Meet Your<br>Emotions</h1>
+<p>Track how you feel. Build calm. Be present.<br>A gentle space to check in, reflect, and breathe — designed for your mental well-being.</p>
+<div class="btns">
+<button class="btn1" onclick="document.getElementById('tracker').style.display='block';document.getElementById('tracker').scrollIntoView({behavior:'smooth'})">Begin Now →</button>
+<button class="btn2" onclick="alert('Calm Mind is your daily mental health companion')">Learn More</button>
+</div>
+</div>
+<div class="right">
+<div class="card c1" onclick="selectEmo('Happy')">😊<span class="label">Happy - Joyful</span></div>
+<div class="card c2" onclick="selectEmo('Sad - Blue')">😢<span class="label">Sad - Blue</span></div>
+<div class="card c3" onclick="selectEmo('Calm - Sleepy')">😴<span class="label">Calm - Sleepy</span></div>
+<div class="card c4" onclick="selectEmo('Anxious - Worried')">😰<span class="label">Anxious - Worried</span></div>
+</div>
+</div>
 
-<div id="tracker" class="emotions">
-<h2>How are you feeling today?</h2>
-<div class="emo-box" onclick="feel('Happy 😊')">Happy 😊</div>
-<div class="emo-box" onclick="feel('Calm 😌')">Calm 😌</div>
-<div class="emo-box" onclick="feel('Anxious 😟')">Anxious 😟</div>
-<div class="emo-box" onclick="feel('Sad 😔')">Sad 😔</div>
-<div id="msg"></div>
+<div id="tracker">
+<h2 id="result" style="font-size:40px">How are you feeling today?</h2>
+<p style="color:#aaa;margin-top:10px">Click any emotion card above or below</p>
+<div style="margin-top:30px">
+<div class="emo" onclick="selectEmo('Happy 😊')">Happy 😊</div>
+<div class="emo" onclick="selectEmo('Sad 😔')">Sad 😔</div>
+<div class="emo" onclick="selectEmo('Anxious 😟')">Anxious 😟</div>
+<div class="emo" onclick="selectEmo('Calm 😌')">Calm 😌</div>
+</div>
 </div>
 
 <script>
-function show(){document.getElementById('tracker').style.display='block';window.scrollTo(0,300)}
-function feel(e){let m=document.getElementById('msg');m.style.display='block';m.innerHTML='<h3>You selected: '+e+'</h3><p>Great job! Take a deep breath for 5 seconds.</p><button class=btn onclick=location.reload()>Start Over</button>'}
+function selectEmo(e){
+document.getElementById('tracker').style.display='block';
+document.getElementById('result').innerHTML="You are feeling: "+e+" <br><span style='font-size:18px;color:#aaa'>Take 3 deep breaths. You are doing great.</span>";
+document.getElementById('tracker').scrollIntoView({behavior:'smooth'});
+}
 </script>
 </body>
 </html>
