@@ -13,31 +13,35 @@ nav{display:flex;justify-content:space-between;padding:18px 5%;align-items:cente
 .menu a{color:#a5b4cf;text-decoration:none;font-size:14px;cursor:pointer}
 .menu a:hover{color:white}
 .hero{display:flex;padding:60px 5%;gap:40px;align-items:center}
-.left{flex:1}
-.left h1{font-size:55px;line-height:1.1}
-.left p{color:#9fb0d0;margin:20px 0;line-height:1.6;max-width:500px}
+.left{flex:1}.left h1{font-size:55px;line-height:1.1}.left p{color:#9fb0d0;margin:20px 0;line-height:1.6;max-width:500px}
 .btn1{background:#8ef0b6;color:#0B102E;padding:12px 28px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
 .btn2{background:transparent;color:#8ef0b6;padding:12px 28px;border-radius:8px;border:1px solid #8ef0b6;cursor:pointer;margin-left:10px}
 .right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .card{border-radius:20px;height:190px;display:flex;align-items:center;justify-content:center;font-size:70px;box-shadow:0 0 25px rgba(142,240,182,0.25)}
-.c1{background:linear-gradient(135deg,#ffeaa7,#ffec99)}
-.c2{background:linear-gradient(135deg,#a8d8ff,#8ec5ff)}
-.c3{background:linear-gradient(135deg,#d7b8ff,#b89cff)}
-.c4{background:linear-gradient(135deg,#ffddb3,#ffc999)}
+.c1{background:linear-gradient(135deg,#ffeaa7,#ffec99)}.c2{background:linear-gradient(135deg,#a8d8ff,#8ec5ff)}.c3{background:linear-gradient(135deg,#d7b8ff,#b89cff)}.c4{background:linear-gradient(135deg,#ffddb3,#ffc999)}
 
-.reviews{padding:50px 5%;background:#0f1535}
+.meditate{padding:60px 5%;background:#0f1535}
+.meditate h2{text-align:center;font-size:35px}
+.meditate .sub{text-align:center;color:#9fb0d0;margin:10px 0 40px}
+.tips{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
+.tip-card{background:#1a234a;padding:25px;border-radius:15px;border:1px solid #26325f;transition:0.3s}
+.tip-card:hover{border-color:#8ef0b6;transform:translateY(-5px)}
+.tip-card h3{color:#8ef0b6;margin:15px 0 10px}
+.tip-card p{color:#9fb0d0;font-size:14px;line-height:1.6}
+.tip-icon{font-size:40px}
+
+.reviews{padding:50px 5%}
 .reviews h2{text-align:center;font-size:30px;margin-bottom:30px}
 .r-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
 .r-card{background:#1a234a;padding:25px;border-radius:15px;text-align:center;line-height:1.5}
 
-.contact{padding:60px 5%;display:flex;gap:40px}
-.contact-left{flex:1}
-.contact-right{flex:1;background:#1a234a;padding:30px;border-radius:15px}
+.contact{padding:60px 5%;display:flex;gap:40px;background:#0f1535}
+.contact-left{flex:1}.contact-right{flex:1;background:#1a234a;padding:30px;border-radius:15px}
 .info-card{background:#1a234a;padding:18px;border-radius:12px;margin-bottom:12px;border:1px solid #26325f}
 input,textarea{width:100%;padding:12px;margin:8px 0;background:#0B102E;border:1px solid #334155;border-radius:8px;color:white}
 .send-btn{background:#8ef0b6;color:#0B102E;padding:12px 25px;border:none;border-radius:8px;font-weight:700;cursor:pointer;width:100%;margin-top:10px}
 footer{text-align:center;padding:20px;color:#5a6b8c;font-size:13px;border-top:1px solid #1a234a}
-@media(max-width:800px){.hero,.contact,.r-grid{flex-direction:column;grid-template-columns:1fr}}
+@media(max-width:900px){.hero,.contact,.r-grid,.tips{flex-direction:column;grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -46,29 +50,68 @@ footer{text-align:center;padding:20px;color:#5a6b8c;font-size:13px;border-top:1p
 <div class="logo">🍃 CALM MIND</div>
 <div class="menu">
 <a onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</a>
-<a onclick="document.getElementById('meditate').scrollIntoView({behavior:'smooth'})">Meditate</a>
+<a onclick="document.getElementById('meditate-sec').scrollIntoView({behavior:'smooth'})">Meditate</a>
 <a onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">Reviews</a>
 <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
 <a onclick="document.getElementById('feedback').scrollIntoView({behavior:'smooth'})">Feedback</a>
 </div>
 </nav>
 
-<!-- HOME SECTION -->
+<!-- HOME -->
 <div class="hero" id="home">
-<div class="left" id="meditate">
+<div class="left">
 <h1>Meet Your<br>Emotions</h1>
-<p>Track, understand, and calm your emotions with guided meditations, mindful check-ins, and gentle support. Start your journey to a calmer, clearer mind today.</p>
+<p>Track, understand, and calm your emotions with guided meditations, mindful check-ins, and gentle support.</p>
 <button class="btn1">Begin Now</button><button class="btn2">Learn More</button>
 </div>
 <div class="right">
-<div class="card c1">😊</div>
-<div class="card c2">😢</div>
-<div class="card c3">😴</div>
-<div class="card c4">😰</div>
+<div class="card c1">😊</div><div class="card c2">😢</div>
+<div class="card c3">😴</div><div class="card c4">😰</div>
 </div>
 </div>
 
-<!-- REVIEWS SECTION -->
+<!-- MEDITATE SECTION WITH TIPS -->
+<div class="meditate" id="meditate-sec">
+<h2>🧘 Meditate & Find Your Calm</h2>
+<p class="sub">Simple daily practices to bring peace to your mind</p>
+
+<div class="tips">
+<div class="tip-card">
+<div class="tip-icon">🌬️</div>
+<h3>1. Deep Breathing (4-7-8)</h3>
+<p>Inhale 4 sec, hold 7 sec, exhale 8 sec. Repeat 3 times. Instant calm for anxiety and stress. Do it every morning.</p>
+</div>
+
+<div class="tip-card">
+<div class="tip-icon">🧠</div>
+<h3>2. Mindful 5-Minute Check-in</h3>
+<p>Close eyes, notice what you feel without judging. Ask: "How am I feeling right now?" Write it in app daily.</p>
+</div>
+
+<div class="tip-card">
+<div class="tip-icon">🌙</div>
+<h3>3. Sleep Meditation</h3>
+<p>Before sleep, listen to soft music, breathe slowly, let go of today's worries. Helps with purple 😴 mood.</p>
+</div>
+
+<div class="tip-card">
+<div class="tip-icon">💛</div>
+<h3>4. Gratitude Moment</h3>
+<p>Daily 2 minutes: Think of 3 good things today. Turns sad 😢 or anxious 😰 into happy 😊. Best for evening.</p>
+</div>
+</div>
+
+<div style="margin-top:40px;background:#1a234a;padding:25px;border-radius:15px;display:flex;gap:20px;align-items:center">
+<div style="font-size:50px">🎧</div>
+<div>
+<h3 style="color:#8ef0b6">Daily Guided Meditation - 10 Minutes</h3>
+<p style="color:#9fb0d0;margin-top:8px">Press Begin Now to start your 10-minute guided session. Includes breathing, body scan, and positive affirmations. Perfect for beginners!</p>
+</div>
+<button class="btn1" style="white-space:nowrap">▶ Start Session</button>
+</div>
+</div>
+
+<!-- REVIEWS -->
 <div class="reviews" id="reviews">
 <h2>What Our Users Say</h2>
 <div class="r-grid">
@@ -78,32 +121,25 @@ footer{text-align:center;padding:20px;color:#5a6b8c;font-size:13px;border-top:1p
 </div>
 </div>
 
-<!-- CONTACT + FEEDBACK SECTION (Sari Info Ek Jagah) -->
+<!-- CONTACT + FEEDBACK -->
 <div class="contact" id="contact">
 <div class="contact-left">
 <h1 style="font-size:40px">Get in Touch</h1>
-<p style="color:#9fb0d0;margin:20px 0">We'd love to hear from you. Official contact of CALM MIND wellness platform.</p>
-
-<div class="info-card">📧 <b>Email:</b> hello@calmmind.com<br>support@calmmind.com</div>
+<p style="color:#9fb0d0;margin:20px 0">Official contact of CALM MIND wellness platform.</p>
+<div class="info-card">📧 <b>Email:</b> hello@calmmind.com</div>
 <div class="info-card">📱 <b>Phone:</b> +92 300 1234567</div>
 <div class="info-card">📍 <b>Location:</b> Bahawalpur, Punjab, Pakistan</div>
-<div class="info-card">🕒 <b>Working Hours:</b> Mon - Fri, 9AM - 6PM PKT</div>
-<div class="info-card">🌐 <b>Social:</b> @calmmind (Instagram, Twitter, Facebook)</div>
-<div class="info-card">💼 <b>Official Website:</b> www.calmmind.com</div>
+<div class="info-card">🌐 <b>Social:</b> @calmmind</div>
 </div>
-
 <div class="contact-right" id="feedback">
-<h3>Send Feedback / Contact Us</h3>
+<h3>Send Feedback</h3>
 <input type="text" placeholder="Your Name">
 <input type="email" placeholder="Your Email">
-<input type="text" placeholder="Subject (Feedback / Support)">
-<textarea rows="5" placeholder="Your Message"></textarea>
+<textarea rows="5" placeholder="Your Feedback"></textarea>
 <button class="send-btn">Send Message</button>
-<p style="margin-top:15px;color:#5a6b8c;font-size:12px;text-align:center">Your official emotional wellness partner 💜</p>
 </div>
 </div>
 
-<footer>© 2026 CALM MIND - Official Emotional Wellness Platform | All Rights Reserved</footer>
-
+<footer>© 2026 CALM MIND - Official Emotional Wellness Platform</footer>
 </body>
 </html>
