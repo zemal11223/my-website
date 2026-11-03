@@ -1,0 +1,26 @@
+[
+  {
+    "id": "fb_1",
+    "name": "Maya",
+    "email": "maya28@example.com",
+    "rating": 5,
+    "message": "This app helped me calm my anxiety before bed. So peaceful and easy.",
+    "date": "2026-03-15 21:30"
+  },
+  {
+    "id": "fb_2",
+    "name": "Jordan",
+    "email": "jordan34@example.com",
+    "rating": 5,
+    "message": "Love the emotion check-ins. I finally feel aware of what I am feeling.",
+    "date": "2026-03-20 14:15"
+  },
+  {
+    "id": "fb_3",
+    "name": "Priya",
+    "email": "priya41@example.com",
+    "rating": 5,
+    "message": "The meditations are gentle and calming. My daily calm now.",
+    "date": "2026-03-28 08:45"
+  }
+]
