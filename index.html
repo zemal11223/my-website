@@ -1,134 +1,1966 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CALM MIND - Official Website</title>
+<title>CALM MIND - Official Emotional Wellness & Meditation Platform</title>
+<meta name="description" content="Track, understand, and calm your emotions with guided meditations, mindful check-ins, breathing exercises, and community feedback.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0B102E;color:white;font-family:Arial,sans-serif}
-nav{display:flex;justify-content:space-between;padding:18px 5%;align-items:center;background:#0f1535;position:sticky;top:0;z-index:100}
-.logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:700;color:#8ef0b6;letter-spacing:1px}
-.menu{display:flex;gap:25px}
-.menu a{color:#a5b4cf;text-decoration:none;font-size:14px;cursor:pointer}
-.menu a:hover{color:white}
-.hero{display:flex;padding:60px 5%;gap:40px;align-items:center}
-.left{flex:1}.left h1{font-size:55px;line-height:1.1}.left p{color:#9fb0d0;margin:20px 0;line-height:1.6;max-width:500px}
-.btn1{background:#8ef0b6;color:#0B102E;padding:12px 28px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
-.btn2{background:transparent;color:#8ef0b6;padding:12px 28px;border-radius:8px;border:1px solid #8ef0b6;cursor:pointer;margin-left:10px}
-.right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.card{border-radius:20px;height:190px;display:flex;align-items:center;justify-content:center;font-size:70px;box-shadow:0 0 25px rgba(142,240,182,0.25)}
-.c1{background:linear-gradient(135deg,#ffeaa7,#ffec99)}.c2{background:linear-gradient(135deg,#a8d8ff,#8ec5ff)}.c3{background:linear-gradient(135deg,#d7b8ff,#b89cff)}.c4{background:linear-gradient(135deg,#ffddb3,#ffc999)}
+:root {
+  --bg-primary: #0B102E;
+  --bg-secondary: #0f1535;
+  --bg-card: #1a234a;
+  --bg-card-hover: #222d5d;
+  --accent: #8ef0b6;
+  --accent-hover: #77e0a2;
+  --accent-light: rgba(142, 240, 182, 0.15);
+  --text-main: #ffffff;
+  --text-muted: #9fb0d0;
+  --border-color: #26325f;
+  --danger: #ff6b6b;
+  --gold: #ffc107;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-.meditate{padding:60px 5%;background:#0f1535}
-.meditate h2{text-align:center;font-size:35px}
-.meditate .sub{text-align:center;color:#9fb0d0;margin:10px 0 40px}
-.tips{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
-.tip-card{background:#1a234a;padding:25px;border-radius:15px;border:1px solid #26325f;transition:0.3s}
-.tip-card:hover{border-color:#8ef0b6;transform:translateY(-5px)}
-.tip-card h3{color:#8ef0b6;margin:15px 0 10px}
-.tip-card p{color:#9fb0d0;font-size:14px;line-height:1.6}
-.tip-icon{font-size:40px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.reviews{padding:50px 5%}
-.reviews h2{text-align:center;font-size:30px;margin-bottom:30px}
-.r-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-.r-card{background:#1a234a;padding:25px;border-radius:15px;text-align:center;line-height:1.5}
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-.contact{padding:60px 5%;display:flex;gap:40px;background:#0f1535}
-.contact-left{flex:1}.contact-right{flex:1;background:#1a234a;padding:30px;border-radius:15px}
-.info-card{background:#1a234a;padding:18px;border-radius:12px;margin-bottom:12px;border:1px solid #26325f}
-input,textarea{width:100%;padding:12px;margin:8px 0;background:#0B102E;border:1px solid #334155;border-radius:8px;color:white}
-.send-btn{background:#8ef0b6;color:#0B102E;padding:12px 25px;border:none;border-radius:8px;font-weight:700;cursor:pointer;width:100%;margin-top:10px}
-footer{text-align:center;padding:20px;color:#5a6b8c;font-size:13px;border-top:1px solid #1a234a}
-@media(max-width:900px){.hero,.contact,.r-grid,.tips{flex-direction:column;grid-template-columns:1fr}}
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 5%;
+  align-items: center;
+  background: rgba(15, 21, 53, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover, .menu a.active {
+  color: var(--accent);
+}
+
+.nav-db-btn {
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-db-btn:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  padding: 70px 5% 60px;
+  gap: 40px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.left {
+  flex: 1.1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(142, 240, 182, 0.1);
+  border: 1px solid rgba(142, 240, 182, 0.3);
+  border-radius: 20px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.left h1 {
+  font-size: 54px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.left h1 span {
+  color: var(--accent);
+}
+
+.left p {
+  color: var(--text-muted);
+  margin: 22px 0 32px;
+  line-height: 1.7;
+  font-size: 17px;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn1 {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(142, 240, 182, 0.35);
+}
+
+.btn1:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(142, 240, 182, 0.5);
+}
+
+.btn2 {
+  background: transparent;
+  color: var(--accent);
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1.5px solid var(--accent);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn2:hover {
+  background: rgba(142, 240, 182, 0.12);
+  transform: translateY(-2px);
+}
+
+.right {
+  flex: 0.9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.mood-card {
+  border-radius: 20px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.mood-card .emoji {
+  font-size: 64px;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.mood-card .mood-label {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a2e;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mood-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(142, 240, 182, 0.35);
+  border-color: #ffffff;
+}
+
+.mood-card:hover .emoji {
+  transform: scale(1.15);
+}
+
+.c1 { background: linear-gradient(135deg, #ffeaa7, #ffec99); }
+.c2 { background: linear-gradient(135deg, #a8d8ff, #8ec5ff); }
+.c3 { background: linear-gradient(135deg, #d7b8ff, #b89cff); }
+.c4 { background: linear-gradient(135deg, #ffddb3, #ffc999); }
+
+.mood-tip {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  grid-column: span 2;
+  margin-top: -5px;
+}
+
+/* MEDITATE SECTION WITH TIPS */
+.meditate {
+  padding: 80px 5%;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.meditate h2, .section-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.sub {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 12px 0 50px;
+  font-size: 17px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tips {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.tip-card {
+  background: var(--bg-card);
+  padding: 30px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tip-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tip-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.tip-card h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.tip-card p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.tip-card .card-action-btn {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(142, 240, 182, 0.4);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.tip-card .card-action-btn:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* REVIEWS SECTION */
+.reviews {
+  padding: 80px 5%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.reviews-header-left h2 {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.reviews-header-left p {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.r-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.r-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  line-height: 1.6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.r-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(142, 240, 182, 0.5);
+}
+
+.r-card .stars {
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.r-card .r-text {
+  color: #e2e8f0;
+  font-size: 15px;
+  font-style: italic;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.r-card .r-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 15px;
+}
+
+.r-card .r-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.r-card .r-info b {
+  color: var(--accent);
+  display: block;
+  font-size: 15px;
+}
+
+.r-card .r-info span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* CONTACT & FEEDBACK */
+.contact-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 80px 5%;
+}
+
+.contact {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+}
+
+.contact-left {
+  flex: 1;
+}
+
+.contact-left h2 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.contact-left p {
+  color: var(--text-muted);
+  margin: 20px 0 30px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.info-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-card {
+  background: var(--bg-card);
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.info-card:hover {
+  border-color: var(--accent);
+}
+
+.info-card .icon {
+  font-size: 24px;
+}
+
+.contact-right {
+  flex: 1.1;
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.contact-right h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.contact-right p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg-primary);
+  border: 1.5px solid #334155;
+  border-radius: 10px;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(142, 240, 182, 0.2);
+}
+
+.rating-select {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 5px 0 10px;
+}
+
+.star-btn {
+  background: transparent;
+  border: none;
+  color: #4b5563;
+  font-size: 26px;
+  cursor: pointer;
+  padding: 0 3px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.star-btn:hover, .star-btn.active {
+  color: var(--gold);
+  transform: scale(1.15);
+}
+
+.send-btn {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 14px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.send-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(142, 240, 182, 0.4);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #718096;
+  font-size: 14px;
+  border-top: 1px solid var(--border-color);
+  background: #090d26;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* MODALS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 12, 34, 0.85);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background: #141c42;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  position: relative;
+  padding: 35px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+/* MEDITATION SESSION MODAL SPECIFIC */
+.meditation-timer-box {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.session-mood-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.breathing-circle-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breathing-ring-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dashed rgba(142, 240, 182, 0.3);
+  animation: rotateRing 30s linear infinite;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.breathing-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #8ef0b6 0%, #4facfe 100%);
+  box-shadow: 0 0 35px rgba(142, 240, 182, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #0B102E;
+  font-weight: 800;
+  transition: transform 4s ease-in-out;
+}
+
+.breathing-phase-text {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breathing-phase-sub {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.timer-digits {
+  font-size: 44px;
+  font-weight: 800;
+  font-family: monospace;
+  margin: 15px 0 5px;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px 0 15px;
+}
+
+.timer-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timer-btn-primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.timer-btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.timer-btn-secondary {
+  background: #26325f;
+  color: white;
+}
+
+.timer-btn-secondary:hover {
+  background: #334155;
+}
+
+.duration-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dur-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dur-chip.active, .dur-chip:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+/* DATABASE & ADMIN MODAL */
+.db-tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.db-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.db-tab-btn.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.db-table-container {
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: #0B102E;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #1a234a;
+}
+
+th {
+  background: #141c42;
+  color: var(--accent);
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  color: #cbd5e1;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(142, 240, 182, 0.15);
+  color: var(--accent);
+}
+
+/* TOAST NOTIFICATION */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1a234a;
+  border-left: 5px solid var(--accent);
+  color: white;
+  padding: 16px 22px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  font-size: 14.5px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .tips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding-top: 40px;
+    text-align: center;
+  }
+  .left p {
+    margin: 20px auto 30px;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .right {
+    width: 100%;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .r-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tips {
+    grid-template-columns: 1fr;
+  }
+  .left h1 {
+    font-size: 38px;
+  }
+  .menu {
+    display: none; /* can be opened or simple on mobile */
+  }
+}
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-<div class="logo">🍃 CALM MIND</div>
-<div class="menu">
-<a onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</a>
-<a onclick="document.getElementById('meditate-sec').scrollIntoView({behavior:'smooth'})">Meditate</a>
-<a onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">Reviews</a>
-<a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
-<a onclick="document.getElementById('feedback').scrollIntoView({behavior:'smooth'})">Feedback</a>
-</div>
+  <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <span>🍃</span> CALM MIND
+  </div>
+  <div class="menu">
+    <a onclick="scrollToSection('home')">Home</a>
+    <a onclick="scrollToSection('meditate-sec')">Meditate</a>
+    <a onclick="scrollToSection('reviews')">Reviews</a>
+    <a onclick="scrollToSection('contact')">Contact</a>
+    <a onclick="scrollToSection('feedback')">Feedback</a>
+    <button class="nav-db-btn" onclick="openDatabaseModal()">📊 Data Base</button>
+  </div>
 </nav>
 
-<!-- HOME -->
-<div class="hero" id="home">
-<div class="left">
-<h1>Meet Your<br>Emotions</h1>
-<p>Track, understand, and calm your emotions with guided meditations, mindful check-ins, and gentle support.</p>
-<button class="btn1">Begin Now</button><button class="btn2">Learn More</button>
-</div>
-<div class="right">
-<div class="card c1">😊</div><div class="card c2">😢</div>
-<div class="card c3">😴</div><div class="card c4">😰</div>
-</div>
-</div>
+<!-- HOME / HERO SECTION -->
+<section class="hero" id="home">
+  <div class="left">
+    <div class="badge">✨ Emotional Wellness Platform</div>
+    <h1>Meet Your<br><span>Emotions</span></h1>
+    <p>Track, understand, and calm your emotions with guided meditations, mindful check-ins, and gentle support whenever you need it.</p>
+    <div class="hero-actions">
+      <button class="btn1" onclick="openMeditationModal('general')">
+        <span>▶</span> Begin Now
+      </button>
+      <button class="btn2" onclick="openLearnMoreModal()">
+        Learn More
+      </button>
+    </div>
+  </div>
+  <div class="right">
+    <div class="mood-card c1" onclick="openMeditationModal('happy')" title="Practice Joy & Gratitude">
+      <div class="emoji">😊</div>
+      <div class="mood-label">Happy</div>
+    </div>
+    <div class="mood-card c2" onclick="openMeditationModal('sad')" title="Comforting Sadness Meditation">
+      <div class="emoji">😢</div>
+      <div class="mood-label">Sad</div>
+    </div>
+    <div class="mood-card c3" onclick="openMeditationModal('sleepy')" title="Sleep & Relaxation">
+      <div class="emoji">😴</div>
+      <div class="mood-label">Sleepy</div>
+    </div>
+    <div class="mood-card c4" onclick="openMeditationModal('anxious')" title="Instant Anxiety Relief">
+      <div class="emoji">😰</div>
+      <div class="mood-label">Anxious</div>
+    </div>
+    <div class="mood-tip">Tap any emotion above to start a customized soothing session</div>
+  </div>
+</section>
 
 <!-- MEDITATE SECTION WITH TIPS -->
-<div class="meditate" id="meditate-sec">
-<h2>🧘 Meditate & Find Your Calm</h2>
-<p class="sub">Simple daily practices to bring peace to your mind</p>
+<section class="meditate" id="meditate-sec">
+  <div class="section-container">
+    <h2>🧘 Meditate & Find Your Calm</h2>
+    <p class="sub">Simple, science-backed daily practices designed to bring peace to your mind in just minutes.</p>
 
-<div class="tips">
-<div class="tip-card">
-<div class="tip-icon">🌬️</div>
-<h3>1. Deep Breathing (4-7-8)</h3>
-<p>Inhale 4 sec, hold 7 sec, exhale 8 sec. Repeat 3 times. Instant calm for anxiety and stress. Do it every morning.</p>
+    <div class="tips">
+      <!-- Tip 1 -->
+      <div class="tip-card">
+        <div>
+          <div class="tip-icon">🌬️</div>
+          <h3>1. Deep Breathing (4-7-8)</h3>
+          <p>Inhale for 4 seconds, hold gently for 7 seconds, exhale completely for 8 seconds. Repeat 3 to 4 times. Brings instant calm for anxiety and nervous tension.</p>
+        </div>
+        <button class="card-action-btn" onclick="openMeditationModal('anxious')">Practice 4-7-8 Now →</button>
+      </div>
+
+      <!-- Tip 2 -->
+      <div class="tip-card">
+        <div>
+          <div class="tip-icon">🧠</div>
+          <h3>2. Mindful 5-Minute Check-in</h3>
+          <p>Close your eyes, notice what you feel without judging or resisting. Ask yourself: "How am I feeling right now?" Acknowledge every thought with kindness.</p>
+        </div>
+        <button class="card-action-btn" onclick="openMeditationModal('general')">Start Check-in →</button>
+      </div>
+
+      <!-- Tip 3 -->
+      <div class="tip-card">
+        <div>
+          <div class="tip-icon">🌙</div>
+          <h3>3. Sleep & Night Relaxation</h3>
+          <p>Before sleeping, disconnect from screens, breathe deeply, and allow your body to release today's tension and worries. Perfect for quiet rest.</p>
+        </div>
+        <button class="card-action-btn" onclick="openMeditationModal('sleepy')">Night Session →</button>
+      </div>
+
+      <!-- Tip 4 -->
+      <div class="tip-card">
+        <div>
+          <div class="tip-icon">💛</div>
+          <h3>4. Gratitude & Joy Moment</h3>
+          <p>Take 2 minutes to reflect on 3 positive moments today. Transforming stress into appreciation elevates your dopamine and settles anxiety.</p>
+        </div>
+        <button class="card-action-btn" onclick="openMeditationModal('happy')">Joy Practice →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS SECTION -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div class="reviews-header-left">
+      <h2>What Our Users Say</h2>
+      <p>Real experiences from people calming their minds every day</p>
+    </div>
+    <button class="nav-db-btn" onclick="scrollToSection('feedback')">✍️ Write a Review</button>
+  </div>
+  <div class="r-grid" id="reviews-container">
+    <!-- Reviews rendered dynamically from Database -->
+  </div>
+</section>
+
+<!-- CONTACT & FEEDBACK -->
+<section class="contact-section" id="contact">
+  <div class="contact">
+    <div class="contact-left">
+      <h2>Get in Touch &<br><span style="color:var(--accent);">Connect With Us</span></h2>
+      <p>Have questions, ideas, or need guidance? We are here to support your journey towards emotional balance.</p>
+
+      <div class="info-cards-grid">
+        <div class="info-card">
+          <div class="icon">📧</div>
+          <div>
+            <div style="color:var(--text-muted);font-size:12px;">Email Us</div>
+            <b>hello@calmmind.com</b>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📱</div>
+          <div>
+            <div style="color:var(--text-muted);font-size:12px;">Phone / WhatsApp</div>
+            <b>+92 300 1234567</b>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <div>
+            <div style="color:var(--text-muted);font-size:12px;">Headquarters</div>
+            <b>Bahawalpur, Punjab, Pakistan</b>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon">🌐</div>
+          <div>
+            <div style="color:var(--text-muted);font-size:12px;">Social Media</div>
+            <b>@calmmind.official</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK FORM -->
+    <div class="contact-right" id="feedback">
+      <h3>Send Feedback & Review</h3>
+      <p>Your feedback is automatically recorded in our database and helps inspire others.</p>
+
+      <form id="feedback-form" onsubmit="handleFeedbackSubmit(event)">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" id="fb-name" placeholder="e.g. Zemal Fatima" required>
+        </div>
+
+        <div class="form-group">
+          <label>Your Email *</label>
+          <input type="email" id="fb-email" placeholder="e.g. zemal@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Your Experience Rating</label>
+          <div class="rating-select" id="star-rating-container">
+            <button type="button" class="star-btn active" data-rating="1" onclick="setRating(1)">★</button>
+            <button type="button" class="star-btn active" data-rating="2" onclick="setRating(2)">★</button>
+            <button type="button" class="star-btn active" data-rating="3" onclick="setRating(3)">★</button>
+            <button type="button" class="star-btn active" data-rating="4" onclick="setRating(4)">★</button>
+            <button type="button" class="star-btn active" data-rating="5" onclick="setRating(5)">★</button>
+            <span id="rating-text" style="color:var(--gold);font-weight:bold;margin-left:8px;">5 / 5 (Excellent)</span>
+          </div>
+          <input type="hidden" id="fb-rating" value="5">
+        </div>
+
+        <div class="form-group">
+          <label>Your Feedback / Message *</label>
+          <textarea id="fb-message" rows="4" placeholder="How has Calm Mind helped you feel better?" required></textarea>
+        </div>
+
+        <button type="submit" class="send-btn" id="fb-submit-btn">
+          <span>🚀</span> Submit Feedback to Database
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 CALM MIND - Official Emotional Wellness Platform. All rights reserved.</div>
+  <div class="footer-links">
+    <a onclick="openLearnMoreModal()">About Calm Mind</a> •
+    <a onclick="openMeditationModal('general')">Quick Meditation</a> •
+    <a onclick="openDatabaseModal()">Database Center</a> •
+    <a href="calm-mind-database.zip" download>Download Database ZIP</a>
+  </div>
+</footer>
+
+<!-- 1. MEDITATION & BREATHING TIMER MODAL -->
+<div class="modal-overlay" id="meditation-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeMeditationModal()">×</button>
+    <div class="meditation-timer-box">
+      <div class="session-mood-pill" id="med-mood-pill">Guided Meditation</div>
+      <h2 id="med-title" style="font-size:26px;">4-7-8 Breathing Session</h2>
+      <p id="med-desc" style="color:var(--text-muted);font-size:14px;margin-top:6px;">Follow the circle. Breathe in harmony to soothe your nervous system.</p>
+
+      <div class="breathing-circle-container">
+        <div class="breathing-ring-outer"></div>
+        <div class="breathing-circle" id="breath-circle">
+          <span class="breathing-phase-text" id="breath-phase">Ready?</span>
+          <span class="breathing-phase-sub" id="breath-sec">Click Start</span>
+        </div>
+      </div>
+
+      <div class="timer-digits" id="timer-display">03:00</div>
+
+      <div class="timer-controls">
+        <button class="timer-btn timer-btn-primary" id="timer-toggle-btn" onclick="toggleTimer()">Start Session</button>
+        <button class="timer-btn timer-btn-secondary" onclick="resetTimer()">Reset</button>
+        <button class="timer-btn timer-btn-secondary" id="sound-toggle-btn" onclick="toggleSound()">🔔 Sound: On</button>
+      </div>
+
+      <div class="duration-selector">
+        <span class="dur-chip" onclick="setSessionDuration(60, this)">1 Min</span>
+        <span class="dur-chip active" onclick="setSessionDuration(180, this)">3 Min</span>
+        <span class="dur-chip" onclick="setSessionDuration(300, this)">5 Min</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="tip-card">
-<div class="tip-icon">🧠</div>
-<h3>2. Mindful 5-Minute Check-in</h3>
-<p>Close eyes, notice what you feel without judging. Ask: "How am I feeling right now?" Write it in app daily.</p>
+<!-- 2. LEARN MORE MODAL -->
+<div class="modal-overlay" id="learn-modal">
+  <div class="modal-content" style="max-width: 650px;">
+    <button class="modal-close" onclick="closeLearnModal()">×</button>
+    <h2 style="color:var(--accent);font-size:28px;margin-bottom:12px;">🍃 Discover Calm Mind</h2>
+    <p style="color:var(--text-muted);font-size:15px;margin-bottom:24px;">Welcome to your emotional sanctuary. Calm Mind empowers you to cultivate peace, master anxiety, and align with your feelings through clinically proven mindfulness techniques.</p>
+
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div style="background:var(--bg-primary);padding:18px;border-radius:12px;border:1px solid var(--border-color);">
+        <h3 style="color:#ffeaa7;font-size:17px;margin-bottom:6px;">🌬️ The Science of 4-7-8 Breathing</h3>
+        <p style="color:var(--text-muted);font-size:14px;">Developed by integrative medicine specialists, extending the exhale triggers the vagus nerve, rapidly lowering heart rate and switching your body from "fight-or-flight" to "rest-and-digest".</p>
+      </div>
+
+      <div style="background:var(--bg-primary);padding:18px;border-radius:12px;border:1px solid var(--border-color);">
+        <h3 style="color:#a8d8ff;font-size:17px;margin-bottom:6px;">🎭 Emotional Awareness</h3>
+        <p style="color:var(--text-muted);font-size:14px;">Suppressing feelings magnifies distress. By naming your emotion (Happy, Sad, Sleepy, Anxious), you activate the prefrontal cortex and immediately dampen emotional reactivity.</p>
+      </div>
+
+      <div style="background:var(--bg-primary);padding:18px;border-radius:12px;border:1px solid var(--border-color);">
+        <h3 style="color:#8ef0b6;font-size:17px;margin-bottom:6px;">📊 Real-time Persistent Database</h3>
+        <p style="color:var(--text-muted);font-size:14px;">Every feedback and meditation check-in is saved in the platform database with Google Apps Script cloud sync capability and offline browser persistence.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:25px;display:flex;justify-content:flex-end;gap:12px;">
+      <button class="btn1" onclick="closeLearnModal(); openMeditationModal('general');" style="padding:10px 22px;font-size:14px;">Try a Guided Session Now</button>
+    </div>
+  </div>
 </div>
 
-<div class="tip-card">
-<div class="tip-icon">🌙</div>
-<h3>3. Sleep Meditation</h3>
-<p>Before sleep, listen to soft music, breathe slowly, let go of today's worries. Helps with purple 😴 mood.</p>
+<!-- 3. DATABASE MANAGEMENT & ADMIN MODAL -->
+<div class="modal-overlay" id="db-modal">
+  <div class="modal-content" style="max-width: 780px;">
+    <button class="modal-close" onclick="closeDatabaseModal()">×</button>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px;">
+      <div>
+        <h2 style="color:var(--accent);font-size:24px;">📊 Calm Mind Database Center</h2>
+        <p style="color:var(--text-muted);font-size:13px;">View, export, and manage your live website data</p>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="nav-db-btn" onclick="exportDataJSON()">📥 Export JSON</button>
+        <button class="nav-db-btn" onclick="exportDataCSV()">📄 Export CSV</button>
+      </div>
+    </div>
+
+    <div class="db-tabs">
+      <button class="db-tab-btn active" id="tab-reviews" onclick="switchDbTab('reviews')">User Reviews & Feedback (<span id="count-feedback">0</span>)</button>
+      <button class="db-tab-btn" id="tab-sessions" onclick="switchDbTab('sessions')">Meditation Sessions (<span id="count-sessions">0</span>)</button>
+      <button class="db-tab-btn" id="tab-sync" onclick="switchDbTab('sync')">Google Sheet Sync</button>
+    </div>
+
+    <!-- Feedbacks View -->
+    <div id="db-view-reviews">
+      <div class="db-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Rating</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody id="db-feedback-tbody">
+            <!-- Feedbacks populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sessions View -->
+    <div id="db-view-sessions" style="display:none;">
+      <div class="db-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Mood / Type</th>
+              <th>Duration</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="db-sessions-tbody">
+            <!-- Sessions populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Google Sheet Sync View -->
+    <div id="db-view-sync" style="display:none;">
+      <div style="background:var(--bg-primary);padding:18px;border-radius:12px;border:1px solid var(--border-color);line-height:1.6;">
+        <h4 style="color:var(--accent);margin-bottom:8px;">🔗 Google Apps Script Cloud Sync</h4>
+        <p style="color:var(--text-muted);font-size:13px;margin-bottom:14px;">
+          Aapki Google Apps Script file (<a href="https://script.google.com/u/0/home/projects/1-2MnQPXGL7URmUeGj3nmTaOM4IK8SzszTAtxJJjNd8DglIYO1capOLNp/edit" target="_blank" style="color:var(--accent);">Project Link</a>) ke sath live data save karne ke liye apna Web App deployment URL yahan enter karein.
+        </p>
+        <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/YOUR_EXEC_ID/exec" style="margin-bottom:12px;">
+        <div style="display:flex;gap:10px;">
+          <button class="timer-btn timer-btn-primary" onclick="saveGoogleScriptUrl()">Save Web App URL</button>
+          <button class="timer-btn timer-btn-secondary" onclick="syncAllToGoogleScript()">Sync All Data Now</button>
+        </div>
+        <p id="gas-sync-status" style="font-size:12px;color:var(--accent);margin-top:10px;"></p>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <a href="calm-mind-database.zip" download class="nav-db-btn" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+        📦 Download Complete Database ZIP
+      </a>
+      <button onclick="clearDatabase()" style="background:transparent;border:none;color:var(--danger);font-size:12px;cursor:pointer;">
+        ⚠️ Reset to Default Data
+      </button>
+    </div>
+  </div>
 </div>
 
-<div class="tip-card">
-<div class="tip-icon">💛</div>
-<h3>4. Gratitude Moment</h3>
-<p>Daily 2 minutes: Think of 3 good things today. Turns sad 😢 or anxious 😰 into happy 😊. Best for evening.</p>
-
-
-<!-- REVIEWS -->
-<div class="reviews" id="reviews">
-<h2>What Our Users Say</h2>
-<div class="r-grid">
-<div class="r-card">⭐⭐⭐⭐⭐<br><br>"This app helped me calm my anxiety before bed. So peaceful and easy."<br><br><b style="color:#8ef0b6">— Maya, 28</b></div>
-<div class="r-card">⭐⭐⭐⭐⭐<br><br>"Love the emotion check-ins. I finally feel aware of what I'm feeling."<br><br><b style="color:#8ef0b6">— Jordan, 34</b></div>
-<div class="r-card">⭐⭐⭐⭐⭐<br><br>"The meditations are gentle and calming. My daily calm now."<br><br><b style="color:#8ef0b6">— Priya, 41</b></div>
-</div>
+<!-- TOAST MESSAGE -->
+<div id="toast">
+  <span id="toast-icon">✅</span>
+  <span id="toast-msg">Success</span>
 </div>
 
-<!-- CONTACT + FEEDBACK -->
-<div class="contact" id="contact">
-<div class="contact-left">
-<h1 style="font-size:40px">Get in Touch</h1>
-<p style="color:#9fb0d0;margin:20px 0">Official contact of CALM MIND wellness platform.</p>
-<div class="info-card">📧 <b>Email:</b> hello@calmmind.com</div>
-<div class="info-card">📱 <b>Phone:</b> +92 300 1234567</div>
-<div class="info-card">📍 <b>Location:</b> Bahawalpur, Punjab, Pakistan</div>
-<div class="info-card">🌐 <b>Social:</b> @calmmind</div>
-</div>
-<div class="contact-right" id="feedback">
-<h3>Send Feedback</h3>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Your Feedback"></textarea>
-<button class="send-btn">Send Message</button>
-</div>
-</div>
+<script>
+/* ==========================================================
+   1. DATABASE LAYER (IndexedDB + LocalStorage with Fallback)
+   ========================================================== */
+const DB_NAME = 'CalmMindDB';
+const DB_VERSION = 1;
+const STORAGE_KEY_FEEDBACK = 'calm_mind_feedbacks';
+const STORAGE_KEY_SESSIONS = 'calm_mind_sessions';
+const STORAGE_KEY_GAS_URL = 'calm_mind_gas_url';
 
-<footer>© 2026 CALM MIND - Official Emotional Wellness Platform</footer>
+// Default initial database content
+const DEFAULT_FEEDBACKS = [
+  {
+    id: "fb_1",
+    name: "Maya",
+    email: "maya28@example.com",
+    rating: 5,
+    message: "This app helped me calm my anxiety before bed. So peaceful and easy to follow.",
+    date: "2026-03-15 21:30"
+  },
+  {
+    id: "fb_2",
+    name: "Jordan",
+    email: "jordan34@example.com",
+    rating: 5,
+    message: "Love the emotion check-ins. I finally feel aware of what I'm feeling every day.",
+    date: "2026-03-20 14:15"
+  },
+  {
+    id: "fb_3",
+    name: "Priya",
+    email: "priya41@example.com",
+    rating: 5,
+    message: "The meditations are gentle and calming. My daily go-to sanctuary now.",
+    date: "2026-03-28 08:45"
+  }
+];
+
+const DEFAULT_SESSIONS = [
+  {
+    id: "sess_1",
+    mood: "anxious",
+    type: "4-7-8 Breathing",
+    durationSec: 180,
+    completed: true,
+    date: "2026-03-30 10:00"
+  }
+];
+
+class DatabaseService {
+  constructor() {
+    this.feedbacks = [];
+    this.sessions = [];
+    this.init();
+  }
+
+  init() {
+    try {
+      const storedFb = localStorage.getItem(STORAGE_KEY_FEEDBACK);
+      if (storedFb) {
+        this.feedbacks = JSON.parse(storedFb);
+      } else {
+        this.feedbacks = [...DEFAULT_FEEDBACKS];
+        this.saveFeedbacks();
+      }
+
+      const storedSess = localStorage.getItem(STORAGE_KEY_SESSIONS);
+      if (storedSess) {
+        this.sessions = JSON.parse(storedSess);
+      } else {
+        this.sessions = [...DEFAULT_SESSIONS];
+        this.saveSessions();
+      }
+    } catch (e) {
+      console.warn("Storage access warning:", e);
+      this.feedbacks = [...DEFAULT_FEEDBACKS];
+      this.sessions = [...DEFAULT_SESSIONS];
+    }
+  }
+
+  saveFeedbacks() {
+    try {
+      localStorage.setItem(STORAGE_KEY_FEEDBACK, JSON.stringify(this.feedbacks));
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  saveSessions() {
+    try {
+      localStorage.setItem(STORAGE_KEY_SESSIONS, JSON.stringify(this.sessions));
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  addFeedback(feedback) {
+    this.feedbacks.unshift(feedback);
+    this.saveFeedbacks();
+    renderReviews();
+    renderDatabaseTables();
+    return feedback;
+  }
+
+  addSession(session) {
+    this.sessions.unshift(session);
+    this.saveSessions();
+    renderDatabaseTables();
+    return session;
+  }
+
+  getAllFeedbacks() {
+    return this.feedbacks;
+  }
+
+  getAllSessions() {
+    return this.sessions;
+  }
+
+  reset() {
+    this.feedbacks = [...DEFAULT_FEEDBACKS];
+    this.sessions = [...DEFAULT_SESSIONS];
+    this.saveFeedbacks();
+    this.saveSessions();
+    renderReviews();
+    renderDatabaseTables();
+  }
+}
+
+const db = new DatabaseService();
+
+/* ==========================================================
+   2. REVIEWS RENDERING & FEEDBACK SUBMISSION
+   ========================================================= */
+function renderReviews() {
+  const container = document.getElementById('reviews-container');
+  if (!container) return;
+  const list = db.getAllFeedbacks();
+
+  container.innerHTML = list.map(item => {
+    const starStr = '★'.repeat(item.rating) + '☆'.repeat(Math.max(0, 5 - item.rating));
+    const firstChar = item.name ? item.name.trim().charAt(0).toUpperCase() : 'U';
+    return `
+      <div class="r-card">
+        <div>
+          <div class="stars">${starStr}</div>
+          <div class="r-text">"${escapeHtml(item.message)}"</div>
+        </div>
+        <div class="r-author">
+          <div class="r-avatar">${firstChar}</div>
+          <div class="r-info">
+            <b>— ${escapeHtml(item.name)}</b>
+            <span>${item.date ? item.date.split(' ')[0] : 'Recent'}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function setRating(val) {
+  document.getElementById('fb-rating').value = val;
+  const buttons = document.querySelectorAll('#star-rating-container .star-btn');
+  buttons.forEach(btn => {
+    const r = parseInt(btn.dataset.rating, 10);
+    if (r <= val) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  const texts = {
+    1: '1 / 5 (Needs Improvement)',
+    2: '2 / 5 (Fair)',
+    3: '3 / 5 (Good)',
+    4: '4 / 5 (Very Good)',
+    5: '5 / 5 (Excellent)'
+  };
+  document.getElementById('rating-text').innerText = texts[val] || `${val} / 5`;
+}
+
+async function handleFeedbackSubmit(e) {
+  e.preventDefault();
+  const submitBtn = document.getElementById('fb-submit-btn');
+  const name = document.getElementById('fb-name').value.trim();
+  const email = document.getElementById('fb-email').value.trim();
+  const rating = parseInt(document.getElementById('fb-rating').value, 10) || 5;
+  const message = document.getElementById('fb-message').value.trim();
+
+  if (!name || !email || !message) {
+    showToast("Please complete all required fields.", "⚠️");
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `<span>⏳</span> Saving to Database...`;
+
+  const newEntry = {
+    id: "fb_" + Date.now(),
+    name: name,
+    email: email,
+    rating: rating,
+    message: message,
+    date: new Date().toISOString().replace('T', ' ').substring(0, 16)
+  };
+
+  // 1. Save locally in Browser DB
+  db.addFeedback(newEntry);
+
+  // 2. Sync to Google Apps Script if URL provided
+  const gasUrl = localStorage.getItem(STORAGE_KEY_GAS_URL);
+  if (gasUrl) {
+    try {
+      await fetch(gasUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "feedback", data: newEntry })
+      });
+    } catch (err) {
+      console.log("Cloud sync note:", err);
+    }
+  }
+
+  // Reset form
+  document.getElementById('feedback-form').reset();
+  setRating(5);
+  submitBtn.disabled = false;
+  submitBtn.innerHTML = `<span>🚀</span> Submit Feedback to Database`;
+
+  showToast("Thank you! Feedback recorded in Calm Mind database.", "✨");
+  scrollToSection('reviews');
+}
+
+/* ==========================================================
+   3. GUIDED MEDITATION & 4-7-8 BREATHING TIMER ENGINE
+   ========================================================== */
+let timerInterval = null;
+let breathingCycleInterval = null;
+let currentRemainingSec = 180;
+let totalDurationSec = 180;
+let isTimerRunning = false;
+let currentMood = 'general';
+let soundEnabled = true;
+
+const MOOD_CONFIG = {
+  general: {
+    title: "Guided Mindful Meditation",
+    pill: "🧘 Mindful Balance",
+    desc: "Take this moment to ground yourself, center your thoughts, and breathe with awareness.",
+    inhale: 4, hold: 4, exhale: 4
+  },
+  happy: {
+    title: "Joy & Gratitude Alignment",
+    pill: "😊 Joy Practice",
+    desc: "Reflect on what makes you feel alive. Breathe into appreciation and expand your happiness.",
+    inhale: 4, hold: 2, exhale: 4
+  },
+  sad: {
+    title: "Gentle Comfort & Healing",
+    pill: "😢 Comfort Meditation",
+    desc: "It is okay to feel sadness. Softly embrace your feelings with warmth and releasing breaths.",
+    inhale: 4, hold: 4, exhale: 6
+  },
+  sleepy: {
+    title: "Deep Sleep & Relaxation",
+    pill: "😴 Restful Sleep",
+    desc: "Let go of all muscle tension, slow down your heart rate, and drift into peace.",
+    inhale: 4, hold: 7, exhale: 8
+  },
+  anxious: {
+    title: "4-7-8 Anxiety Reliever",
+    pill: "🌬️ Instant Calm",
+    desc: "Inhale 4s, hold gently for 7s, exhale completely for 8s to calm the nervous system instantly.",
+    inhale: 4, hold: 7, exhale: 8
+  }
+};
+
+// Web Audio API Gentle Chime (no external assets needed)
+function playTone(freq = 440, type = 'sine', duration = 0.8) {
+  if (!soundEnabled) return;
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + duration);
+  } catch (e) {
+    // AudioContext blocked until user interaction
+  }
+}
+
+function openMeditationModal(mood = 'general') {
+  currentMood = mood;
+  const config = MOOD_CONFIG[mood] || MOOD_CONFIG.general;
+
+  document.getElementById('med-title').innerText = config.title;
+  document.getElementById('med-mood-pill').innerText = config.pill;
+  document.getElementById('med-desc').innerText = config.desc;
+
+  resetTimer();
+  document.getElementById('meditation-modal').classList.add('active');
+}
+
+function closeMeditationModal() {
+  pauseTimer();
+  document.getElementById('meditation-modal').classList.remove('active');
+}
+
+function setSessionDuration(seconds, chipEl) {
+  document.querySelectorAll('.duration-selector .dur-chip').forEach(c => c.classList.remove('active'));
+  if (chipEl) chipEl.classList.add('active');
+  totalDurationSec = seconds;
+  currentRemainingSec = seconds;
+  updateTimerDisplay();
+  if (isTimerRunning) {
+    resetTimer();
+  }
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(currentRemainingSec / 60);
+  const s = currentRemainingSec % 60;
+  document.getElementById('timer-display').innerText =
+    `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
+function toggleTimer() {
+  if (isTimerRunning) {
+    pauseTimer();
+  } else {
+    startTimer();
+  }
+}
+
+function startTimer() {
+  isTimerRunning = true;
+  document.getElementById('timer-toggle-btn').innerText = "Pause Session";
+  playTone(528, 'sine', 1.2); // 528Hz Solfeggio frequency tone for calm
+
+  runBreathingCycle();
+
+  timerInterval = setInterval(() => {
+    currentRemainingSec--;
+    updateTimerDisplay();
+
+    if (currentRemainingSec <= 0) {
+      finishTimer();
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  isTimerRunning = false;
+  document.getElementById('timer-toggle-btn').innerText = "Resume Session";
+  clearInterval(timerInterval);
+  clearTimeout(breathingCycleInterval);
+  const circle = document.getElementById('breath-circle');
+  if (circle) circle.style.transform = 'scale(1)';
+  document.getElementById('breath-phase').innerText = "Paused";
+  document.getElementById('breath-sec').innerText = "Take a breath";
+}
+
+function resetTimer() {
+  pauseTimer();
+  currentRemainingSec = totalDurationSec;
+  updateTimerDisplay();
+  document.getElementById('timer-toggle-btn').innerText = "Start Session";
+  document.getElementById('breath-phase').innerText = "Ready?";
+  document.getElementById('breath-sec').innerText = "Click Start";
+}
+
+function finishTimer() {
+  pauseTimer();
+  playTone(639, 'sine', 2.0); // Completion chime
+  showToast("Well done! Your meditation session is completed.", "🌟");
+
+  // Save session to database
+  db.addSession({
+    id: "sess_" + Date.now(),
+    mood: currentMood,
+    type: MOOD_CONFIG[currentMood] ? MOOD_CONFIG[currentMood].title : "Meditation",
+    durationSec: totalDurationSec,
+    completed: true,
+    date: new Date().toISOString().replace('T', ' ').substring(0, 16)
+  });
+
+  document.getElementById('breath-phase').innerText = "Complete!";
+  document.getElementById('breath-sec').innerText = "Peace within you";
+  setTimeout(() => {
+    resetTimer();
+  }, 2500);
+}
+
+function runBreathingCycle() {
+  if (!isTimerRunning) return;
+  const cfg = MOOD_CONFIG[currentMood] || MOOD_CONFIG.general;
+  const circle = document.getElementById('breath-circle');
+  const phaseEl = document.getElementById('breath-phase');
+  const secEl = document.getElementById('breath-sec');
+
+  // Step 1: Inhale
+  phaseEl.innerText = "Inhale";
+  secEl.innerText = `${cfg.inhale}s through nose`;
+  circle.style.transition = `transform ${cfg.inhale}s cubic-bezier(0.4, 0, 0.2, 1)`;
+  circle.style.transform = 'scale(1.4)';
+  playTone(396, 'sine', 0.5);
+
+  breathingCycleInterval = setTimeout(() => {
+    if (!isTimerRunning) return;
+
+    // Step 2: Hold
+    phaseEl.innerText = "Hold";
+    secEl.innerText = `${cfg.hold}s gently`;
+    circle.style.transition = `transform 0.2s linear`;
+
+    breathingCycleInterval = setTimeout(() => {
+      if (!isTimerRunning) return;
+
+      // Step 3: Exhale
+      phaseEl.innerText = "Exhale";
+      secEl.innerText = `${cfg.exhale}s release through mouth`;
+      circle.style.transition = `transform ${cfg.exhale}s cubic-bezier(0.4, 0, 0.2, 1)`;
+      circle.style.transform = 'scale(1)';
+      playTone(285, 'sine', 0.5);
+
+      breathingCycleInterval = setTimeout(() => {
+        if (isTimerRunning) {
+          runBreathingCycle();
+        }
+      }, cfg.exhale * 1000);
+
+    }, cfg.hold * 1000);
+
+  }, cfg.inhale * 1000);
+}
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  const btn = document.getElementById('sound-toggle-btn');
+  btn.innerText = soundEnabled ? "🔔 Sound: On" : "🔕 Sound: Off";
+}
+
+/* ==========================================================
+   4. LEARN MORE MODAL & NAVIGATION
+   ========================================================== */
+function openLearnMoreModal() {
+  document.getElementById('learn-modal').classList.add('active');
+}
+
+function closeLearnModal() {
+  document.getElementById('learn-modal').classList.remove('active');
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+/* ==========================================================
+   5. DATABASE ADMIN MODAL, EXPORT & SYNC
+   ========================================================== */
+function openDatabaseModal() {
+  renderDatabaseTables();
+  const gasUrl = localStorage.getItem(STORAGE_KEY_GAS_URL) || '';
+  document.getElementById('gas-url-input').value = gasUrl;
+  document.getElementById('db-modal').classList.add('active');
+}
+
+function closeDatabaseModal() {
+  document.getElementById('db-modal').classList.remove('active');
+}
+
+function switchDbTab(tab) {
+  document.querySelectorAll('.db-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`tab-${tab}`).classList.add('active');
+
+  document.getElementById('db-view-reviews').style.display = tab === 'reviews' ? 'block' : 'none';
+  document.getElementById('db-view-sessions').style.display = tab === 'sessions' ? 'block' : 'none';
+  document.getElementById('db-view-sync').style.display = tab === 'sync' ? 'block' : 'none';
+}
+
+function renderDatabaseTables() {
+  const fbs = db.getAllFeedbacks();
+  const sess = db.getAllSessions();
+
+  document.getElementById('count-feedback').innerText = fbs.length;
+  document.getElementById('count-sessions').innerText = sess.length;
+
+  // Feedback Table
+  const fbTbody = document.getElementById('db-feedback-tbody');
+  fbTbody.innerHTML = fbs.map(f => `
+    <tr>
+      <td>${escapeHtml(f.date || '-')}</td>
+      <td><b>${escapeHtml(f.name)}</b></td>
+      <td>${escapeHtml(f.email)}</td>
+      <td><span class="badge-tag">★ ${f.rating}/5</span></td>
+      <td>${escapeHtml(f.message)}</td>
+    </tr>
+  `).join('');
+
+  // Sessions Table
+  const sessTbody = document.getElementById('db-sessions-tbody');
+  sessTbody.innerHTML = sess.map(s => `
+    <tr>
+      <td>${escapeHtml(s.date || '-')}</td>
+      <td><span class="badge-tag">${escapeHtml(s.mood)}</span> ${escapeHtml(s.type)}</td>
+      <td>${Math.round(s.durationSec / 60)} min</td>
+      <td style="color:var(--accent);">Completed</td>
+    </tr>
+  `).join('');
+}
+
+function exportDataJSON() {
+  const payload = {
+    website: "CALM MIND - Official Wellness Platform",
+    exportedAt: new Date().toISOString(),
+    feedbacks: db.getAllFeedbacks(),
+    sessions: db.getAllSessions()
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  downloadBlob(blob, `calm-mind-db-${Date.now()}.json`);
+  showToast("Database exported as JSON successfully!", "📥");
+}
+
+function exportDataCSV() {
+  const fbs = db.getAllFeedbacks();
+  let csv = "ID,Name,Email,Rating,Message,Date\n";
+  fbs.forEach(f => {
+    csv += `"${f.id}","${(f.name||'').replace(/"/g, '""')}","${(f.email||'').replace(/"/g, '""')}","${f.rating}","${(f.message||'').replace(/"/g, '""')}","${f.date}"\n`;
+  });
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  downloadBlob(blob, `calm-mind-feedbacks-${Date.now()}.csv`);
+  showToast("Feedbacks exported as CSV successfully!", "📄");
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function saveGoogleScriptUrl() {
+  const url = document.getElementById('gas-url-input').value.trim();
+  localStorage.setItem(STORAGE_KEY_GAS_URL, url);
+  document.getElementById('gas-sync-status').innerText = "✅ Google Apps Script Web App URL saved successfully!";
+  showToast("Google Apps Script URL saved!", "🔗");
+}
+
+async function syncAllToGoogleScript() {
+  const url = document.getElementById('gas-url-input').value.trim();
+  if (!url) {
+    alert("Please enter a valid Google Apps Script Web App URL first.");
+    return;
+  }
+  const statusEl = document.getElementById('gas-sync-status');
+  statusEl.innerText = "⏳ Syncing all records to Google Sheet...";
+  try {
+    await fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "bulk_sync",
+        feedbacks: db.getAllFeedbacks(),
+        sessions: db.getAllSessions()
+      })
+    });
+    statusEl.innerText = "✅ All records submitted to your Google Apps Script endpoint!";
+    showToast("Cloud sync dispatched successfully!", "☁️");
+  } catch (err) {
+    statusEl.innerText = "❌ Sync note: " + err.message;
+  }
+}
+
+function clearDatabase() {
+  if (confirm("Reset database to initial sample records?")) {
+    db.reset();
+    showToast("Database reset to defaults.", "🔄");
+  }
+}
+
+/* ==========================================================
+   6. UTILITY FUNCTIONS
+   ========================================================== */
+function showToast(msg, icon = "✅") {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-msg').innerText = msg;
+  document.getElementById('toast-icon').innerText = icon;
+  toast.style.display = 'flex';
+  setTimeout(() => {
+    toast.style.display = 'none';
+  }, 4000);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// Close modals when clicking backdrop
+window.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal-overlay')) {
+    e.target.classList.remove('active');
+  }
+});
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+  renderReviews();
+});
+</script>
 </body>
 </html>
